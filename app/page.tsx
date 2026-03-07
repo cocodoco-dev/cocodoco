@@ -12,6 +12,12 @@ export default function Home() {
       href: "/quiz/love-style",
       badge: "New",
     },
+    {
+      title: "Hidden Personality Test",
+      desc: "Discover the hidden side of your personality ✨",
+      href: "/quiz/hidden-personality",
+      badge: "Hot",
+    },
   ];
 
   return (
@@ -69,7 +75,12 @@ export default function Home() {
                   fontSize: "12px",
                   padding: "6px 10px",
                   borderRadius: "999px",
-                  background: q.badge === "Popular" ? "#ff8fab" : "#111827",
+                  background:
+                    q.badge === "Popular"
+                      ? "#ff8fab"
+                      : q.badge === "Hot"
+                      ? "#f97316"
+                      : "#111827",
                   color: "white",
                   fontWeight: 700,
                 }}
@@ -87,7 +98,6 @@ export default function Home() {
         ))}
       </section>
 
-      {/* Ad placeholder */}
       <div
         style={{
           margin: "28px auto 0",
@@ -124,24 +134,15 @@ export default function Home() {
             flexWrap: "wrap",
           }}
         >
-          <a
-            href="/privacy"
-            style={{ color: "#9ca3af", textDecoration: "none" }}
-          >
+          <a href="/privacy" style={{ color: "#9ca3af", textDecoration: "none" }}>
             Privacy
           </a>
 
-          <a
-            href="/terms"
-            style={{ color: "#9ca3af", textDecoration: "none" }}
-          >
+          <a href="/terms" style={{ color: "#9ca3af", textDecoration: "none" }}>
             Terms
           </a>
 
-          <a
-            href="/contact"
-            style={{ color: "#9ca3af", textDecoration: "none" }}
-          >
+          <a href="/contact" style={{ color: "#9ca3af", textDecoration: "none" }}>
             Contact
           </a>
         </div>
