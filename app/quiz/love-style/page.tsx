@@ -4,97 +4,195 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 type ResultKey =
-  | "warm_hugger"
-  | "charming_tease"
-  | "steady_rock"
-  | "mystery_cat"
-  | "golden_retriever"
-  | "independent_star";
+  | "comfort_giver"
+  | "playful_charmer"
+  | "loyal_anchor"
+  | "enigmatic_heart"
+  | "golden_retriever_lover"
+  | "free_spirit_lover";
 
 const questions = [
   {
     q: "On a date, you usually…",
     opts: [
-      { t: "Ask lots of questions and listen deeply", s: { warm_hugger: 2, steady_rock: 1 } },
-      { t: "Crack jokes and keep it playful", s: { charming_tease: 2, golden_retriever: 1 } },
-      { t: "Plan everything in advance", s: { steady_rock: 2, independent_star: 1 } },
-      { t: "Go with the vibe and stay a bit mysterious", s: { mystery_cat: 2, charming_tease: 1 } },
+      {
+        t: "Ask thoughtful questions and listen deeply",
+        s: { comfort_giver: 2, loyal_anchor: 1 },
+      },
+      {
+        t: "Keep things playful and tease a little",
+        s: { playful_charmer: 2, golden_retriever_lover: 1 },
+      },
+      {
+        t: "Plan ahead and make things feel smooth",
+        s: { loyal_anchor: 2, free_spirit_lover: 1 },
+      },
+      {
+        t: "Go with the vibe and stay a little mysterious",
+        s: { enigmatic_heart: 2, playful_charmer: 1 },
+      },
     ],
   },
   {
-    q: "Your love language vibe is closest to…",
+    q: "Your love language feels closest to…",
     opts: [
-      { t: "Quality time", s: { warm_hugger: 2, golden_retriever: 1 } },
-      { t: "Words of affirmation", s: { charming_tease: 2, warm_hugger: 1 } },
-      { t: "Acts of service", s: { steady_rock: 2 } },
-      { t: "Space + trust", s: { independent_star: 2, mystery_cat: 1 } },
+      {
+        t: "Quality time and emotional presence",
+        s: { comfort_giver: 2, golden_retriever_lover: 1 },
+      },
+      {
+        t: "Words, flirting, and playful attention",
+        s: { playful_charmer: 2, comfort_giver: 1 },
+      },
+      {
+        t: "Acts of service and reliability",
+        s: { loyal_anchor: 2 },
+      },
+      {
+        t: "Trust, freedom, and space",
+        s: { free_spirit_lover: 2, enigmatic_heart: 1 },
+      },
     ],
   },
   {
-    q: "When texting, you’re…",
+    q: "When texting someone you like, you are…",
     opts: [
-      { t: "Fast replies, lots of emojis", s: { golden_retriever: 2, warm_hugger: 1 } },
-      { t: "Short and witty", s: { charming_tease: 2 } },
-      { t: "Consistent, calm, and clear", s: { steady_rock: 2 } },
-      { t: "Disappear… then return like nothing happened", s: { mystery_cat: 2, independent_star: 1 } },
+      {
+        t: "Warm, consistent, and caring",
+        s: { comfort_giver: 2, loyal_anchor: 1 },
+      },
+      {
+        t: "Witty, quick, and full of charm",
+        s: { playful_charmer: 2 },
+      },
+      {
+        t: "Very excited and openly affectionate",
+        s: { golden_retriever_lover: 2, comfort_giver: 1 },
+      },
+      {
+        t: "A bit unpredictable but interesting",
+        s: { enigmatic_heart: 2, free_spirit_lover: 1 },
+      },
     ],
   },
   {
-    q: "Conflict style?",
+    q: "Your biggest relationship strength is…",
     opts: [
-      { t: "Talk it out ASAP", s: { warm_hugger: 2, steady_rock: 1 } },
-      { t: "Lighten the mood first, then talk", s: { charming_tease: 2 } },
-      { t: "Need time to cool down", s: { independent_star: 2, mystery_cat: 1 } },
-      { t: "Avoid drama at all costs", s: { mystery_cat: 2 } },
+      {
+        t: "Making people feel emotionally safe",
+        s: { comfort_giver: 2 },
+      },
+      {
+        t: "Keeping things fun and exciting",
+        s: { playful_charmer: 2 },
+      },
+      {
+        t: "Being dependable no matter what",
+        s: { loyal_anchor: 2 },
+      },
+      {
+        t: "Staying true to yourself while loving deeply",
+        s: { free_spirit_lover: 2, enigmatic_heart: 1 },
+      },
     ],
   },
   {
-    q: "Your ideal weekend with a partner is…",
+    q: "When conflict happens, you usually…",
     opts: [
-      { t: "Cozy home date + deep talk", s: { warm_hugger: 2 } },
-      { t: "Spontaneous outing + fun photos", s: { golden_retriever: 2, charming_tease: 1 } },
-      { t: "A well-planned day, no chaos", s: { steady_rock: 2 } },
-      { t: "Separate hobbies, meet later for dinner", s: { independent_star: 2 } },
+      {
+        t: "Try to talk gently and work through it",
+        s: { comfort_giver: 2, loyal_anchor: 1 },
+      },
+      {
+        t: "Lighten the tension before going serious",
+        s: { playful_charmer: 2 },
+      },
+      {
+        t: "Stay calm and solve things practically",
+        s: { loyal_anchor: 2 },
+      },
+      {
+        t: "Pull back for space before opening up",
+        s: { enigmatic_heart: 2, free_spirit_lover: 1 },
+      },
     ],
   },
   {
-    q: "What attracts you most?",
+    q: "Your ideal relationship feels like…",
     opts: [
-      { t: "Kindness and emotional warmth", s: { warm_hugger: 2 } },
-      { t: "Confidence and humor", s: { charming_tease: 2 } },
-      { t: "Reliability and maturity", s: { steady_rock: 2 } },
-      { t: "Quiet charm and independence", s: { mystery_cat: 2, independent_star: 1 } },
+      {
+        t: "Warm, gentle, and emotionally secure",
+        s: { comfort_giver: 2 },
+      },
+      {
+        t: "Fun, flirty, and full of chemistry",
+        s: { playful_charmer: 2, golden_retriever_lover: 1 },
+      },
+      {
+        t: "Stable, loyal, and long-term",
+        s: { loyal_anchor: 2 },
+      },
+      {
+        t: "Deep, free, and never controlling",
+        s: { free_spirit_lover: 2, enigmatic_heart: 1 },
+      },
     ],
   },
   {
-    q: "When you like someone, you…",
+    q: "People are most attracted to your…",
     opts: [
-      { t: "Show care in small daily ways", s: { warm_hugger: 2, steady_rock: 1 } },
-      { t: "Flirt a lot and test the waters", s: { charming_tease: 2 } },
-      { t: "Keep it low-key but loyal", s: { steady_rock: 2 } },
-      { t: "Act chill… but secretly think about them", s: { mystery_cat: 2, golden_retriever: 1 } },
+      {
+        t: "Warmth and kindness",
+        s: { comfort_giver: 2, golden_retriever_lover: 1 },
+      },
+      {
+        t: "Charm and playful confidence",
+        s: { playful_charmer: 2 },
+      },
+      {
+        t: "Maturity and emotional steadiness",
+        s: { loyal_anchor: 2 },
+      },
+      {
+        t: "Mystery and quiet depth",
+        s: { enigmatic_heart: 2, free_spirit_lover: 1 },
+      },
     ],
   },
   {
-    q: "In relationships, you value…",
+    q: "In love, what matters most to you?",
     opts: [
-      { t: "Emotional safety", s: { warm_hugger: 2, steady_rock: 1 } },
-      { t: "Fun & chemistry", s: { charming_tease: 2, golden_retriever: 1 } },
-      { t: "Stability & commitment", s: { steady_rock: 2 } },
-      { t: "Freedom & individuality", s: { independent_star: 2 } },
+      {
+        t: "Feeling safe and understood",
+        s: { comfort_giver: 2 },
+      },
+      {
+        t: "Excitement and emotional spark",
+        s: { playful_charmer: 2, golden_retriever_lover: 1 },
+      },
+      {
+        t: "Trust and commitment",
+        s: { loyal_anchor: 2 },
+      },
+      {
+        t: "Freedom and authenticity",
+        s: { free_spirit_lover: 2, enigmatic_heart: 1 },
+      },
     ],
   },
 ];
 
 function pickTop(scores: Record<ResultKey, number>): ResultKey {
-  let best: ResultKey = "warm_hugger";
+  let best: ResultKey = "comfort_giver";
   let bestVal = -999;
+
   (Object.keys(scores) as ResultKey[]).forEach((k) => {
     if (scores[k] > bestVal) {
       bestVal = scores[k];
       best = k;
     }
   });
+
   return best;
 }
 
@@ -102,19 +200,21 @@ export default function LoveStyleQuiz() {
   const router = useRouter();
   const [current, setCurrent] = useState(0);
   const [scores, setScores] = useState<Record<ResultKey, number>>({
-    warm_hugger: 0,
-    charming_tease: 0,
-    steady_rock: 0,
-    mystery_cat: 0,
-    golden_retriever: 0,
-    independent_star: 0,
+    comfort_giver: 0,
+    playful_charmer: 0,
+    loyal_anchor: 0,
+    enigmatic_heart: 0,
+    golden_retriever_lover: 0,
+    free_spirit_lover: 0,
   });
 
   function choose(partial: Partial<Record<ResultKey, number>>) {
     const nextScores = { ...scores };
+
     (Object.keys(partial) as ResultKey[]).forEach((k) => {
       nextScores[k] += partial[k] || 0;
     });
+
     setScores(nextScores);
 
     if (current < questions.length - 1) {
@@ -139,7 +239,10 @@ export default function LoveStyleQuiz() {
       }}
     >
       <div style={{ width: "min(860px, 100%)", textAlign: "center" }}>
-        <h1 style={{ fontSize: "40px", marginBottom: "10px" }}>Love Style Test 💘</h1>
+        <h1 style={{ fontSize: "40px", marginBottom: "10px" }}>
+          Love Style Test 💘
+        </h1>
+
         <p style={{ marginBottom: "22px", color: "#374151" }}>
           Question {current + 1} / {questions.length}
         </p>
@@ -154,7 +257,14 @@ export default function LoveStyleQuiz() {
         >
           <h2 style={{ marginBottom: "18px" }}>{q.q}</h2>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px", alignItems: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "12px",
+              alignItems: "center",
+            }}
+          >
             {q.opts.map((opt, idx) => (
               <button
                 key={idx}
@@ -176,7 +286,6 @@ export default function LoveStyleQuiz() {
           </div>
         </div>
 
-        {/* Ad placeholder */}
         <div
           style={{
             marginTop: "18px",
