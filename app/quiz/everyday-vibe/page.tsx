@@ -1,67 +1,220 @@
 "use client";
 
-import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
-type ResultKey = "cozy" | "sprinter" | "collector" | "floater";
+type ResultKey =
+  | "cozy_planner"
+  | "spontaneous_sprinter"
+  | "curious_collector"
+  | "chill_floater"
+  | "social_butterfly"
+  | "quiet_observer";
 
 const questions = [
   {
-    question: "What do you usually do on weekends?",
-    options: [
-      { text: "Stay home and relax", score: { cozy: 2, floater: 1 } },
-      { text: "Meet friends", score: { sprinter: 2, collector: 1 } },
-      { text: "Explore something new", score: { collector: 2, sprinter: 1 } },
-      { text: "Just go with the flow", score: { floater: 2, cozy: 1 } },
+    q: "Your ideal weekend starts with…",
+    opts: [
+      {
+        t: "Making a cozy plan for the day",
+        s: { cozy_planner: 2, quiet_observer: 1 },
+      },
+      {
+        t: "Going somewhere exciting",
+        s: { spontaneous_sprinter: 2, social_butterfly: 1 },
+      },
+      {
+        t: "Exploring a new place",
+        s: { curious_collector: 2, spontaneous_sprinter: 1 },
+      },
+      {
+        t: "Seeing what friends are doing",
+        s: { social_butterfly: 2, chill_floater: 1 },
+      },
     ],
   },
   {
-    question: "Pick a drink",
-    options: [
-      { text: "Coffee", score: { cozy: 1, collector: 1 } },
-      { text: "Beer", score: { sprinter: 1, floater: 1 } },
-      { text: "Energy drink", score: { sprinter: 2 } },
-      { text: "Water", score: { floater: 2 } },
+    q: "When you enter a new place you usually…",
+    opts: [
+      {
+        t: "Find a comfortable spot first",
+        s: { cozy_planner: 2, chill_floater: 1 },
+      },
+      {
+        t: "Walk around quickly to explore",
+        s: { spontaneous_sprinter: 2, curious_collector: 1 },
+      },
+      {
+        t: "Start talking to people",
+        s: { social_butterfly: 2 },
+      },
+      {
+        t: "Observe quietly before doing anything",
+        s: { quiet_observer: 2, curious_collector: 1 },
+      },
     ],
   },
   {
-    question: "Your ideal place?",
-    options: [
-      { text: "Home", score: { cozy: 2 } },
-      { text: "City", score: { sprinter: 2 } },
-      { text: "Nature", score: { floater: 2 } },
-      { text: "Anywhere", score: { collector: 2 } },
+    q: "Your friends describe you as…",
+    opts: [
+      {
+        t: "Reliable and calm",
+        s: { cozy_planner: 2, quiet_observer: 1 },
+      },
+      {
+        t: "Energetic and spontaneous",
+        s: { spontaneous_sprinter: 2 },
+      },
+      {
+        t: "Curious and thoughtful",
+        s: { curious_collector: 2, quiet_observer: 1 },
+      },
+      {
+        t: "Easygoing and relaxed",
+        s: { chill_floater: 2, social_butterfly: 1 },
+      },
+    ],
+  },
+  {
+    q: "When plans suddenly change you…",
+    opts: [
+      {
+        t: "Feel a bit uncomfortable",
+        s: { cozy_planner: 2, quiet_observer: 1 },
+      },
+      {
+        t: "Get excited about the surprise",
+        s: { spontaneous_sprinter: 2 },
+      },
+      {
+        t: "Adapt and explore new options",
+        s: { curious_collector: 2, chill_floater: 1 },
+      },
+      {
+        t: "Just go with the flow",
+        s: { chill_floater: 2, social_butterfly: 1 },
+      },
+    ],
+  },
+  {
+    q: "Your ideal environment is…",
+    opts: [
+      {
+        t: "A warm cozy room",
+        s: { cozy_planner: 2 },
+      },
+      {
+        t: "A busy city full of activity",
+        s: { social_butterfly: 2, spontaneous_sprinter: 1 },
+      },
+      {
+        t: "A new place to discover",
+        s: { curious_collector: 2, spontaneous_sprinter: 1 },
+      },
+      {
+        t: "Somewhere quiet and peaceful",
+        s: { quiet_observer: 2, chill_floater: 1 },
+      },
+    ],
+  },
+  {
+    q: "When meeting new people you usually…",
+    opts: [
+      {
+        t: "Listen more than you talk",
+        s: { quiet_observer: 2, cozy_planner: 1 },
+      },
+      {
+        t: "Start conversations easily",
+        s: { social_butterfly: 2, spontaneous_sprinter: 1 },
+      },
+      {
+        t: "Ask lots of questions",
+        s: { curious_collector: 2 },
+      },
+      {
+        t: "Wait and observe the vibe",
+        s: { chill_floater: 1, quiet_observer: 2 },
+      },
+    ],
+  },
+  {
+    q: "Your daily energy feels more like…",
+    opts: [
+      {
+        t: "Calm and steady",
+        s: { cozy_planner: 2, quiet_observer: 1 },
+      },
+      {
+        t: "Fast and excited",
+        s: { spontaneous_sprinter: 2, social_butterfly: 1 },
+      },
+      {
+        t: "Curious and focused",
+        s: { curious_collector: 2 },
+      },
+      {
+        t: "Relaxed and flexible",
+        s: { chill_floater: 2 },
+      },
+    ],
+  },
+  {
+    q: "Your life motto sounds like…",
+    opts: [
+      {
+        t: "Comfort and balance matter most",
+        s: { cozy_planner: 2 },
+      },
+      {
+        t: "Life is an adventure",
+        s: { spontaneous_sprinter: 2 },
+      },
+      {
+        t: "Always learn something new",
+        s: { curious_collector: 2 },
+      },
+      {
+        t: "No stress, just flow",
+        s: { chill_floater: 2, social_butterfly: 1 },
+      },
     ],
   },
 ];
 
 function pickTop(scores: Record<ResultKey, number>): ResultKey {
-  let best: ResultKey = "cozy";
-  let bestVal = -Infinity;
+  let best: ResultKey = "cozy_planner";
+  let bestVal = -999;
+
   (Object.keys(scores) as ResultKey[]).forEach((k) => {
     if (scores[k] > bestVal) {
       bestVal = scores[k];
       best = k;
     }
   });
+
   return best;
 }
 
-export default function QuizPage() {
+export default function EverydayVibeQuiz() {
   const router = useRouter();
   const [current, setCurrent] = useState(0);
   const [scores, setScores] = useState<Record<ResultKey, number>>({
-    cozy: 0,
-    sprinter: 0,
-    collector: 0,
-    floater: 0,
+    cozy_planner: 0,
+    spontaneous_sprinter: 0,
+    curious_collector: 0,
+    chill_floater: 0,
+    social_butterfly: 0,
+    quiet_observer: 0,
   });
 
-  function choose(optionScore: Partial<Record<ResultKey, number>>) {
+  function choose(partial: Partial<Record<ResultKey, number>>) {
     const nextScores = { ...scores };
-    (Object.keys(optionScore) as ResultKey[]).forEach((k) => {
-      nextScores[k] += optionScore[k] || 0;
+
+    (Object.keys(partial) as ResultKey[]).forEach((k) => {
+      nextScores[k] += partial[k] || 0;
     });
+
     setScores(nextScores);
 
     if (current < questions.length - 1) {
@@ -77,46 +230,79 @@ export default function QuizPage() {
   return (
     <main
       style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
+        minHeight: "100vh",
         background: "#fdf2f8",
         fontFamily: "sans-serif",
-        textAlign: "center",
-        padding: "24px",
+        padding: "42px 18px",
+        display: "flex",
+        justifyContent: "center",
       }}
     >
-      <h1 style={{ fontSize: "36px", marginBottom: "18px" }}>
-        Everyday Vibe Test
-      </h1>
+      <div style={{ width: "min(860px, 100%)", textAlign: "center" }}>
+        <h1 style={{ fontSize: "40px", marginBottom: "10px" }}>
+          Everyday Vibe Test 🌿
+        </h1>
 
-      <p style={{ marginBottom: "18px" }}>
-        Question {current + 1} / {questions.length}
-      </p>
+        <p style={{ marginBottom: "22px", color: "#374151" }}>
+          Question {current + 1} / {questions.length}
+        </p>
 
-      <h2 style={{ marginBottom: "22px", maxWidth: "720px" }}>{q.question}</h2>
+        <div
+          style={{
+            background: "rgba(255,255,255,0.75)",
+            border: "1px solid #f2a7b8",
+            borderRadius: "16px",
+            padding: "22px",
+          }}
+        >
+          <h2 style={{ marginBottom: "18px" }}>{q.q}</h2>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-        {q.options.map((opt, idx) => (
-          <button
-            key={idx}
-            onClick={() => choose(opt.score)}
+          <div
             style={{
-              padding: "12px 26px",
-              borderRadius: "10px",
-              border: "none",
-              background: "#ff8fab",
-              color: "white",
-              cursor: "pointer",
-              fontSize: "16px",
-              minWidth: "280px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "12px",
+              alignItems: "center",
             }}
           >
-            {opt.text}
-          </button>
-        ))}
+            {q.opts.map((opt, idx) => (
+              <button
+                key={idx}
+                onClick={() => choose(opt.s)}
+                style={{
+                  padding: "12px 18px",
+                  borderRadius: "12px",
+                  border: "none",
+                  background: "#ff8fab",
+                  color: "white",
+                  cursor: "pointer",
+                  fontSize: "16px",
+                  width: "min(520px, 100%)",
+                }}
+              >
+                {opt.t}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: "18px",
+            width: "100%",
+            height: "110px",
+            borderRadius: "14px",
+            border: "1px dashed #f2a7b8",
+            background: "rgba(255, 255, 255, 0.6)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "#9ca3af",
+            fontSize: "14px",
+          }}
+        >
+          Ad Space (Google AdSense will go here)
+        </div>
       </div>
     </main>
   );
