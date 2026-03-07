@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Kind of Mind Do You Have?",
+      desc: "Discover how your mind naturally sees the world 🧠",
+      href: "/quiz/mind-type",
+      badge: "New",
+    },
+    {
       title: "Your True Strength Test",
       desc: "Discover the strength that defines you most 💪",
       href: "/quiz/true-strength",
