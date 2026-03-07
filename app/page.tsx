@@ -1,39 +1,9 @@
 export default function Home() {
   const quizzes = [
     {
-      title: "Everyday Vibe Test",
-      desc: "Find your vibe in 30 seconds ✨",
-      href: "/quiz/everyday-vibe",
-      badge: "Popular",
-    },
-    {
-      title: "Love Style Test",
-      desc: "What kind of lover are you? 💘",
-      href: "/quiz/love-style",
-      badge: "New",
-    },
-    {
-      title: "Hidden Personality Test",
-      desc: "Discover the hidden side of your personality ✨",
-      href: "/quiz/hidden-personality",
-      badge: "Hot",
-    },
-    {
-      title: "Your Inner Animal Test",
-      desc: "Find the animal that matches your true instinct 🐾",
-      href: "/quiz/inner-animal",
-      badge: "Hot",
-    },
-    {
-      title: "What Energy Do You Give Off?",
-      desc: "Find out the energy people feel from you instantly ✨",
-      href: "/quiz/energy",
-      badge: "New",
-    },
-    {
-      title: "Your Brain Type Test",
-      desc: "Discover how your mind naturally works 🧠",
-      href: "/quiz/brain-type",
+      title: "Your True Strength Test",
+      desc: "Discover the strength that defines you most 💪",
+      href: "/quiz/true-strength",
       badge: "New",
     },
     {
@@ -43,10 +13,40 @@ export default function Home() {
       badge: "Hot",
     },
     {
-      title: "Your True Strength Test",
-      desc: "Discover the strength that defines you most 💪",
-      href: "/quiz/true-strength",
+      title: "Your Brain Type Test",
+      desc: "Discover how your mind naturally works 🧠",
+      href: "/quiz/brain-type",
       badge: "New",
+    },
+    {
+      title: "What Energy Do You Give Off?",
+      desc: "Find out the energy people feel from you instantly ✨",
+      href: "/quiz/energy",
+      badge: "New",
+    },
+    {
+      title: "Your Inner Animal Test",
+      desc: "Find the animal that matches your true instinct 🐾",
+      href: "/quiz/inner-animal",
+      badge: "Hot",
+    },
+    {
+      title: "Hidden Personality Test",
+      desc: "Discover the hidden side of your personality ✨",
+      href: "/quiz/hidden-personality",
+      badge: "Hot",
+    },
+    {
+      title: "Love Style Test",
+      desc: "What kind of lover are you? 💘",
+      href: "/quiz/love-style",
+      badge: "New",
+    },
+    {
+      title: "Everyday Vibe Test",
+      desc: "Find your vibe in 30 seconds ✨",
+      href: "/quiz/everyday-vibe",
+      badge: "Popular",
     },
   ];
 
