@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Kind of Person Are You to Others?",
+      desc: "Discover how people actually see you 👀",
+      href: "/quiz/person-to-others",
+      badge: "New",
+    },
+    {
       title: "What Makes You Attractive?",
       desc: "Discover the quality that draws people to you most ✨",
       href: "/quiz/attractive",
