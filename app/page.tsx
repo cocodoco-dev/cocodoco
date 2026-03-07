@@ -30,6 +30,12 @@ export default function Home() {
       href: "/quiz/energy",
       badge: "New",
     },
+    {
+      title: "Your Brain Type Test",
+      desc: "Discover how your mind naturally works 🧠",
+      href: "/quiz/brain-type",
+      badge: "New",
+    },
   ];
 
   return (
