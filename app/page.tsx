@@ -36,6 +36,12 @@ export default function Home() {
       href: "/quiz/brain-type",
       badge: "New",
     },
+    {
+      title: "Your Social Personality Test",
+      desc: "Discover your real social personality in 30 seconds 💬",
+      href: "/quiz/social-personality",
+      badge: "Hot",
+    },
   ];
 
   return (
