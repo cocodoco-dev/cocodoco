@@ -1,7 +1,7 @@
 "use client";
 
+import { Suspense, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
 
 const results = {
   warm_hugger: {
@@ -32,7 +32,7 @@ const results = {
 
 type ResultKey = keyof typeof results;
 
-export default function LoveStyleResult() {
+function ResultContent() {
   const sp = useSearchParams();
   const key = (sp.get("type") as ResultKey) || "warm_hugger";
   const r = results[key];
@@ -68,9 +68,18 @@ export default function LoveStyleResult() {
     >
       <div style={{ width: "min(860px, 100%)" }}>
         <h1 style={{ fontSize: "46px", marginBottom: "12px" }}>{r.title}</h1>
-        <p style={{ fontSize: "18px", color: "#374151", marginBottom: "24px" }}>{r.desc}</p>
+        <p style={{ fontSize: "18px", color: "#374151", marginBottom: "24px" }}>
+          {r.desc}
+        </p>
 
-        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "12px",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
           <button
             onClick={copyLink}
             style={{
@@ -116,7 +125,6 @@ export default function LoveStyleResult() {
           </a>
         </div>
 
-        {/* Ad placeholder */}
         <div
           style={{
             marginTop: "22px",
@@ -136,5 +144,13 @@ export default function LoveStyleResult() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function LoveStyleResult() {
+  return (
+    <Suspense fallback={<div style={{ padding: "40px" }}>Loading...</div>}>
+      <ResultContent />
+    </Suspense>
   );
 }
