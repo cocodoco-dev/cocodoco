@@ -1,7 +1,9 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
+import { Suspense, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
 
 const results = {
   cozy: {
@@ -24,7 +26,7 @@ const results = {
 
 type ResultKey = keyof typeof results;
 
-export default function ResultPage() {
+function ResultContent() {
   const sp = useSearchParams();
   const key = (sp.get("type") as ResultKey) || "cozy";
   const r = results[key];
@@ -65,7 +67,14 @@ export default function ResultPage() {
         {r.desc}
       </p>
 
-      <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: "12px",
+          flexWrap: "wrap",
+          justifyContent: "center",
+        }}
+      >
         <button
           onClick={copyLink}
           style={{
@@ -111,7 +120,6 @@ export default function ResultPage() {
         </a>
       </div>
 
-      {/* Ad placeholder (later: AdSense) */}
       <div
         style={{
           marginTop: "28px",
@@ -130,5 +138,13 @@ export default function ResultPage() {
         Ad Space (Google AdSense will go here)
       </div>
     </main>
+  );
+}
+
+export default function ResultPage() {
+  return (
+    <Suspense fallback={<div style={{ padding: "40px" }}>Loading...</div>}>
+      <ResultContent />
+    </Suspense>
   );
 }
