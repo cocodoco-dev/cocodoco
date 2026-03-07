@@ -42,6 +42,12 @@ export default function Home() {
       href: "/quiz/social-personality",
       badge: "Hot",
     },
+    {
+      title: "Your True Strength Test",
+      desc: "Discover the strength that defines you most 💪",
+      href: "/quiz/true-strength",
+      badge: "New",
+    },
   ];
 
   return (
