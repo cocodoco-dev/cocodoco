@@ -18,6 +18,12 @@ export default function Home() {
       href: "/quiz/hidden-personality",
       badge: "Hot",
     },
+    {
+      title: "Your Inner Animal Test",
+      desc: "Find the animal that matches your true instinct 🐾",
+      href: "/quiz/inner-animal",
+      badge: "Hot",
+    },
   ];
 
   return (
