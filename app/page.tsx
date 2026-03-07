@@ -24,6 +24,12 @@ export default function Home() {
       href: "/quiz/inner-animal",
       badge: "Hot",
     },
+    {
+      title: "What Energy Do You Give Off?",
+      desc: "Find out the energy people feel from you instantly ✨",
+      href: "/quiz/energy",
+      badge: "New",
+    },
   ];
 
   return (
