@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "Your Life Energy Test",
+      desc: "Discover the energy that shapes your life most ✨",
+      href: "/quiz/life-energy",
+      badge: "New",
+    },
+    {
       title: "What Kind of Mind Do You Have?",
       desc: "Discover how your mind naturally sees the world 🧠",
       href: "/quiz/mind-type",
