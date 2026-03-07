@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Makes You Attractive?",
+      desc: "Discover the quality that draws people to you most ✨",
+      href: "/quiz/attractive",
+      badge: "New",
+    },
+    {
       title: "Your Life Energy Test",
       desc: "Discover the energy that shapes your life most ✨",
       href: "/quiz/life-energy",
