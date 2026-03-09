@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Kind of Romantic Energy Do You Have?",
+      desc: "Discover the vibe you naturally bring into love 💘",
+      href: "/quiz/romantic-energy",
+      badge: "New",
+    },
+    {
       title: "What Is Your Hidden Talent?",
       desc: "Discover the strength inside you that people may notice later 🎁",
       href: "/quiz/hidden-talent",
