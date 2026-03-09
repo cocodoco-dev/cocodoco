@@ -141,7 +141,15 @@ function ResultContent() {
       }}
     >
       <div style={{ width: "min(860px, 100%)", textAlign: "center" }}>
-        <h1 style={{ fontSize: "46px", marginBottom: "12px" }}>{r.title}</h1>
+        <h1
+          style={{
+            fontSize: "40px",
+            marginBottom: "12px",
+            color: "#111827",
+          }}
+        >
+          {r.title}
+        </h1>
 
         <p
           style={{
