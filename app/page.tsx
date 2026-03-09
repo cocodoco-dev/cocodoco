@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Is Your Emotional Age?",
+      desc: "Discover how emotionally young, deep, or mature you really are 💌",
+      href: "/quiz/emotional-age",
+      badge: "New",
+    },
+    {
       title: "What Kind of Person Are You to Others?",
       desc: "Discover how people actually see you 👀",
       href: "/quiz/person-to-others",
