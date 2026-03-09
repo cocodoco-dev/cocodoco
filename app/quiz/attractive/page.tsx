@@ -15,169 +15,73 @@ const questions = [
   {
     q: "What usually draws people to you first?",
     opts: [
-      {
-        t: "Your warmth and kindness",
-        s: { warm_charm: 2, bright_presence: 1 },
-      },
-      {
-        t: "Your quiet and mysterious vibe",
-        s: { quiet_mystery: 2, deep_allure: 1 },
-      },
-      {
-        t: "Your playful and fun energy",
-        s: { playful_magnetism: 2, bright_presence: 1 },
-      },
-      {
-        t: "Your calm and refined presence",
-        s: { elegant_energy: 2, deep_allure: 1 },
-      },
+      { t: "Your warmth and kindness", s: { warm_charm: 2, bright_presence: 1 } },
+      { t: "Your quiet and mysterious vibe", s: { quiet_mystery: 2, deep_allure: 1 } },
+      { t: "Your playful and fun energy", s: { playful_magnetism: 2, bright_presence: 1 } },
+      { t: "Your calm and refined presence", s: { elegant_energy: 2, deep_allure: 1 } },
     ],
   },
   {
     q: "In conversation, your most attractive trait is…",
     opts: [
-      {
-        t: "Making people feel comfortable quickly",
-        s: { warm_charm: 2 },
-      },
-      {
-        t: "Saying less, but making it memorable",
-        s: { quiet_mystery: 2, elegant_energy: 1 },
-      },
-      {
-        t: "Making people laugh and feel alive",
-        s: { playful_magnetism: 2, bright_presence: 1 },
-      },
-      {
-        t: "Speaking with depth and intention",
-        s: { deep_allure: 2, elegant_energy: 1 },
-      },
+      { t: "Making people feel comfortable quickly", s: { warm_charm: 2 } },
+      { t: "Saying less, but making it memorable", s: { quiet_mystery: 2, elegant_energy: 1 } },
+      { t: "Making people laugh and feel alive", s: { playful_magnetism: 2, bright_presence: 1 } },
+      { t: "Speaking with depth and intention", s: { deep_allure: 2, elegant_energy: 1 } },
     ],
   },
   {
     q: "Which compliment sounds most like you?",
     opts: [
-      {
-        t: "“You feel so easy to be around.”",
-        s: { warm_charm: 2 },
-      },
-      {
-        t: "“There’s something intriguing about you.”",
-        s: { quiet_mystery: 2, deep_allure: 1 },
-      },
-      {
-        t: "“You have such fun energy.”",
-        s: { playful_magnetism: 2, bright_presence: 1 },
-      },
-      {
-        t: "“You have such a graceful vibe.”",
-        s: { elegant_energy: 2 },
-      },
+      { t: "“You feel so easy to be around.”", s: { warm_charm: 2 } },
+      { t: "“There’s something intriguing about you.”", s: { quiet_mystery: 2, deep_allure: 1 } },
+      { t: "“You have such fun energy.”", s: { playful_magnetism: 2, bright_presence: 1 } },
+      { t: "“You have such a graceful vibe.”", s: { elegant_energy: 2 } },
     ],
   },
   {
     q: "When someone starts liking you, it is often because…",
     opts: [
-      {
-        t: "They feel emotionally safe with you",
-        s: { warm_charm: 2, deep_allure: 1 },
-      },
-      {
-        t: "They want to understand you more",
-        s: { quiet_mystery: 2 },
-      },
-      {
-        t: "You make life feel exciting",
-        s: { playful_magnetism: 2, bright_presence: 1 },
-      },
-      {
-        t: "You carry yourself with quiet confidence",
-        s: { elegant_energy: 2, deep_allure: 1 },
-      },
+      { t: "They feel emotionally safe with you", s: { warm_charm: 2, deep_allure: 1 } },
+      { t: "They want to understand you more", s: { quiet_mystery: 2 } },
+      { t: "You make life feel exciting", s: { playful_magnetism: 2, bright_presence: 1 } },
+      { t: "You carry yourself with quiet confidence", s: { elegant_energy: 2, deep_allure: 1 } },
     ],
   },
   {
     q: "Your energy in a room is usually…",
     opts: [
-      {
-        t: "Soft and welcoming",
-        s: { warm_charm: 2 },
-      },
-      {
-        t: "Quiet, but impossible to ignore",
-        s: { quiet_mystery: 2, deep_allure: 1 },
-      },
-      {
-        t: "Bright and lively",
-        s: { playful_magnetism: 2, bright_presence: 1 },
-      },
-      {
-        t: "Polished and composed",
-        s: { elegant_energy: 2 },
-      },
+      { t: "Soft and welcoming", s: { warm_charm: 2 } },
+      { t: "Quiet, but impossible to ignore", s: { quiet_mystery: 2, deep_allure: 1 } },
+      { t: "Bright and lively", s: { playful_magnetism: 2, bright_presence: 1 } },
+      { t: "Polished and composed", s: { elegant_energy: 2 } },
     ],
   },
   {
     q: "What kind of attraction feels most natural to you?",
     opts: [
-      {
-        t: "Gentle connection",
-        s: { warm_charm: 2 },
-      },
-      {
-        t: "Slow-burning intrigue",
-        s: { quiet_mystery: 2, deep_allure: 1 },
-      },
-      {
-        t: "Chemistry and fun",
-        s: { playful_magnetism: 2, bright_presence: 1 },
-      },
-      {
-        t: "Elegant tension and depth",
-        s: { elegant_energy: 2, deep_allure: 1 },
-      },
+      { t: "Gentle connection", s: { warm_charm: 2 } },
+      { t: "Slow-burning intrigue", s: { quiet_mystery: 2, deep_allure: 1 } },
+      { t: "Chemistry and fun", s: { playful_magnetism: 2, bright_presence: 1 } },
+      { t: "Elegant tension and depth", s: { elegant_energy: 2, deep_allure: 1 } },
     ],
   },
   {
     q: "People are often surprised by your…",
     opts: [
-      {
-        t: "Emotional warmth",
-        s: { warm_charm: 2 },
-      },
-      {
-        t: "Hidden depth",
-        s: { quiet_mystery: 2, deep_allure: 1 },
-      },
-      {
-        t: "Ability to lift the mood instantly",
-        s: { playful_magnetism: 2, bright_presence: 1 },
-      },
-      {
-        t: "Quiet confidence",
-        s: { elegant_energy: 2 },
-      },
+      { t: "Emotional warmth", s: { warm_charm: 2 } },
+      { t: "Hidden depth", s: { quiet_mystery: 2, deep_allure: 1 } },
+      { t: "Ability to lift the mood instantly", s: { playful_magnetism: 2, bright_presence: 1 } },
+      { t: "Quiet confidence", s: { elegant_energy: 2 } },
     ],
   },
   {
     q: "Deep down, what makes you attractive is…",
     opts: [
-      {
-        t: "Your heart",
-        s: { warm_charm: 2 },
-      },
-      {
-        t: "Your mystery",
-        s: { quiet_mystery: 2 },
-      },
-      {
-        t: "Your energy",
-        s: { playful_magnetism: 2, bright_presence: 1 },
-      },
-      {
-        t: "Your depth",
-        s: { deep_allure: 2, elegant_energy: 1 },
-      },
+      { t: "Your heart", s: { warm_charm: 2 } },
+      { t: "Your mystery", s: { quiet_mystery: 2 } },
+      { t: "Your energy", s: { playful_magnetism: 2, bright_presence: 1 } },
+      { t: "Your depth", s: { deep_allure: 2, elegant_energy: 1 } },
     ],
   },
 ];
@@ -233,15 +137,15 @@ export default function AttractiveQuiz() {
         minHeight: "100vh",
         background: "#fdf2f8",
         fontFamily: "sans-serif",
-        padding: "42px 18px",
+        padding: "36px 18px",
         display: "flex",
         justifyContent: "center",
       }}
     >
-      <div style={{ width: "min(860px, 100%)", textAlign: "center" }}>
+      <div style={{ width: "min(720px, 100%)", textAlign: "center" }}>
         <h1
           style={{
-            fontSize: "40px",
+            fontSize: "32px",
             marginBottom: "10px",
             color: "#111827",
           }}
@@ -251,9 +155,9 @@ export default function AttractiveQuiz() {
 
         <p
           style={{
-            marginBottom: "22px",
+            marginBottom: "20px",
             color: "#374151",
-            fontSize: "18px",
+            fontSize: "17px",
             fontWeight: 600,
           }}
         >
@@ -266,15 +170,14 @@ export default function AttractiveQuiz() {
             border: "1px solid #f2a7b8",
             borderRadius: "16px",
             padding: "22px",
-            color: "#374151",
           }}
         >
           <h2
             style={{
               marginBottom: "18px",
               color: "#374151",
-              fontSize: "28px",
-              lineHeight: 1.35,
+              fontSize: "22px",
+              lineHeight: 1.4,
               fontWeight: 700,
             }}
           >
