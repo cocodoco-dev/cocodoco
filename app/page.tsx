@@ -84,8 +84,23 @@ export default function Home() {
       }}
     >
       <header style={{ textAlign: "center", marginBottom: "30px" }}>
-        <h1 style={{ fontSize: "52px", margin: 0 }}>cocodoco</h1>
-        <p style={{ marginTop: "10px", fontSize: "18px" }}>
+        <h1
+          style={{
+            fontSize: "52px",
+            margin: 0,
+            color: "#111827",
+          }}
+        >
+          cocodoco
+        </h1>
+
+        <p
+          style={{
+            marginTop: "10px",
+            fontSize: "18px",
+            color: "#374151",
+          }}
+        >
           Cute quizzes for your mood, personality, and lifestyle 🧁
         </p>
       </header>
