@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Vibe Does Your Soul Give Off?",
+      desc: "Discover the emotional atmosphere your soul carries most 🌙",
+      href: "/quiz/soul-vibe",
+      badge: "New",
+    },
+    {
       title: "What Kind of Friend Are You?",
       desc: "Discover the role you naturally play in friendship 💞",
       href: "/quiz/friend-type",
