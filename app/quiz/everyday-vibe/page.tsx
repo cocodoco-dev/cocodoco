@@ -15,169 +15,73 @@ const questions = [
   {
     q: "Your ideal weekend starts with…",
     opts: [
-      {
-        t: "Making a cozy plan for the day",
-        s: { cozy_planner: 2, quiet_observer: 1 },
-      },
-      {
-        t: "Going somewhere exciting",
-        s: { spontaneous_sprinter: 2, social_butterfly: 1 },
-      },
-      {
-        t: "Exploring a new place",
-        s: { curious_collector: 2, spontaneous_sprinter: 1 },
-      },
-      {
-        t: "Seeing what friends are doing",
-        s: { social_butterfly: 2, chill_floater: 1 },
-      },
+      { t: "Making a cozy plan for the day", s: { cozy_planner: 2, quiet_observer: 1 } },
+      { t: "Going somewhere exciting", s: { spontaneous_sprinter: 2, social_butterfly: 1 } },
+      { t: "Exploring a new place", s: { curious_collector: 2, spontaneous_sprinter: 1 } },
+      { t: "Seeing what friends are doing", s: { social_butterfly: 2, chill_floater: 1 } },
     ],
   },
   {
     q: "When you enter a new place you usually…",
     opts: [
-      {
-        t: "Find a comfortable spot first",
-        s: { cozy_planner: 2, chill_floater: 1 },
-      },
-      {
-        t: "Walk around quickly to explore",
-        s: { spontaneous_sprinter: 2, curious_collector: 1 },
-      },
-      {
-        t: "Start talking to people",
-        s: { social_butterfly: 2 },
-      },
-      {
-        t: "Observe quietly before doing anything",
-        s: { quiet_observer: 2, curious_collector: 1 },
-      },
+      { t: "Find a comfortable spot first", s: { cozy_planner: 2, chill_floater: 1 } },
+      { t: "Walk around quickly to explore", s: { spontaneous_sprinter: 2, curious_collector: 1 } },
+      { t: "Start talking to people", s: { social_butterfly: 2 } },
+      { t: "Observe quietly before doing anything", s: { quiet_observer: 2, curious_collector: 1 } },
     ],
   },
   {
     q: "Your friends describe you as…",
     opts: [
-      {
-        t: "Reliable and calm",
-        s: { cozy_planner: 2, quiet_observer: 1 },
-      },
-      {
-        t: "Energetic and spontaneous",
-        s: { spontaneous_sprinter: 2 },
-      },
-      {
-        t: "Curious and thoughtful",
-        s: { curious_collector: 2, quiet_observer: 1 },
-      },
-      {
-        t: "Easygoing and relaxed",
-        s: { chill_floater: 2, social_butterfly: 1 },
-      },
+      { t: "Reliable and calm", s: { cozy_planner: 2, quiet_observer: 1 } },
+      { t: "Energetic and spontaneous", s: { spontaneous_sprinter: 2 } },
+      { t: "Curious and thoughtful", s: { curious_collector: 2, quiet_observer: 1 } },
+      { t: "Easygoing and relaxed", s: { chill_floater: 2, social_butterfly: 1 } },
     ],
   },
   {
     q: "When plans suddenly change you…",
     opts: [
-      {
-        t: "Feel a bit uncomfortable",
-        s: { cozy_planner: 2, quiet_observer: 1 },
-      },
-      {
-        t: "Get excited about the surprise",
-        s: { spontaneous_sprinter: 2 },
-      },
-      {
-        t: "Adapt and explore new options",
-        s: { curious_collector: 2, chill_floater: 1 },
-      },
-      {
-        t: "Just go with the flow",
-        s: { chill_floater: 2, social_butterfly: 1 },
-      },
+      { t: "Feel a bit uncomfortable", s: { cozy_planner: 2, quiet_observer: 1 } },
+      { t: "Get excited about the surprise", s: { spontaneous_sprinter: 2 } },
+      { t: "Adapt and explore new options", s: { curious_collector: 2, chill_floater: 1 } },
+      { t: "Just go with the flow", s: { chill_floater: 2, social_butterfly: 1 } },
     ],
   },
   {
     q: "Your ideal environment is…",
     opts: [
-      {
-        t: "A warm cozy room",
-        s: { cozy_planner: 2 },
-      },
-      {
-        t: "A busy city full of activity",
-        s: { social_butterfly: 2, spontaneous_sprinter: 1 },
-      },
-      {
-        t: "A new place to discover",
-        s: { curious_collector: 2, spontaneous_sprinter: 1 },
-      },
-      {
-        t: "Somewhere quiet and peaceful",
-        s: { quiet_observer: 2, chill_floater: 1 },
-      },
+      { t: "A warm cozy room", s: { cozy_planner: 2 } },
+      { t: "A busy city full of activity", s: { social_butterfly: 2, spontaneous_sprinter: 1 } },
+      { t: "A new place to discover", s: { curious_collector: 2, spontaneous_sprinter: 1 } },
+      { t: "Somewhere quiet and peaceful", s: { quiet_observer: 2, chill_floater: 1 } },
     ],
   },
   {
     q: "When meeting new people you usually…",
     opts: [
-      {
-        t: "Listen more than you talk",
-        s: { quiet_observer: 2, cozy_planner: 1 },
-      },
-      {
-        t: "Start conversations easily",
-        s: { social_butterfly: 2, spontaneous_sprinter: 1 },
-      },
-      {
-        t: "Ask lots of questions",
-        s: { curious_collector: 2 },
-      },
-      {
-        t: "Wait and observe the vibe",
-        s: { chill_floater: 1, quiet_observer: 2 },
-      },
+      { t: "Listen more than you talk", s: { quiet_observer: 2, cozy_planner: 1 } },
+      { t: "Start conversations easily", s: { social_butterfly: 2, spontaneous_sprinter: 1 } },
+      { t: "Ask lots of questions", s: { curious_collector: 2 } },
+      { t: "Wait and observe the vibe", s: { chill_floater: 1, quiet_observer: 2 } },
     ],
   },
   {
     q: "Your daily energy feels more like…",
     opts: [
-      {
-        t: "Calm and steady",
-        s: { cozy_planner: 2, quiet_observer: 1 },
-      },
-      {
-        t: "Fast and excited",
-        s: { spontaneous_sprinter: 2, social_butterfly: 1 },
-      },
-      {
-        t: "Curious and focused",
-        s: { curious_collector: 2 },
-      },
-      {
-        t: "Relaxed and flexible",
-        s: { chill_floater: 2 },
-      },
+      { t: "Calm and steady", s: { cozy_planner: 2, quiet_observer: 1 } },
+      { t: "Fast and excited", s: { spontaneous_sprinter: 2, social_butterfly: 1 } },
+      { t: "Curious and focused", s: { curious_collector: 2 } },
+      { t: "Relaxed and flexible", s: { chill_floater: 2 } },
     ],
   },
   {
     q: "Your life motto sounds like…",
     opts: [
-      {
-        t: "Comfort and balance matter most",
-        s: { cozy_planner: 2 },
-      },
-      {
-        t: "Life is an adventure",
-        s: { spontaneous_sprinter: 2 },
-      },
-      {
-        t: "Always learn something new",
-        s: { curious_collector: 2 },
-      },
-      {
-        t: "No stress, just flow",
-        s: { chill_floater: 2, social_butterfly: 1 },
-      },
+      { t: "Comfort and balance matter most", s: { cozy_planner: 2 } },
+      { t: "Life is an adventure", s: { spontaneous_sprinter: 2 } },
+      { t: "Always learn something new", s: { curious_collector: 2 } },
+      { t: "No stress, just flow", s: { chill_floater: 2, social_butterfly: 1 } },
     ],
   },
 ];
@@ -198,7 +102,9 @@ function pickTop(scores: Record<ResultKey, number>): ResultKey {
 
 export default function EverydayVibeQuiz() {
   const router = useRouter();
+
   const [current, setCurrent] = useState(0);
+
   const [scores, setScores] = useState<Record<ResultKey, number>>({
     cozy_planner: 0,
     spontaneous_sprinter: 0,
@@ -233,17 +139,30 @@ export default function EverydayVibeQuiz() {
         minHeight: "100vh",
         background: "#fdf2f8",
         fontFamily: "sans-serif",
-        padding: "42px 18px",
+        padding: "36px 18px",
         display: "flex",
         justifyContent: "center",
       }}
     >
-      <div style={{ width: "min(860px, 100%)", textAlign: "center" }}>
-        <h1 style={{ fontSize: "40px", marginBottom: "10px" }}>
+      <div style={{ width: "min(720px,100%)", textAlign: "center" }}>
+        <h1
+          style={{
+            fontSize: "32px",
+            marginBottom: "10px",
+            color: "#111827",
+          }}
+        >
           Everyday Vibe Test 🌿
         </h1>
 
-        <p style={{ marginBottom: "22px", color: "#374151" }}>
+        <p
+          style={{
+            marginBottom: "20px",
+            color: "#374151",
+            fontSize: "17px",
+            fontWeight: 600,
+          }}
+        >
           Question {current + 1} / {questions.length}
         </p>
 
@@ -255,7 +174,17 @@ export default function EverydayVibeQuiz() {
             padding: "22px",
           }}
         >
-          <h2 style={{ marginBottom: "18px" }}>{q.q}</h2>
+          <h2
+            style={{
+              marginBottom: "18px",
+              color: "#374151",
+              fontSize: "22px",
+              lineHeight: 1.4,
+              fontWeight: 700,
+            }}
+          >
+            {q.q}
+          </h2>
 
           <div
             style={{
@@ -277,7 +206,7 @@ export default function EverydayVibeQuiz() {
                   color: "white",
                   cursor: "pointer",
                   fontSize: "16px",
-                  width: "min(520px, 100%)",
+                  width: "min(520px,100%)",
                 }}
               >
                 {opt.t}
@@ -293,7 +222,7 @@ export default function EverydayVibeQuiz() {
             height: "110px",
             borderRadius: "14px",
             border: "1px dashed #f2a7b8",
-            background: "rgba(255, 255, 255, 0.6)",
+            background: "rgba(255,255,255,0.6)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
