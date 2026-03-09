@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Kind of Friend Are You?",
+      desc: "Discover the role you naturally play in friendship 💞",
+      href: "/quiz/friend-type",
+      badge: "New",
+    },
+    {
       title: "What Kind of Aura Do You Have?",
       desc: "Discover the energy people feel from you instantly ✨",
       href: "/quiz/aura",
