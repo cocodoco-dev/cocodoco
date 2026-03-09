@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Kind of Aura Do You Have?",
+      desc: "Discover the energy people feel from you instantly ✨",
+      href: "/quiz/aura",
+      badge: "New",
+    },
+    {
       title: "What Is Your Emotional Age?",
       desc: "Discover how emotionally young, deep, or mature you really are 💌",
       href: "/quiz/emotional-age",
