@@ -15,169 +15,73 @@ const questions = [
   {
     q: "When facing a new situation, you usually…",
     opts: [
-      {
-        t: "Observe and understand the situation first",
-        s: { quiet_strategist: 2, calm_thinker: 1 },
-      },
-      {
-        t: "Focus on how people feel about it",
-        s: { gentle_idealist: 2 },
-      },
-      {
-        t: "Jump in and explore it directly",
-        s: { curious_explorer: 2, natural_leader: 1 },
-      },
-      {
-        t: "Think of a new or unusual approach",
-        s: { creative_mind: 2, curious_explorer: 1 },
-      },
+      { t: "Observe and understand the situation first", s: { quiet_strategist: 2, calm_thinker: 1 } },
+      { t: "Focus on how people feel about it", s: { gentle_idealist: 2 } },
+      { t: "Jump in and explore it directly", s: { curious_explorer: 2, natural_leader: 1 } },
+      { t: "Think of a new or unusual approach", s: { creative_mind: 2, curious_explorer: 1 } },
     ],
   },
   {
     q: "Your friends often say you are…",
     opts: [
-      {
-        t: "Thoughtful",
-        s: { quiet_strategist: 2, calm_thinker: 1 },
-      },
-      {
-        t: "Kind",
-        s: { gentle_idealist: 2 },
-      },
-      {
-        t: "Adventurous",
-        s: { curious_explorer: 2, natural_leader: 1 },
-      },
-      {
-        t: "Creative",
-        s: { creative_mind: 2 },
-      },
+      { t: "Thoughtful", s: { quiet_strategist: 2, calm_thinker: 1 } },
+      { t: "Kind", s: { gentle_idealist: 2 } },
+      { t: "Adventurous", s: { curious_explorer: 2, natural_leader: 1 } },
+      { t: "Creative", s: { creative_mind: 2 } },
     ],
   },
   {
     q: "When solving problems you prefer to…",
     opts: [
-      {
-        t: "Analyze the situation logically",
-        s: { quiet_strategist: 2, calm_thinker: 1 },
-      },
-      {
-        t: "Talk things out with people",
-        s: { gentle_idealist: 2 },
-      },
-      {
-        t: "Experiment with different options",
-        s: { curious_explorer: 2, creative_mind: 1 },
-      },
-      {
-        t: "Come up with new ideas",
-        s: { creative_mind: 2, natural_leader: 1 },
-      },
+      { t: "Analyze the situation logically", s: { quiet_strategist: 2, calm_thinker: 1 } },
+      { t: "Talk things out with people", s: { gentle_idealist: 2 } },
+      { t: "Experiment with different options", s: { curious_explorer: 2, creative_mind: 1 } },
+      { t: "Come up with new ideas", s: { creative_mind: 2, natural_leader: 1 } },
     ],
   },
   {
     q: "Your hidden strength is probably…",
     opts: [
-      {
-        t: "Strategy",
-        s: { quiet_strategist: 2, natural_leader: 1 },
-      },
-      {
-        t: "Empathy",
-        s: { gentle_idealist: 2 },
-      },
-      {
-        t: "Curiosity",
-        s: { curious_explorer: 2 },
-      },
-      {
-        t: "Creativity",
-        s: { creative_mind: 2 },
-      },
+      { t: "Strategy", s: { quiet_strategist: 2, natural_leader: 1 } },
+      { t: "Empathy", s: { gentle_idealist: 2 } },
+      { t: "Curiosity", s: { curious_explorer: 2 } },
+      { t: "Creativity", s: { creative_mind: 2 } },
     ],
   },
   {
     q: "In group situations you usually…",
     opts: [
-      {
-        t: "Watch and understand the dynamics",
-        s: { quiet_strategist: 2, calm_thinker: 1 },
-      },
-      {
-        t: "Support others emotionally",
-        s: { gentle_idealist: 2 },
-      },
-      {
-        t: "Encourage new experiences",
-        s: { curious_explorer: 2, natural_leader: 1 },
-      },
-      {
-        t: "Bring fresh ideas",
-        s: { creative_mind: 2 },
-      },
+      { t: "Watch and understand the dynamics", s: { quiet_strategist: 2, calm_thinker: 1 } },
+      { t: "Support others emotionally", s: { gentle_idealist: 2 } },
+      { t: "Encourage new experiences", s: { curious_explorer: 2, natural_leader: 1 } },
+      { t: "Bring fresh ideas", s: { creative_mind: 2 } },
     ],
   },
   {
     q: "If you had a free year you would…",
     opts: [
-      {
-        t: "Study something deeply",
-        s: { quiet_strategist: 2, calm_thinker: 1 },
-      },
-      {
-        t: "Help people or communities",
-        s: { gentle_idealist: 2 },
-      },
-      {
-        t: "Travel and explore the world",
-        s: { curious_explorer: 2, natural_leader: 1 },
-      },
-      {
-        t: "Create something original",
-        s: { creative_mind: 2 },
-      },
+      { t: "Study something deeply", s: { quiet_strategist: 2, calm_thinker: 1 } },
+      { t: "Help people or communities", s: { gentle_idealist: 2 } },
+      { t: "Travel and explore the world", s: { curious_explorer: 2, natural_leader: 1 } },
+      { t: "Create something original", s: { creative_mind: 2 } },
     ],
   },
   {
     q: "People are most surprised by your…",
     opts: [
-      {
-        t: "Insight",
-        s: { quiet_strategist: 2, calm_thinker: 1 },
-      },
-      {
-        t: "Warmth",
-        s: { gentle_idealist: 2 },
-      },
-      {
-        t: "Boldness",
-        s: { natural_leader: 2, curious_explorer: 1 },
-      },
-      {
-        t: "Imagination",
-        s: { creative_mind: 2 },
-      },
+      { t: "Insight", s: { quiet_strategist: 2, calm_thinker: 1 } },
+      { t: "Warmth", s: { gentle_idealist: 2 } },
+      { t: "Boldness", s: { natural_leader: 2, curious_explorer: 1 } },
+      { t: "Imagination", s: { creative_mind: 2 } },
     ],
   },
   {
     q: "Deep down you want to…",
     opts: [
-      {
-        t: "Understand how things work",
-        s: { quiet_strategist: 2, calm_thinker: 1 },
-      },
-      {
-        t: "Make the world kinder",
-        s: { gentle_idealist: 2 },
-      },
-      {
-        t: "Experience everything life offers",
-        s: { curious_explorer: 2, natural_leader: 1 },
-      },
-      {
-        t: "Express something unique",
-        s: { creative_mind: 2 },
-      },
+      { t: "Understand how things work", s: { quiet_strategist: 2, calm_thinker: 1 } },
+      { t: "Make the world kinder", s: { gentle_idealist: 2 } },
+      { t: "Experience everything life offers", s: { curious_explorer: 2, natural_leader: 1 } },
+      { t: "Express something unique", s: { creative_mind: 2 } },
     ],
   },
 ];
@@ -198,7 +102,9 @@ function pickTop(scores: Record<ResultKey, number>): ResultKey {
 
 export default function HiddenPersonalityQuiz() {
   const router = useRouter();
+
   const [current, setCurrent] = useState(0);
+
   const [scores, setScores] = useState<Record<ResultKey, number>>({
     quiet_strategist: 0,
     gentle_idealist: 0,
@@ -233,17 +139,30 @@ export default function HiddenPersonalityQuiz() {
         minHeight: "100vh",
         background: "#fdf2f8",
         fontFamily: "sans-serif",
-        padding: "42px 18px",
+        padding: "36px 18px",
         display: "flex",
         justifyContent: "center",
       }}
     >
-      <div style={{ width: "min(860px, 100%)", textAlign: "center" }}>
-        <h1 style={{ fontSize: "40px", marginBottom: "10px" }}>
+      <div style={{ width: "min(720px,100%)", textAlign: "center" }}>
+        <h1
+          style={{
+            fontSize: "32px",
+            marginBottom: "10px",
+            color: "#111827",
+          }}
+        >
           Hidden Personality Test ✨
         </h1>
 
-        <p style={{ marginBottom: "22px", color: "#374151" }}>
+        <p
+          style={{
+            marginBottom: "20px",
+            color: "#374151",
+            fontSize: "17px",
+            fontWeight: 600,
+          }}
+        >
           Question {current + 1} / {questions.length}
         </p>
 
@@ -255,7 +174,17 @@ export default function HiddenPersonalityQuiz() {
             padding: "22px",
           }}
         >
-          <h2 style={{ marginBottom: "18px" }}>{q.q}</h2>
+          <h2
+            style={{
+              marginBottom: "18px",
+              color: "#374151",
+              fontSize: "22px",
+              lineHeight: 1.4,
+              fontWeight: 700,
+            }}
+          >
+            {q.q}
+          </h2>
 
           <div
             style={{
@@ -277,7 +206,7 @@ export default function HiddenPersonalityQuiz() {
                   color: "white",
                   cursor: "pointer",
                   fontSize: "16px",
-                  width: "min(520px, 100%)",
+                  width: "min(520px,100%)",
                 }}
               >
                 {opt.t}
@@ -293,7 +222,7 @@ export default function HiddenPersonalityQuiz() {
             height: "110px",
             borderRadius: "14px",
             border: "1px dashed #f2a7b8",
-            background: "rgba(255, 255, 255, 0.6)",
+            background: "rgba(255,255,255,0.6)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
