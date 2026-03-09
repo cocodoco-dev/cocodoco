@@ -239,11 +239,24 @@ export default function AttractiveQuiz() {
       }}
     >
       <div style={{ width: "min(860px, 100%)", textAlign: "center" }}>
-        <h1 style={{ fontSize: "40px", marginBottom: "10px" }}>
+        <h1
+          style={{
+            fontSize: "40px",
+            marginBottom: "10px",
+            color: "#111827",
+          }}
+        >
           What Makes You Attractive? ✨
         </h1>
 
-        <p style={{ marginBottom: "22px", color: "#374151" }}>
+        <p
+          style={{
+            marginBottom: "22px",
+            color: "#374151",
+            fontSize: "18px",
+            fontWeight: 600,
+          }}
+        >
           Question {current + 1} / {questions.length}
         </p>
 
@@ -253,9 +266,20 @@ export default function AttractiveQuiz() {
             border: "1px solid #f2a7b8",
             borderRadius: "16px",
             padding: "22px",
+            color: "#374151",
           }}
         >
-          <h2 style={{ marginBottom: "18px" }}>{q.q}</h2>
+          <h2
+            style={{
+              marginBottom: "18px",
+              color: "#374151",
+              fontSize: "28px",
+              lineHeight: 1.35,
+              fontWeight: 700,
+            }}
+          >
+            {q.q}
+          </h2>
 
           <div
             style={{
