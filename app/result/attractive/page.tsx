@@ -141,7 +141,15 @@ function ResultContent() {
       }}
     >
       <div style={{ width: "min(860px, 100%)", textAlign: "center" }}>
-        <h1 style={{ fontSize: "46px", marginBottom: "12px" }}>{r.title}</h1>
+        <h1
+          style={{
+            fontSize: "40px",
+            marginBottom: "12px",
+            color: "#111827",
+          }}
+        >
+          {r.title}
+        </h1>
 
         <p
           style={{
@@ -154,7 +162,6 @@ function ResultContent() {
           {r.summary}
         </p>
 
-        {/* Ad 1: summary 바로 아래 */}
         <div style={{ ...adBoxStyle, marginBottom: "22px" }}>
           Ad Space (Google AdSense will go here)
         </div>
@@ -240,7 +247,6 @@ function ResultContent() {
           </a>
         </div>
 
-        {/* Ad 2: 버튼 아래 */}
         <div style={{ ...adBoxStyle, marginTop: "22px" }}>
           Ad Space (Google AdSense will go here)
         </div>
