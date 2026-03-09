@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Is Your Hidden Talent?",
+      desc: "Discover the strength inside you that people may notice later 🎁",
+      href: "/quiz/hidden-talent",
+      badge: "New",
+    },
+    {
       title: "What Vibe Does Your Soul Give Off?",
       desc: "Discover the emotional atmosphere your soul carries most 🌙",
       href: "/quiz/soul-vibe",
