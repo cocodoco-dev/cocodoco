@@ -233,17 +233,30 @@ export default function SocialPersonalityQuiz() {
         minHeight: "100vh",
         background: "#fdf2f8",
         fontFamily: "sans-serif",
-        padding: "42px 18px",
+        padding: "36px 18px",
         display: "flex",
         justifyContent: "center",
       }}
     >
-      <div style={{ width: "min(860px, 100%)", textAlign: "center" }}>
-        <h1 style={{ fontSize: "40px", marginBottom: "10px" }}>
+      <div style={{ width: "min(720px, 100%)", textAlign: "center" }}>
+        <h1
+          style={{
+            fontSize: "32px",
+            marginBottom: "10px",
+            color: "#111827",
+          }}
+        >
           Your Social Personality Test 💬
         </h1>
 
-        <p style={{ marginBottom: "22px", color: "#374151" }}>
+        <p
+          style={{
+            marginBottom: "20px",
+            color: "#374151",
+            fontSize: "17px",
+            fontWeight: 600,
+          }}
+        >
           Question {current + 1} / {questions.length}
         </p>
 
@@ -255,7 +268,17 @@ export default function SocialPersonalityQuiz() {
             padding: "22px",
           }}
         >
-          <h2 style={{ marginBottom: "18px" }}>{q.q}</h2>
+          <h2
+            style={{
+              marginBottom: "18px",
+              color: "#374151",
+              fontSize: "22px",
+              lineHeight: 1.4,
+              fontWeight: 700,
+            }}
+          >
+            {q.q}
+          </h2>
 
           <div
             style={{
