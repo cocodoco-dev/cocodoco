@@ -15,7 +15,8 @@ const results = {
       "People may underestimate how much you notice, but that is often your advantage. You tend to think ahead, adjust quickly, and protect yourself well. The only risk is becoming too guarded or too focused on staying ahead. Your strength becomes even more powerful when strategy is balanced with trust.",
     strengths: "Intelligence, adaptability, timing",
     watchOut: "Over-guarding yourself, always trying to stay in control",
-    bestMatch: "Someone perceptive and confident who respects your independence",
+    bestMatch:
+      "Someone perceptive and confident who respects your independence",
   },
 
   owl: {
@@ -27,19 +28,22 @@ const results = {
       "There is a calm wisdom in your presence. You do not need to dominate every room to leave an impression. In fact, your quiet understanding is often what makes you memorable. The challenge is that you may stay in observation mode too long. When you trust your own voice, your insight becomes truly powerful.",
     strengths: "Observation, wisdom, emotional depth",
     watchOut: "Overthinking, holding back too much",
-    bestMatch: "Someone patient and emotionally aware who values depth",
+    bestMatch:
+      "Someone patient and emotionally aware who values depth",
   },
 
   wolf: {
     title: "The Wolf 🐺",
-    summary: "You are independent, loyal, and stronger than people first assume.",
+    summary:
+      "You are independent, loyal, and stronger than people first assume.",
     desc1:
       "Your inner animal is the wolf because you carry both independence and fierce loyalty. You may not trust easily, and you probably do not feel the need to belong everywhere. But when someone is truly part of your circle, you protect them deeply and stand by them with real strength.",
     desc2:
       "There is something powerful in your presence because people can sense that you are not fake or easily swayed. You know who you are, and that gives your energy weight. The challenge is that your guarded side can make you seem harder to approach than you really are. Letting the right people in is where your strength becomes connection.",
     strengths: "Loyalty, independence, quiet strength",
     watchOut: "Trust issues, emotional walls",
-    bestMatch: "Someone genuine and strong enough to respect your boundaries",
+    bestMatch:
+      "Someone genuine and strong enough to respect your boundaries",
   },
 
   dolphin: {
@@ -50,8 +54,10 @@ const results = {
     desc2:
       "You bring humor, flexibility, and brightness into spaces that might otherwise feel dull. That is part of what makes you so likable. At the same time, being socially open can sometimes make you overextend yourself. Your energy becomes strongest when your warmth is protected by healthy boundaries.",
     strengths: "Charm, emotional brightness, social ease",
-    watchOut: "Spreading yourself too thin, needing too much outside energy",
-    bestMatch: "Someone warm and playful who also helps you recharge",
+    watchOut:
+      "Spreading yourself too thin, needing too much outside energy",
+    bestMatch:
+      "Someone warm and playful who also helps you recharge",
   },
 
   bear: {
@@ -63,7 +69,8 @@ const results = {
       "There is comfort in the way you move through life. You trust your own pace, and that gives you a strong sense of stability. The challenge is that you may sometimes resist change longer than you should. Your strength becomes even more impressive when you let new experiences in without losing your grounded nature.",
     strengths: "Stability, patience, dependable presence",
     watchOut: "Resistance to change, staying too comfortable",
-    bestMatch: "Someone energetic enough to inspire you but calm enough to understand you",
+    bestMatch:
+      "Someone energetic enough to inspire you but calm enough to understand you",
   },
 
   cat: {
@@ -75,7 +82,8 @@ const results = {
       "That independence is part of your charm. People are often drawn to your quiet confidence and the fact that you never seem desperate for approval. The challenge is that your need for space can sometimes be misunderstood as distance. When you let the right people see your softer side, your independence becomes even more magnetic.",
     strengths: "Freedom, intuition, authenticity",
     watchOut: "Appearing distant, pulling away too quickly",
-    bestMatch: "Someone secure and relaxed who does not try to control you",
+    bestMatch:
+      "Someone secure and relaxed who does not try to control you",
   },
 } as const;
 
@@ -103,6 +111,19 @@ function ResultContent() {
     }
   }
 
+  const adBoxStyle = {
+    width: "100%",
+    height: "110px",
+    borderRadius: "14px",
+    border: "1px dashed #f2a7b8",
+    background: "rgba(255, 255, 255, 0.6)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "#9ca3af",
+    fontSize: "14px",
+  } as const;
+
   return (
     <main
       style={{
@@ -115,7 +136,15 @@ function ResultContent() {
       }}
     >
       <div style={{ width: "min(860px, 100%)", textAlign: "center" }}>
-        <h1 style={{ fontSize: "46px", marginBottom: "12px" }}>{r.title}</h1>
+        <h1
+          style={{
+            fontSize: "40px",
+            marginBottom: "12px",
+            color: "#111827",
+          }}
+        >
+          {r.title}
+        </h1>
 
         <p
           style={{
@@ -127,6 +156,10 @@ function ResultContent() {
         >
           {r.summary}
         </p>
+
+        <div style={{ ...adBoxStyle, marginBottom: "22px" }}>
+          Ad Space (Google AdSense will go here)
+        </div>
 
         <div
           style={{
@@ -205,25 +238,11 @@ function ResultContent() {
               border: "1px solid #e5e7eb",
             }}
           >
-            Home
+            Other tests
           </a>
         </div>
 
-        <div
-          style={{
-            marginTop: "22px",
-            width: "100%",
-            height: "120px",
-            borderRadius: "14px",
-            border: "1px dashed #f2a7b8",
-            background: "rgba(255, 255, 255, 0.6)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "#9ca3af",
-            fontSize: "14px",
-          }}
-        >
+        <div style={{ ...adBoxStyle, marginTop: "22px" }}>
           Ad Space (Google AdSense will go here)
         </div>
       </div>

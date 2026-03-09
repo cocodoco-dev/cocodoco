@@ -15,7 +15,8 @@ const results = {
       "Your love often feels like home. You remember small things, notice emotional shifts, and know how to make someone feel understood. That warmth is one of your biggest strengths—but it can also make you overextend yourself. The right relationship for you is one where your kindness is appreciated, not quietly taken for granted.",
     strengths: "Emotional warmth, empathy, consistency",
     watchOut: "Over-giving, staying too long in one-sided dynamics",
-    bestMatch: "Someone who values stability, softness, and emotional depth",
+    bestMatch:
+      "Someone who values stability, softness, and emotional depth",
   },
 
   playful_charmer: {
@@ -27,7 +28,8 @@ const results = {
       "People are often drawn to your charm before they even realize why. Being with you feels light, fun, and memorable. But sometimes your playful side can blur your deeper feelings, making others wonder how serious you really are. When you pair your charm with emotional clarity, you become incredibly hard to forget.",
     strengths: "Charisma, humor, chemistry",
     watchOut: "Mixed signals, emotional ambiguity",
-    bestMatch: "Someone confident enough to enjoy your playful rhythm",
+    bestMatch:
+      "Someone confident enough to enjoy your playful rhythm",
   },
 
   loyal_anchor: {
@@ -39,7 +41,8 @@ const results = {
       "What people admire most about you is your consistency. Your words and actions usually match, and that creates real security. Some may misread your calm nature as emotional distance at first, but the people who stay long enough realize your steadiness is actually your strongest form of affection.",
     strengths: "Loyalty, stability, maturity",
     watchOut: "Being too reserved, taking too long to express feelings",
-    bestMatch: "Someone who wants trust, commitment, and emotional security",
+    bestMatch:
+      "Someone who wants trust, commitment, and emotional security",
   },
 
   enigmatic_heart: {
@@ -51,7 +54,8 @@ const results = {
       "You value depth, privacy, and emotional nuance. When you finally let someone in, it means something real. The challenge is that not everyone knows how to read your quieter way of loving. You need someone patient enough to understand that your reserved nature does not mean your feelings are small.",
     strengths: "Depth, independence, emotional complexity",
     watchOut: "Emotional distance, difficulty showing vulnerability",
-    bestMatch: "Someone patient, perceptive, and emotionally secure",
+    bestMatch:
+      "Someone patient, perceptive, and emotionally secure",
   },
 
   golden_retriever_lover: {
@@ -63,19 +67,23 @@ const results = {
       "You are often the one who adds the little sparks—kind texts, excited reactions, spontaneous sweetness, and visible loyalty. That openness is beautiful, but it can also leave you vulnerable when the other person gives much less than you do. Your love becomes strongest when your warmth is balanced by healthy boundaries.",
     strengths: "Warmth, openness, loyalty",
     watchOut: "Getting attached too quickly, giving too much too soon",
-    bestMatch: "Someone affectionate, kind, and emotionally expressive",
+    bestMatch:
+      "Someone affectionate, kind, and emotionally expressive",
   },
 
   free_spirit_lover: {
     title: "The Free Spirit Lover ⭐",
-    summary: "You love deeply, but never lose your sense of independence.",
+    summary:
+      "You love deeply, but never lose your sense of independence.",
     desc1:
       "For you, love is not about possession. It is about connection between two people who still get to remain fully themselves. You value freedom, individuality, and emotional honesty, and you want relationships that feel alive rather than restrictive.",
     desc2:
       "You are drawn to bonds that leave room for growth, curiosity, and personal direction. That makes your love feel refreshing and mature. Some people may mistake your independence for distance, but the truth is that you simply believe the healthiest love is built between two whole people—not two people trying to control each other.",
     strengths: "Independence, authenticity, confidence",
-    watchOut: "Appearing detached, needing more space than some partners expect",
-    bestMatch: "Someone secure, self-driven, and emotionally mature",
+    watchOut:
+      "Appearing detached, needing more space than some partners expect",
+    bestMatch:
+      "Someone secure, self-driven, and emotionally mature",
   },
 } as const;
 
@@ -103,6 +111,19 @@ function ResultContent() {
     }
   }
 
+  const adBoxStyle = {
+    width: "100%",
+    height: "110px",
+    borderRadius: "14px",
+    border: "1px dashed #f2a7b8",
+    background: "rgba(255, 255, 255, 0.6)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "#9ca3af",
+    fontSize: "14px",
+  } as const;
+
   return (
     <main
       style={{
@@ -115,7 +136,15 @@ function ResultContent() {
       }}
     >
       <div style={{ width: "min(860px, 100%)", textAlign: "center" }}>
-        <h1 style={{ fontSize: "46px", marginBottom: "12px" }}>{r.title}</h1>
+        <h1
+          style={{
+            fontSize: "40px",
+            marginBottom: "12px",
+            color: "#111827",
+          }}
+        >
+          {r.title}
+        </h1>
 
         <p
           style={{
@@ -127,6 +156,10 @@ function ResultContent() {
         >
           {r.summary}
         </p>
+
+        <div style={{ ...adBoxStyle, marginBottom: "22px" }}>
+          Ad Space (Google AdSense will go here)
+        </div>
 
         <div
           style={{
@@ -205,25 +238,11 @@ function ResultContent() {
               border: "1px solid #e5e7eb",
             }}
           >
-            Home
+            Other tests
           </a>
         </div>
 
-        <div
-          style={{
-            marginTop: "22px",
-            width: "100%",
-            height: "120px",
-            borderRadius: "14px",
-            border: "1px dashed #f2a7b8",
-            background: "rgba(255, 255, 255, 0.6)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "#9ca3af",
-            fontSize: "14px",
-          }}
-        >
+        <div style={{ ...adBoxStyle, marginTop: "22px" }}>
           Ad Space (Google AdSense will go here)
         </div>
       </div>
