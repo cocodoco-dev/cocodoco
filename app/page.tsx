@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Kind of Comfort Are You?",
+      desc: "Discover the kind of emotional comfort people feel from you ☁️",
+      href: "/quiz/comfort-type",
+      badge: "New",
+    },
+    {
       title: "What Kind of Romantic Energy Do You Have?",
       desc: "Discover the vibe you naturally bring into love 💘",
       href: "/quiz/romantic-energy",
