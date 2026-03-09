@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Is Your Core Personality Color?",
+      desc: "Discover the color that defines your deepest personality 🎨",
+      href: "/quiz/personality-color",
+      badge: "New",
+    },
+    {
       title: "What Kind of Comfort Are You?",
       desc: "Discover the kind of emotional comfort people feel from you ☁️",
       href: "/quiz/comfort-type",
