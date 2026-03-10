@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Fun Personality Tests & Quizzes | Cocodoco",
+    default: "Fun Personality Tests | Cocodoco",
     template: "%s | Cocodoco",
   },
   description:
-    "Discover your personality, aura, emotional age, and hidden strengths through fun interactive tests and quizzes.",
+    "Discover your personality, aura, emotional age, and hidden strengths through fun interactive tests.",
   metadataBase: new URL("https://www.cocodoco.fun"),
   keywords: [
     "personality test",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     "cocodoco",
   ],
   openGraph: {
-    title: "Fun Personality Tests & Quizzes | Cocodoco",
+    title: "Fun Personality Tests | Cocodoco",
     description:
-      "Discover your personality, aura, emotional age, and hidden strengths through fun interactive tests and quizzes.",
+      "Discover your personality, aura, emotional age, and hidden strengths through fun interactive tests.",
     url: "https://www.cocodoco.fun",
     siteName: "Cocodoco",
     locale: "en_US",
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fun Personality Tests & Quizzes | Cocodoco",
+    title: "Fun Personality Tests | Cocodoco",
     description:
-      "Discover your personality, aura, emotional age, and hidden strengths through fun interactive tests and quizzes.",
+      "Discover your personality, aura, emotional age, and hidden strengths through fun interactive tests.",
   },
   robots: {
     index: true,
@@ -58,6 +58,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google AdSense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8500564460470684"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
