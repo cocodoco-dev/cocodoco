@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Is Your Attachment Style in Love?",
+      desc: "Discover how your heart naturally connects in relationships 💘",
+      href: "/quiz/attachment-style",
+      badge: "New",
+    },
+    {
       title: "What Is Your Core Personality Color?",
       desc: "Discover the color that defines your deepest personality 🎨",
       href: "/quiz/personality-color",
