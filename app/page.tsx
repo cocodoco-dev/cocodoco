@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Aesthetic Matches Your Soul?",
+      desc: "Discover the aesthetic that feels most true to your inner world ✨",
+      href: "/quiz/soul-aesthetic",
+      badge: "New",
+    },
+    {
       title: "What Is Your Attachment Style in Love?",
       desc: "Discover how your heart naturally connects in relationships 💘",
       href: "/quiz/attachment-style",
