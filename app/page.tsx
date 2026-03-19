@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Is Your Love Language?",
+      desc: "Discover how your heart most naturally gives and receives love 💗",
+      href: "/quiz/love-language",
+      badge: "New",
+    },
+    {
       title: "What Aesthetic Matches Your Soul?",
       desc: "Discover the aesthetic that feels most true to your inner world ✨",
       href: "/quiz/soul-aesthetic",
