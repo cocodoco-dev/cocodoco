@@ -1,6 +1,48 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "Which Archetype Are You at Heart?",
+      desc: "Discover the deeper symbolic role your soul naturally returns to 🗝️",
+      href: "/quiz/archetype-at-heart",
+      badge: "New",
+    },
+    {
+      title: "What Energy Do You Bring to a Party?",
+      desc: "Discover the social vibe you naturally bring into the room 🎉",
+      href: "/quiz/party-energy",
+      badge: "New",
+    },
+    {
+      title: "What Kind of Pretty Are You?",
+      desc: "Discover the beauty vibe you naturally carry ✨",
+      href: "/quiz/kind-of-pretty",
+      badge: "New",
+    },
+    {
+      title: "Which Soft Skill Is Your Superpower?",
+      desc: "Discover the human strength that makes you quietly powerful ✨",
+      href: "/quiz/soft-skill-superpower",
+      badge: "New",
+    },
+    {
+      title: "What Is Your Shadow Side?",
+      desc: "Discover the hidden pattern that shows up when you feel emotionally unprotected 🌑",
+      href: "/quiz/shadow-side",
+      badge: "New",
+    },
+    {
+      title: "What Kind of Main Character Are You?",
+      desc: "Discover the cinematic role your energy naturally plays 🎬",
+      href: "/quiz/main-character",
+      badge: "New",
+    },
+    {
+      title: "What Is Your Secret Green Flag?",
+      desc: "Discover the hidden healthy trait that makes you deeply lovable 💚",
+      href: "/quiz/secret-green-flag",
+      badge: "New",
+    },
+    {
       title: "What Is Your Love Language?",
       desc: "Discover how your heart most naturally gives and receives love 💗",
       href: "/quiz/love-language",
