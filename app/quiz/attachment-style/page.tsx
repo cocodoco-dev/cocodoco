@@ -41,45 +41,9 @@ const questions = [
     q: "How do you usually show love?",
     opts: [
       { t: "Steadily, honestly, and naturally", s: { secure_heart: 2 } },
-      { t: "With lots of care, attention, and checking in", s: { anxious_romantic: 2 } },
+      { t: "With lots of care and attention", s: { anxious_romantic: 2 } },
       { t: "Quietly, through actions more than words", s: { avoidant_soul: 2 } },
-      { t: "Very deeply, but only when I feel safe enough", s: { fearful_deep: 2, secure_heart: 1 } },
-    ],
-  },
-  {
-    q: "When conflict happens in love, you tend to…",
-    opts: [
-      { t: "Talk it through calmly", s: { secure_heart: 2 } },
-      { t: "Feel panicked and want quick reassurance", s: { anxious_romantic: 2 } },
-      { t: "Need space and shut down a little", s: { avoidant_soul: 2 } },
-      { t: "Freeze between wanting comfort and wanting distance", s: { fearful_deep: 2 } },
-    ],
-  },
-  {
-    q: "Which relationship dynamic feels most familiar?",
-    opts: [
-      { t: "Mutual trust and emotional stability", s: { secure_heart: 2 } },
-      { t: "Loving hard but worrying a lot", s: { anxious_romantic: 2 } },
-      { t: "Caring deeply but guarding independence", s: { avoidant_soul: 2 } },
-      { t: "Wanting intimacy but fearing emotional pain", s: { fearful_deep: 2 } },
-    ],
-  },
-  {
-    q: "What do you secretly need most in love?",
-    opts: [
-      { t: "Honesty and consistent affection", s: { secure_heart: 2 } },
-      { t: "Reassurance that I truly matter", s: { anxious_romantic: 2 } },
-      { t: "Respect for my space and pace", s: { avoidant_soul: 2 } },
-      { t: "Safety strong enough to soften my fear", s: { fearful_deep: 2, secure_heart: 1 } },
-    ],
-  },
-  {
-    q: "At your core, your love style is…",
-    opts: [
-      { t: "Open and balanced", s: { secure_heart: 2 } },
-      { t: "Deeply attached and emotionally intense", s: { anxious_romantic: 2 } },
-      { t: "Independent and self-protective", s: { avoidant_soul: 2 } },
-      { t: "Sensitive, layered, and cautious", s: { fearful_deep: 2 } },
+      { t: "Very deeply, but only when I feel safe", s: { fearful_deep: 2, secure_heart: 1 } },
     ],
   },
 ];
@@ -128,193 +92,54 @@ export default function AttachmentStyleQuiz() {
   const q = questions[current];
 
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        background: "#fdf2f8",
-        fontFamily: "sans-serif",
-        padding: "36px 18px 60px",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      <div style={{ width: "min(720px, 100%)", textAlign: "center" }}>
-        <h1
-          style={{
-            fontSize: "32px",
-            marginBottom: "10px",
-            color: "#111827",
-          }}
-        >
-          What Is Your Attachment Style in Love? 💘
-        </h1>
+    <main style={{ padding: "40px" }}>
+      <h1>What Is Your Attachment Style in Love? 💘</h1>
 
-        <p
-          style={{
-            marginBottom: "20px",
-            color: "#374151",
-            fontSize: "17px",
-            fontWeight: 600,
-          }}
-        >
-          Question {current + 1} / {questions.length}
+      <h2>
+        Question {current + 1} / {questions.length}
+      </h2>
+
+      <h3>{q.q}</h3>
+
+      {q.opts.map((opt, idx) => (
+        <button key={idx} onClick={() => choose(opt.s)}>
+          {opt.t}
+        </button>
+      ))}
+
+      <section style={{ marginTop: "40px" }}>
+        <h2>About this quiz</h2>
+
+        <p>
+          This love attachment style quiz is designed to help you understand how you emotionally connect in romantic relationships. Attachment style influences how you respond to closeness, trust, reassurance, and emotional conflict. It plays a major role in how relationships begin, develop, and sometimes struggle.
         </p>
 
-        <div
-          style={{
-            background: "rgba(255,255,255,0.75)",
-            border: "1px solid #f2a7b8",
-            borderRadius: "16px",
-            padding: "22px",
-          }}
-        >
-          <h2
-            style={{
-              marginBottom: "18px",
-              color: "#374151",
-              fontSize: "22px",
-              lineHeight: 1.4,
-              fontWeight: 700,
-            }}
-          >
-            {q.q}
-          </h2>
+        <p>
+          Some people feel naturally secure and stable in love, while others may feel anxious, distant, or conflicted between closeness and fear. These patterns are not flaws — they are simply learned emotional responses shaped by past experiences, personality, and environment.
+        </p>
 
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "12px",
-              alignItems: "center",
-            }}
-          >
-            {q.opts.map((opt, idx) => (
-              <button
-                key={idx}
-                onClick={() => choose(opt.s)}
-                style={{
-                  padding: "12px 18px",
-                  borderRadius: "12px",
-                  border: "none",
-                  background: "#ff8fab",
-                  color: "white",
-                  cursor: "pointer",
-                  fontSize: "16px",
-                  width: "min(520px, 100%)",
-                }}
-              >
-                {opt.t}
-              </button>
-            ))}
-          </div>
-        </div>
+        <p>
+          By answering a few simple questions, this quiz identifies which emotional pattern best represents your current relationship tendencies. The results include Secure Heart, Anxious Romantic, Avoidant Soul, and Fearful Deep — each representing a unique way of experiencing love.
+        </p>
 
-        <div
-          style={{
-            marginTop: "18px",
-            width: "100%",
-            height: "110px",
-            borderRadius: "14px",
-            border: "1px dashed #f2a7b8",
-            background: "rgba(255, 255, 255, 0.6)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "#9ca3af",
-            fontSize: "14px",
-          }}
-        >
-          Ad Space (Google AdSense will go here)
-        </div>
+        <h3>Why this matters</h3>
+        <p>
+          Understanding your attachment style can help you build healthier relationships. When you recognize your patterns, you become more aware of your reactions, expectations, and emotional needs. This awareness can improve communication, reduce misunderstandings, and help you form stronger, more balanced connections with others.
+        </p>
 
-        <section
-          style={{
-            marginTop: "34px",
-            textAlign: "left",
-            background: "rgba(255,255,255,0.72)",
-            border: "1px solid #f2d2db",
-            borderRadius: "16px",
-            padding: "24px",
-            color: "#374151",
-          }}
-        >
-          <h2
-            style={{
-              fontSize: "24px",
-              fontWeight: 700,
-              marginBottom: "14px",
-              color: "#111827",
-            }}
-          >
-            About this quiz
-          </h2>
+        <h3>How to use your result</h3>
+        <p>
+          Once you receive your result, use it as a tool for reflection rather than a fixed label. Your attachment style is not permanent — it can evolve over time through self-awareness and experience. Think about how your tendencies show up in real relationships and consider small changes that can lead to more secure and fulfilling connections.
+        </p>
 
-          <p
-            style={{
-              lineHeight: 1.9,
-              fontSize: "16px",
-              marginBottom: "14px",
-            }}
-          >
-            This love attachment style quiz is designed to help you understand
-            how you emotionally connect in romantic relationships. Attachment
-            style is the pattern that shapes how you respond to closeness,
-            reassurance, distance, trust, and emotional conflict in love.
-          </p>
-
-          <p
-            style={{
-              lineHeight: 1.9,
-              fontSize: "16px",
-              marginBottom: "14px",
-            }}
-          >
-            Some people feel naturally secure and balanced in love. Others may
-            crave reassurance, protect themselves through distance, or feel torn
-            between wanting intimacy and fearing emotional pain. None of these
-            patterns make you “too much” or “not enough” — they simply reveal
-            how your heart has learned to protect and connect.
-          </p>
-
-          <p
-            style={{
-              lineHeight: 1.9,
-              fontSize: "16px",
-              marginBottom: "18px",
-            }}
-          >
-            By answering a few short questions, you can discover whether your
-            love style is most similar to Secure Heart, Anxious Romantic,
-            Avoidant Soul, or Fearful Deep. The result is meant to be fun,
-            insightful, and easy to share.
-          </p>
-
-          <h3
-            style={{
-              fontSize: "20px",
-              fontWeight: 700,
-              marginBottom: "10px",
-              color: "#111827",
-            }}
-          >
-            Possible results
-          </h3>
-
-          <ul
-            style={{
-              paddingLeft: "22px",
-              lineHeight: 1.9,
-              fontSize: "16px",
-              margin: 0,
-            }}
-          >
-            <li>Secure Heart</li>
-            <li>Anxious Romantic</li>
-            <li>Avoidant Soul</li>
-            <li>Fearful Deep</li>
-          </ul>
-        </section>
-      </div>
+        <h3>Possible results</h3>
+        <ul>
+          <li>Secure Heart</li>
+          <li>Anxious Romantic</li>
+          <li>Avoidant Soul</li>
+          <li>Fearful Deep</li>
+        </ul>
+      </section>
     </main>
   );
 }
