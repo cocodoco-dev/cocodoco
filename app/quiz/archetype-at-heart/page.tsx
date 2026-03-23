@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 type ResultKey =
   | "dreamer"
@@ -11,7 +11,15 @@ type ResultKey =
   | "guardian"
   | "magician";
 
-const questions = [
+type Question = {
+  q: string;
+  opts: {
+    t: string;
+    s: Partial<Record<ResultKey, number>>;
+  }[];
+};
+
+const questions: Question[] = [
   {
     q: "What feels most natural to your inner self?",
     opts: [
@@ -76,21 +84,66 @@ const questions = [
     ],
   },
   {
+    q: "When someone you care about is struggling, what do you naturally do?",
+    opts: [
+      { t: "Help them see hope, possibility, or a brighter future", s: { dreamer: 2, magician: 1 } },
+      { t: "Stay close, comfort them, and offer emotional warmth", s: { lover: 2, guardian: 1 } },
+      { t: "Listen carefully and offer thoughtful perspective", s: { sage: 2 } },
+      { t: "Encourage them to break out of what is trapping them", s: { rebel: 2, magician: 1 } },
+    ],
+  },
+  {
+    q: "What do you protect most fiercely?",
+    opts: [
+      { t: "My vision, ideals, and inner world", s: { dreamer: 2 } },
+      { t: "My relationships and emotional bonds", s: { lover: 2, guardian: 1 } },
+      { t: "My truth and intellectual honesty", s: { sage: 2 } },
+      { t: "My freedom and authenticity", s: { rebel: 2 } },
+    ],
+  },
+  {
+    q: "Which kind of beauty pulls you in the most?",
+    opts: [
+      { t: "Something poetic, soft, and full of longing", s: { dreamer: 2, lover: 1 } },
+      { t: "Something intimate, heartfelt, and deeply human", s: { lover: 2, guardian: 1 } },
+      { t: "Something quiet, profound, and meaningful", s: { sage: 2 } },
+      { t: "Something strange, powerful, and transformative", s: { magician: 2, rebel: 1 } },
+    ],
+  },
+  {
+    q: "When you enter a new chapter of life, what leads you forward?",
+    opts: [
+      { t: "Hope for what could bloom next", s: { dreamer: 2 } },
+      { t: "Love, loyalty, and emotional purpose", s: { lover: 2, guardian: 1 } },
+      { t: "A deeper understanding of what matters", s: { sage: 2 } },
+      { t: "The desire to reinvent, disrupt, or transform", s: { magician: 2, rebel: 1 } },
+    ],
+  },
+  {
     q: "At your core, which archetype are you at heart?",
     opts: [
       { t: "The Dreamer", s: { dreamer: 2 } },
-      { t: "The Guardian", s: { guardian: 2, lover: 1 } },
+      { t: "The Lover", s: { lover: 2, guardian: 1 } },
       { t: "The Sage", s: { sage: 2 } },
-      { t: "The Magician", s: { magician: 2, rebel: 1 } },
+      { t: "The Rebel", s: { rebel: 2, magician: 1 } },
     ],
   },
 ];
 
 function pickTop(scores: Record<ResultKey, number>): ResultKey {
+  const priority: ResultKey[] = [
+    "dreamer",
+    "lover",
+    "sage",
+    "rebel",
+    "guardian",
+    "magician",
+  ];
+
   let best: ResultKey = "dreamer";
   let bestVal = -999;
 
-  (Object.keys(scores) as ResultKey[]).forEach((k) => {
+  priority.forEach((k) => {
     if (scores[k] > bestVal) {
       bestVal = scores[k];
       best = k;
@@ -111,6 +164,10 @@ export default function ArchetypeAtHeartQuiz() {
     guardian: 0,
     magician: 0,
   });
+
+  const progress = useMemo(() => {
+    return ((current + 1) / questions.length) * 100;
+  }, [current]);
 
   function choose(partial: Partial<Record<ResultKey, number>>) {
     const nextScores = { ...scores };
@@ -135,18 +192,33 @@ export default function ArchetypeAtHeartQuiz() {
     <main
       style={{
         minHeight: "100vh",
-        background: "#fdf2f8",
-        fontFamily: "sans-serif",
+        background:
+          "linear-gradient(180deg, #fdf2f8 0%, #fff7ed 45%, #fefce8 100%)",
+        fontFamily: "Arial, sans-serif",
         padding: "36px 18px 60px",
         display: "flex",
         justifyContent: "center",
       }}
     >
-      <div style={{ width: "min(720px, 100%)", textAlign: "center" }}>
+      <div style={{ width: "min(760px, 100%)", textAlign: "center" }}>
+        <p
+          style={{
+            margin: "0 0 10px",
+            fontSize: "13px",
+            fontWeight: 700,
+            letterSpacing: "0.08em",
+            color: "#9d174d",
+            textTransform: "uppercase",
+          }}
+        >
+          Archetype Personality Test
+        </p>
+
         <h1
           style={{
-            fontSize: "32px",
-            marginBottom: "10px",
+            fontSize: "34px",
+            lineHeight: 1.2,
+            marginBottom: "12px",
             color: "#111827",
           }}
         >
@@ -155,29 +227,66 @@ export default function ArchetypeAtHeartQuiz() {
 
         <p
           style={{
-            marginBottom: "20px",
-            color: "#374151",
-            fontSize: "17px",
-            fontWeight: 600,
+            margin: "0 auto 18px",
+            color: "#4b5563",
+            fontSize: "16px",
+            lineHeight: 1.8,
+            maxWidth: "680px",
           }}
         >
-          Question {current + 1} / {questions.length}
+          Discover the deeper symbolic energy your soul returns to again and
+          again. This personality quiz explores whether your inner self is most
+          aligned with the Dreamer, Lover, Sage, Rebel, Guardian, or Magician.
         </p>
 
         <div
           style={{
-            background: "rgba(255,255,255,0.75)",
+            width: "100%",
+            height: "12px",
+            borderRadius: "999px",
+            background: "rgba(255,255,255,0.8)",
+            border: "1px solid #fbcfe8",
+            overflow: "hidden",
+            marginBottom: "12px",
+          }}
+        >
+          <div
+            style={{
+              width: `${progress}%`,
+              height: "100%",
+              background: "linear-gradient(90deg, #fb7185 0%, #f59e0b 100%)",
+              borderRadius: "999px",
+              transition: "width 0.25s ease",
+            }}
+          />
+        </div>
+
+        <p
+          style={{
+            marginBottom: "20px",
+            color: "#374151",
+            fontSize: "16px",
+            fontWeight: 700,
+          }}
+        >
+          Question {current + 1} of {questions.length}
+        </p>
+
+        <div
+          style={{
+            background: "rgba(255,255,255,0.78)",
             border: "1px solid #f2a7b8",
-            borderRadius: "16px",
-            padding: "22px",
+            borderRadius: "18px",
+            padding: "24px",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
           }}
         >
           <h2
             style={{
-              marginBottom: "18px",
+              marginBottom: "20px",
               color: "#374151",
-              fontSize: "22px",
-              lineHeight: 1.4,
+              fontSize: "24px",
+              lineHeight: 1.45,
               fontWeight: 700,
             }}
           >
@@ -197,14 +306,17 @@ export default function ArchetypeAtHeartQuiz() {
                 key={idx}
                 onClick={() => choose(opt.s)}
                 style={{
-                  padding: "12px 18px",
-                  borderRadius: "12px",
+                  padding: "14px 18px",
+                  borderRadius: "14px",
                   border: "none",
-                  background: "#ff8fab",
+                  background: "linear-gradient(135deg, #ff8fab 0%, #fb7185 100%)",
                   color: "white",
                   cursor: "pointer",
                   fontSize: "16px",
-                  width: "min(520px, 100%)",
+                  lineHeight: 1.5,
+                  width: "min(560px, 100%)",
+                  fontWeight: 600,
+                  boxShadow: "0 8px 18px rgba(251, 113, 133, 0.18)",
                 }}
               >
                 {opt.t}
@@ -220,7 +332,7 @@ export default function ArchetypeAtHeartQuiz() {
             height: "110px",
             borderRadius: "14px",
             border: "1px dashed #f2a7b8",
-            background: "rgba(255, 255, 255, 0.6)",
+            background: "rgba(255, 255, 255, 0.65)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -235,17 +347,19 @@ export default function ArchetypeAtHeartQuiz() {
           style={{
             marginTop: "34px",
             textAlign: "left",
-            background: "rgba(255,255,255,0.72)",
+            background: "rgba(255,255,255,0.76)",
             border: "1px solid #f2d2db",
-            borderRadius: "16px",
-            padding: "24px",
+            borderRadius: "18px",
+            padding: "26px",
             color: "#374151",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.03)",
           }}
         >
           <h2
             style={{
-              fontSize: "24px",
+              fontSize: "25px",
               fontWeight: 700,
+              marginTop: 0,
               marginBottom: "14px",
               color: "#111827",
             }}
@@ -261,10 +375,12 @@ export default function ArchetypeAtHeartQuiz() {
             }}
           >
             This archetype personality quiz is designed to help you discover the
-            deeper symbolic role your inner self most naturally reflects. An
-            archetype is not just a label. It is a recurring emotional pattern,
-            energy, and way of moving through life that feels deeply familiar to
-            your core.
+            symbolic role your inner self most naturally reflects. An archetype
+            is more than a label. It is a recurring emotional pattern, a style
+            of energy, and a way of moving through life that feels deeply
+            familiar to your core. Even when your circumstances change, certain
+            instincts tend to repeat: how you dream, how you love, how you
+            protect, how you seek truth, and how you respond to change.
           </p>
 
           <p
@@ -274,11 +390,13 @@ export default function ArchetypeAtHeartQuiz() {
               marginBottom: "14px",
             }}
           >
-            Some people move through life as dreamers full of hope and vision.
-            Others carry the energy of the lover, the sage, the rebel, the
-            guardian, or the magician. This test looks at your instincts, your
-            emotional values, and the deeper role your soul seems to return to
-            again and again.
+            Some people carry the spirit of the Dreamer, always drawn toward
+            beauty, longing, and possibility. Others move through life with the
+            heart of the Lover, the perspective of the Sage, the fire of the
+            Rebel, the steadiness of the Guardian, or the transformative power
+            of the Magician. None of these energies are better than the others.
+            They simply describe different ways people create meaning, form
+            identity, and shape their lives.
           </p>
 
           <p
@@ -288,15 +406,152 @@ export default function ArchetypeAtHeartQuiz() {
               marginBottom: "18px",
             }}
           >
-            By answering a few short questions, you can discover whether your
-            heart is closest to The Dreamer, The Lover, The Sage, The Rebel, The
-            Guardian, or The Magician. The result is meant to be reflective,
-            meaningful, and easy to share.
+            By answering a series of reflective questions, you can discover
+            which archetype your heart returns to most naturally. The result is
+            meant to be thoughtful, emotionally resonant, and easy to share. It
+            can be a fun personality result, but it can also be a useful mirror
+            for understanding your instincts, values, and emotional direction.
           </p>
 
           <h3
             style={{
-              fontSize: "20px",
+              fontSize: "21px",
+              fontWeight: 700,
+              marginBottom: "10px",
+              color: "#111827",
+            }}
+          >
+            Why archetypes matter
+          </h3>
+
+          <p
+            style={{
+              lineHeight: 1.9,
+              fontSize: "16px",
+              marginBottom: "14px",
+            }}
+          >
+            Archetypes matter because they give language to patterns that often
+            feel difficult to explain. You may already sense that there is a
+            certain role you keep playing in life. Perhaps you are always the
+            one who sees beauty before others do. Perhaps you are the one who
+            protects, questions, rebels, loves, or transforms. Archetypes help
+            name that deeper pattern.
+          </p>
+
+          <p
+            style={{
+              lineHeight: 1.9,
+              fontSize: "16px",
+              marginBottom: "18px",
+            }}
+          >
+            Understanding your archetype can make your inner life feel more
+            coherent. It can help explain what motivates you, what drains you,
+            what kind of meaning you seek, and what kind of energy you naturally
+            bring into relationships, creativity, and personal growth. You may
+            also notice that your archetype influences how you react to change,
+            uncertainty, pressure, and emotional connection.
+          </p>
+
+          <h3
+            style={{
+              fontSize: "21px",
+              fontWeight: 700,
+              marginBottom: "10px",
+              color: "#111827",
+            }}
+          >
+            How to use your result
+          </h3>
+
+          <p
+            style={{
+              lineHeight: 1.9,
+              fontSize: "16px",
+              marginBottom: "14px",
+            }}
+          >
+            Once you receive your result, try to use it as a starting point for
+            reflection rather than a strict box. Most people are not made of one
+            energy alone. You may relate to two or three archetypes, but one
+            usually feels especially central. That core pattern often reveals
+            what your soul leans on when life becomes emotionally meaningful.
+          </p>
+
+          <p
+            style={{
+              lineHeight: 1.9,
+              fontSize: "16px",
+              marginBottom: "14px",
+            }}
+          >
+            A helpful next step is to compare your result with your real life.
+            What role do you naturally play in friendships, love, work, and
+            difficult transitions? What kind of beauty or purpose pulls you
+            forward? What do you protect most strongly? The more honestly you
+            reflect, the more powerful your result becomes.
+          </p>
+
+          <p
+            style={{
+              lineHeight: 1.9,
+              fontSize: "16px",
+              marginBottom: "18px",
+            }}
+          >
+            Your archetype can also help you understand your strengths and your
+            blind spots. The Dreamer may need grounding. The Lover may need
+            boundaries. The Sage may need to trust feeling as much as thought.
+            The Rebel may need direction. The Guardian may need rest. The
+            Magician may need stability. Growth often begins when you learn to
+            honor your deepest energy without being ruled by its extremes.
+          </p>
+
+          <h3
+            style={{
+              fontSize: "21px",
+              fontWeight: 700,
+              marginBottom: "10px",
+              color: "#111827",
+            }}
+          >
+            What this test explores
+          </h3>
+
+          <p
+            style={{
+              lineHeight: 1.9,
+              fontSize: "16px",
+              marginBottom: "14px",
+            }}
+          >
+            This test looks at several dimensions of personality and inner
+            identity. It explores how you respond to difficulty, what kind of
+            emotional power feels most natural to you, what you tend to protect,
+            and what kind of role you often play in the lives of others. It also
+            looks at how you imagine meaning, beauty, truth, love, change, and
+            transformation.
+          </p>
+
+          <p
+            style={{
+              lineHeight: 1.9,
+              fontSize: "16px",
+              marginBottom: "18px",
+            }}
+          >
+            Rather than focusing only on surface traits, this quiz tries to get
+            closer to the emotional and symbolic energy at the center of your
+            personality. That is why the questions are designed to feel
+            reflective rather than purely practical. The goal is not just to
+            sort you into a category, but to reveal something about the deeper
+            emotional role your heart recognizes as home.
+          </p>
+
+          <h3
+            style={{
+              fontSize: "21px",
               fontWeight: 700,
               marginBottom: "10px",
               color: "#111827",
@@ -310,7 +565,8 @@ export default function ArchetypeAtHeartQuiz() {
               paddingLeft: "22px",
               lineHeight: 1.9,
               fontSize: "16px",
-              margin: 0,
+              marginTop: 0,
+              marginBottom: "18px",
             }}
           >
             <li>The Dreamer</li>
@@ -320,6 +576,20 @@ export default function ArchetypeAtHeartQuiz() {
             <li>The Guardian</li>
             <li>The Magician</li>
           </ul>
+
+          <p
+            style={{
+              lineHeight: 1.9,
+              fontSize: "16px",
+              marginBottom: 0,
+            }}
+          >
+            Each result comes with a deeper explanation of your emotional style,
+            your core strengths, your symbolic energy, and the kind of path your
+            personality seems to be inviting you toward. In that sense, this is
+            not only a fun archetype quiz. It is also a small reflection on who
+            you are becoming.
+          </p>
         </section>
       </div>
     </main>
