@@ -16,25 +16,36 @@ export default function Contact() {
           border: "1px solid #f2a7b8",
           borderRadius: "16px",
           padding: "24px",
+          lineHeight: "1.7",
+          color: "#333",
         }}
       >
-        <h1>Contact</h1>
+        <h1 style={{ marginBottom: "20px" }}>Contact</h1>
 
-        <p>For questions or business inquiries, contact:</p>
-
-        <p style={{ fontWeight: "bold", marginTop: "12px" }}>
-          your-email@example.com
+        <p>
+          If you have any questions, feedback, or business inquiries regarding
+          cocodoco, feel free to reach out via email below.
         </p>
 
-        <p style={{ color: "#6b7280", marginTop: "8px" }}>
-          Replace this with your real email address later.
+        <p
+          style={{
+            fontWeight: "bold",
+            marginTop: "16px",
+            fontSize: "18px",
+          }}
+        >
+          forsein1120@gmail.com
+        </p>
+
+        <p style={{ color: "#6b7280", marginTop: "12px" }}>
+          We aim to respond as soon as possible.
         </p>
 
         <a
           href="/"
           style={{
             display: "inline-block",
-            marginTop: "20px",
+            marginTop: "24px",
             color: "#ff4d7d",
             fontWeight: "bold",
             textDecoration: "none",
