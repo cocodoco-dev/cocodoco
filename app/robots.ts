@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://cocodoco.fun/sitemap.xml",
+    sitemap: "https://www.cocodoco.fun/sitemap.xml",
   };
 }
