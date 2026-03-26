@@ -7,6 +7,18 @@ export default function Home() {
       badge: "New",
     },
     {
+      title: "What Kind of Introvert Are You?",
+      desc: "Discover the quiet energy that feels most like your true self 🌙",
+      href: "/quiz/introvert-type",
+      badge: "New",
+    },
+    {
+      title: "Which Era Matches Your Soul?",
+      desc: "Discover the time period your heart feels most naturally at home in ⏳",
+      href: "/quiz/era-matches-your-soul",
+      badge: "New",
+    },
+    {
       title: "Which Archetype Are You at Heart?",
       desc: "Discover the deeper symbolic role your soul naturally returns to 🗝️",
       href: "/quiz/archetype-at-heart",
@@ -180,12 +192,6 @@ export default function Home() {
       href: "/quiz/love-style",
       badge: "New",
     },
-    {
-      title: "Everyday Vibe Test",
-      desc: "Find your vibe in 30 seconds ✨",
-      href: "/quiz/everyday-vibe",
-      badge: "Popular",
-    },
   ];
 
   return (
@@ -266,13 +272,16 @@ export default function Home() {
                       : "#111827",
                   color: "white",
                   fontWeight: 700,
+                  flexShrink: 0,
                 }}
               >
                 {q.badge}
               </span>
             </div>
 
-            <p style={{ margin: 0, color: "#374151" }}>{q.desc}</p>
+            <p style={{ margin: 0, color: "#374151", lineHeight: 1.6 }}>
+              {q.desc}
+            </p>
 
             <div style={{ marginTop: "14px", fontWeight: 700, color: "#ff4d7d" }}>
               Start →
