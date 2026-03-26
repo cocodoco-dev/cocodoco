@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Vibe Do You Give Off Online?",
+      desc: "Discover the online energy people feel from you instantly 💻",
+      href: "/quiz/online-vibe",
+      badge: "New",
+    },
+    {
       title: "Which Archetype Are You at Heart?",
       desc: "Discover the deeper symbolic role your soul naturally returns to 🗝️",
       href: "/quiz/archetype-at-heart",
