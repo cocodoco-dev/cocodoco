@@ -1,10 +1,16 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Kind of Muse Are You?",
+      desc: "Discover the kind of inspiration your presence creates ✨",
+      href: "/quiz/what-kind-of-muse-are-you",
+      badge: "New",
+    },
+    {
       title: "Which Era Matches Your Soul?",
       desc: "Discover the time period your soul feels most connected to ⏳",
       href: "/quiz/era-matches-your-soul",
-      badge: "New",
+      badge: "Hot",
     },
     {
       title: "What Vibe Do You Give Off Online?",
@@ -22,13 +28,13 @@ export default function Home() {
       title: "Which Archetype Are You at Heart?",
       desc: "Discover the deeper symbolic role your soul naturally returns to 🗝️",
       href: "/quiz/archetype-at-heart",
-      badge: "Hot",
+      badge: "Popular",
     },
     {
       title: "What Energy Do You Bring to a Party?",
       desc: "Discover the social vibe you naturally bring into the room 🎉",
       href: "/quiz/party-energy",
-      badge: "Popular",
+      badge: "Hot",
     },
     {
       title: "What Kind of Pretty Are You?",
@@ -40,19 +46,19 @@ export default function Home() {
       title: "Which Soft Skill Is Your Superpower?",
       desc: "Discover the human strength that makes you quietly powerful ✨",
       href: "/quiz/soft-skill-superpower",
-      badge: "Hot",
+      badge: "Popular",
     },
     {
       title: "What Is Your Shadow Side?",
       desc: "Discover the hidden pattern that shows up when you feel emotionally unprotected 🌑",
       href: "/quiz/shadow-side",
-      badge: "Popular",
+      badge: "Hot",
     },
     {
       title: "What Kind of Main Character Are You?",
       desc: "Discover the cinematic role your energy naturally plays 🎬",
       href: "/quiz/main-character",
-      badge: "New",
+      badge: "Popular",
     },
     {
       title: "What Is Your Secret Green Flag?",
