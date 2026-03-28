@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "Which Era Matches Your Soul?",
+      desc: "Discover the time period your soul feels most connected to ⏳",
+      href: "/quiz/era-matches-your-soul",
+      badge: "New",
+    },
+    {
       title: "What Vibe Do You Give Off Online?",
       desc: "Discover the online energy people feel from you instantly 💻",
       href: "/quiz/online-vibe",
@@ -10,19 +16,19 @@ export default function Home() {
       title: "What Kind of Introvert Are You?",
       desc: "Discover the quiet energy that feels most like your true self 🌙",
       href: "/quiz/introvert-type",
-      badge: "New",
+      badge: "Popular",
     },
     {
       title: "Which Archetype Are You at Heart?",
       desc: "Discover the deeper symbolic role your soul naturally returns to 🗝️",
       href: "/quiz/archetype-at-heart",
-      badge: "New",
+      badge: "Hot",
     },
     {
       title: "What Energy Do You Bring to a Party?",
       desc: "Discover the social vibe you naturally bring into the room 🎉",
       href: "/quiz/party-energy",
-      badge: "New",
+      badge: "Popular",
     },
     {
       title: "What Kind of Pretty Are You?",
@@ -34,13 +40,13 @@ export default function Home() {
       title: "Which Soft Skill Is Your Superpower?",
       desc: "Discover the human strength that makes you quietly powerful ✨",
       href: "/quiz/soft-skill-superpower",
-      badge: "New",
+      badge: "Hot",
     },
     {
       title: "What Is Your Shadow Side?",
       desc: "Discover the hidden pattern that shows up when you feel emotionally unprotected 🌑",
       href: "/quiz/shadow-side",
-      badge: "New",
+      badge: "Popular",
     },
     {
       title: "What Kind of Main Character Are You?",
@@ -52,13 +58,13 @@ export default function Home() {
       title: "What Is Your Secret Green Flag?",
       desc: "Discover the hidden healthy trait that makes you deeply lovable 💚",
       href: "/quiz/secret-green-flag",
-      badge: "New",
+      badge: "Hot",
     },
     {
       title: "What Is Your Love Language?",
       desc: "Discover how your heart most naturally gives and receives love 💗",
       href: "/quiz/love-language",
-      badge: "New",
+      badge: "Popular",
     },
     {
       title: "What Aesthetic Matches Your Soul?",
@@ -70,13 +76,13 @@ export default function Home() {
       title: "What Is Your Attachment Style in Love?",
       desc: "Discover how your heart naturally connects in relationships 💘",
       href: "/quiz/attachment-style",
-      badge: "New",
+      badge: "Hot",
     },
     {
       title: "What Is Your Core Personality Color?",
       desc: "Discover the color that defines your deepest personality 🎨",
       href: "/quiz/personality-color",
-      badge: "New",
+      badge: "Popular",
     },
     {
       title: "What Kind of Comfort Are You?",
@@ -88,13 +94,13 @@ export default function Home() {
       title: "What Kind of Romantic Energy Do You Have?",
       desc: "Discover the vibe you naturally bring into love 💘",
       href: "/quiz/romantic-energy",
-      badge: "New",
+      badge: "Hot",
     },
     {
       title: "What Is Your Hidden Talent?",
       desc: "Discover the strength inside you that people may notice later 🎁",
       href: "/quiz/hidden-talent",
-      badge: "New",
+      badge: "Popular",
     },
     {
       title: "What Vibe Does Your Soul Give Off?",
@@ -106,13 +112,13 @@ export default function Home() {
       title: "What Kind of Friend Are You?",
       desc: "Discover the role you naturally play in friendship 💞",
       href: "/quiz/friend-type",
-      badge: "New",
+      badge: "Hot",
     },
     {
       title: "What Kind of Aura Do You Have?",
       desc: "Discover the energy people feel from you instantly ✨",
       href: "/quiz/aura",
-      badge: "New",
+      badge: "Popular",
     },
     {
       title: "What Is Your Emotional Age?",
@@ -124,13 +130,13 @@ export default function Home() {
       title: "What Kind of Person Are You to Others?",
       desc: "Discover how people actually see you 👀",
       href: "/quiz/person-to-others",
-      badge: "New",
+      badge: "Hot",
     },
     {
       title: "What Makes You Attractive?",
       desc: "Discover the quality that draws people to you most ✨",
       href: "/quiz/attractive",
-      badge: "New",
+      badge: "Popular",
     },
     {
       title: "Your Life Energy Test",
@@ -142,13 +148,13 @@ export default function Home() {
       title: "What Kind of Mind Do You Have?",
       desc: "Discover how your mind naturally sees the world 🧠",
       href: "/quiz/mind-type",
-      badge: "New",
+      badge: "Hot",
     },
     {
       title: "Your True Strength Test",
       desc: "Discover the strength that defines you most 💪",
       href: "/quiz/true-strength",
-      badge: "New",
+      badge: "Popular",
     },
     {
       title: "Your Social Personality Test",
@@ -166,7 +172,7 @@ export default function Home() {
       title: "What Energy Do You Give Off?",
       desc: "Find out the energy people feel from you instantly ✨",
       href: "/quiz/energy",
-      badge: "New",
+      badge: "Popular",
     },
     {
       title: "Your Inner Animal Test",
@@ -178,7 +184,7 @@ export default function Home() {
       title: "Hidden Personality Test",
       desc: "Discover the hidden side of your personality ✨",
       href: "/quiz/hidden-personality",
-      badge: "Hot",
+      badge: "Popular",
     },
     {
       title: "Love Style Test",
