@@ -6,196 +6,196 @@ import { Suspense, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 const results = {
-  vintage_romance: {
-    title: "Vintage Romance 📜",
+  roaring_20s: {
+    title: "The Roaring Twenties 🥂",
     summary:
-      "Your soul feels most at home in Vintage Romance — soft, poetic, and full of emotional depth, beauty, and longing.",
+      "Your soul belongs to the Roaring Twenties — glamorous, magnetic, and drawn to a life that feels dazzling, alive, and unforgettable.",
     desc1:
-      "At your core, you are drawn to a world that feels slower, softer, and more emotionally meaningful. Your inner self naturally leans toward tenderness, symbolism, and the kind of beauty that lingers rather than shouts. You may often feel connected to old letters, rainy windows, piano melodies, antique details, and the atmosphere of love that exists somewhere between memory and imagination.",
+      "At your core, you are drawn to energy that sparkles. You may feel emotionally connected to beauty that is bold, social, dramatic, and full of movement. The Roaring Twenties was an era of jazz, glamour, reinvention, and larger-than-life atmosphere, and something in that world seems to echo your inner self.",
     desc2:
-      "What makes this era feel right for you is not simply nostalgia. It is emotional texture. You are someone who often senses the invisible mood of things — the sadness inside beauty, the longing inside hope, the quiet significance of fragile moments. Your soul is not searching for noise. It is searching for meaning wrapped in softness.",
+      "What makes this result powerful is not just a love of aesthetics, but a hunger for aliveness. You are likely someone who wants life to feel vivid rather than dull, memorable rather than flat, and emotionally rich rather than ordinary. Your soul seems to crave excitement, expression, and the kind of beauty that lights up a room.",
     meaning1:
-      "This result often means you are someone who experiences life through emotional atmosphere. You may care deeply about beauty, words, memory, and the small details that make a moment feel sacred. Even if you live in a fast world, part of you may still be reaching for slowness, sincerity, and emotional richness.",
+      "This result often means your inner world is deeply connected to glamour, charisma, celebration, and emotional brightness. You may naturally gravitate toward elegance, music, social energy, and experiences that make life feel cinematic. Part of you may believe life is meant to be lived fully, beautifully, and with a little drama.",
     meaning2:
-      "Because of that, you may sometimes feel out of place in environments that seem too loud, rushed, or superficial. Your gift is that you bring a kind of tenderness and depth into life that many people quietly crave but do not always know how to protect. You remind the world that softness can still be powerful.",
+      "Because of that, you may be someone who carries a naturally radiant presence or who longs for environments that feel alive and full of possibility. You may dislike emotional dullness, rigid routine, or spaces that feel too muted. Your soul wants movement, style, warmth, and the feeling that something unforgettable could happen at any moment.",
     showUp1:
-      "In real life, this energy can show up as romantic sensitivity, love of old music or vintage aesthetics, attachment to emotional memory, and a strong appreciation for beauty that feels intimate rather than flashy. You may be someone who treasures meaningful conversations, symbolic objects, and the feeling of emotional closeness.",
+      "In real life, this energy can show up as personal charm, social sparkle, love of fashion or atmosphere, emotional boldness, and a desire to create memorable moments. You may be the kind of person who enjoys dressing with intention, making a strong impression, or turning ordinary experiences into something more magical.",
     showUp2:
-      "You may also carry a quiet dreaminess that makes people feel calm, nostalgic, or emotionally understood around you. The challenge is that when reality feels too harsh or unromantic, you may withdraw into longing instead of allowing beauty to exist in imperfect forms. Your soul may need both tenderness and grounding.",
-    strengths: "Softness, emotional depth, poetic beauty",
+      "You may also bring a contagious kind of brightness into the lives of others. People may feel more energized, alive, or inspired around you. The challenge is making sure your love of sparkle remains connected to something real beneath the surface, so that beauty becomes expression rather than escape.",
+    strengths: "Charisma, vibrancy, emotional brightness",
     strengthDetails:
-      "Your greatest strengths include emotional sensitivity, symbolic imagination, tenderness, and the ability to make ordinary life feel meaningful. You often notice what others overlook — the hidden mood, the unspoken emotion, the quiet beauty of a passing moment. That depth can make your presence deeply comforting and unforgettable.",
-    watchOut: "Idealizing the past or longing for perfection too deeply",
+      "Your greatest strengths include presence, magnetism, creativity, and the ability to bring life into spaces that feel too flat or colorless. You often remind people that joy, style, and celebration matter. You can make life feel bigger, warmer, and more memorable simply by the way you move through it.",
+    watchOut: "Chasing intensity or glamour without enough grounding",
     watchOutDetails:
-      "What may feel difficult is staying present when your inner world feels more beautiful than reality. Sometimes longing can become a place you live in rather than a feeling you move through. The goal is not to become less sensitive or romantic. It is to let your love of beauty deepen your life instead of pulling you away from it.",
+      "What may feel difficult is knowing when excitement is nourishing and when it is becoming a way to avoid stillness or emotional depth. Sometimes the desire for beauty, movement, or stimulation can make it hard to sit with quieter truths. The goal is not to become less radiant. It is to let your brilliance be rooted in something real.",
     bestMatch:
-      "People and paths that value tenderness, sincerity, beauty, and emotional depth",
+      "People and paths that celebrate your light while also offering depth, sincerity, and emotional steadiness",
     growth1:
-      "Growth for you often begins when you trust that beauty is not only found in distance, fantasy, or memory. It can also exist in the life you are building now. You do not need to wait for a perfect atmosphere to live meaningfully.",
+      "Growth for you often begins when you realize that depth and glamour do not have to compete. A beautiful life is not only one that shines on the outside. It is also one that feels emotionally true. Your soul does not need less sparkle. It simply needs sparkle with substance.",
     growth2:
-      "The healthiest version of your energy is someone who still feels deeply, still loves beauty, and still believes in emotional significance — but also lets those qualities shape real choices, real relationships, and real life. Romance becomes strongest when it is lived, not only imagined.",
+      "The healthiest version of this era energy is someone who still embraces beauty, celebration, and radiance, but who also builds a life that can hold meaning beneath the shine. That is when your light becomes not only captivating, but lasting.",
     reminder:
-      "Your soul was made for beauty, but beauty does not only live in the past. Let it live in the life you are creating now.",
+      "Your glow is part of your gift. Just remember that the most unforgettable beauty is the kind that shines from something real.",
   },
 
-  roaring_twenties: {
-    title: "Roaring Twenties ✨",
+  renaissance: {
+    title: "The Renaissance 🎨",
     summary:
-      "Your soul feels most alive in the Roaring Twenties — dazzling, social, expressive, and drawn toward glamour, movement, and unforgettable energy.",
+      "Your soul belongs to the Renaissance — thoughtful, artistic, and deeply drawn to beauty, meaning, and human brilliance.",
     desc1:
-      "At heart, you are pulled toward a world that sparkles. You are someone whose inner energy naturally resonates with excitement, bold beauty, and the thrill of possibility. The Roaring Twenties matches your soul not just because of its glamour, but because it reflects a life lived vividly — with music, style, confidence, and emotional electricity.",
+      "At heart, you seem most connected to an era shaped by creativity, philosophy, learning, and timeless beauty. The Renaissance was not only about art. It was about awakening, curiosity, and the belief that human life could become more refined, meaningful, and extraordinary through thought and creation.",
     desc2:
-      "What makes this era feel right for you is its fearless aliveness. There is something in you that does not want life to feel flat, muted, or forgettable. You are often drawn to intensity, celebration, charisma, and spaces where self-expression feels magnetic. Your energy tends to bloom in moments that feel vibrant and fully awake.",
+      "What makes this result powerful is your connection to depth and beauty at the same time. You are likely someone who wants more than surface-level living. Your soul seems to crave ideas, artistry, perspective, and the kind of richness that comes from engaging both the heart and the mind.",
     meaning1:
-      "This result often means you are someone who values presence, atmosphere, and the emotional charge of living boldly. You may be naturally expressive, socially alive, or drawn to beauty that makes an entrance. Even when you are quiet on the surface, part of your soul may still crave movement, glamour, and a life that feels charged with possibility.",
+      "This result often means your inner world is naturally aligned with wisdom, creation, refinement, and intellectual beauty. You may feel emotionally connected to art, poetry, symbolism, history, or thoughtful conversation. You are probably not satisfied with what is shallow or purely functional. You want what feels meaningful and beautifully made.",
     meaning2:
-      "Because of that, you may feel especially alive in places where people are fully themselves, where style and energy matter, and where life feels a little theatrical in the best way. Your gift is that you bring brightness and unforgettable momentum into spaces that might otherwise feel ordinary or restrained.",
+      "Because of that, you may be someone who experiences life through reflection, imagination, and creative sensitivity. You may notice details other people miss, care deeply about atmosphere and craftsmanship, and feel drawn toward a life that is both expressive and thoughtful. Your soul seems to believe beauty and meaning belong together.",
     showUp1:
-      "In daily life, this energy can show up as social magnetism, love of dressing up, attraction to nightlife or celebration, and a strong instinct for making moments feel memorable. You may be someone who naturally lifts the atmosphere, enjoys playful confidence, or wants life to feel like something worth showing up for fully.",
+      "In everyday life, this energy can show up as artistic taste, curiosity, depth of thought, emotional intelligence, and a desire to keep learning and creating. You may be the kind of person who is nourished by museums, books, meaningful conversations, design, or anything that feels rich in insight and intention.",
     showUp2:
-      "You may also be drawn to people who feel charismatic, daring, and emotionally awake. The challenge is making sure the sparkle stays connected to substance. Your soul may love excitement, but it also deserves meaning underneath the glitter. The healthiest glamour is not empty. It is alive.",
-    strengths: "Charisma, boldness, vibrant presence",
+      "You may also bring a calming, refined, and quietly inspiring energy into the lives of others. People may experience you as thoughtful, creative, and emotionally layered. The challenge is making sure your love of depth does not turn into overthinking or distance from direct experience.",
+    strengths: "Creativity, wisdom, refinement",
     strengthDetails:
-      "Your strengths include confidence, expressive energy, style, and the ability to make life feel vivid. You often remind others that joy, celebration, and visual beauty matter too. There is power in creating moments that people remember, and your energy can turn the ordinary into something electric.",
-    watchOut: "Chasing stimulation so much that depth gets overlooked",
+      "Your strengths include insight, artistic sensitivity, curiosity, and the ability to see beauty and meaning where others might only see function. You often elevate life simply by paying attention to what is subtle, profound, and worth shaping with care. That makes your presence quietly transformative.",
+    watchOut: "Living too much in thought, ideals, or inner worlds",
     watchOutDetails:
-      "What may feel difficult is knowing when excitement is feeding your spirit and when it is only distracting you. Sometimes a love of movement, glamour, or social energy can make stillness feel uncomfortable. The goal is not to become quieter. It is to make sure your brightness is rooted in something real enough to last.",
+      "What may feel difficult is staying grounded when your inner world becomes richer than the outer one. Because you are drawn to beauty and meaning, you may sometimes linger in reflection, imagination, or perfectionism instead of letting life stay messy and real. The goal is not to become less thoughtful. It is to let your depth remain embodied.",
     bestMatch:
-      "People and paths that celebrate your energy while also honoring your deeper emotional truth",
+      "People and paths that value beauty, wisdom, creativity, and meaningful expression",
     growth1:
-      "Growth for you often means learning that a meaningful life can still shimmer. Depth and sparkle do not cancel each other out. In fact, your gift becomes strongest when joy, beauty, and authenticity are allowed to exist together.",
+      "Growth for you often begins when you trust that imperfect action can still be beautiful. Meaning does not only live in ideas, art, or vision. It also lives in daily reality, unfinished attempts, and lived presence. Your soul does not need to wait for perfection to begin creating something real.",
     growth2:
-      "The healthiest form of your energy is someone who still glows, still celebrates, and still lives vividly — but who also knows that the most unforgettable life is not only dazzling on the outside. It is emotionally real on the inside too.",
+      "The healthiest version of this era energy is someone who keeps their love of thought, art, and beauty intact while also participating fully in life. When your inner brilliance meets real embodiment, your gifts become not only elegant, but alive.",
     reminder:
-      "You were not made for a dull life. Just remember that the brightest shine lasts longest when it is lit from within.",
+      "Your depth is beautiful. Just remember that meaning grows strongest when it is not only imagined, but lived.",
   },
 
-  golden_hollywood: {
-    title: "Golden Hollywood 🎬",
+  victorian: {
+    title: "The Victorian Era 🌹",
     summary:
-      "Your soul belongs to Golden Hollywood — elegant, cinematic, emotionally grand, and quietly unforgettable.",
+      "Your soul belongs to the Victorian Era — romantic, tender, and deeply connected to emotional depth, beauty, and quiet longing.",
     desc1:
-      "At your core, you are drawn to timeless beauty. There is something in your energy that feels composed, graceful, and larger than the ordinary moment. Golden Hollywood matches your soul because it reflects a world of elegance, emotional drama, visual beauty, and star-like presence. You may not always seek attention directly, but you often carry a natural sense of atmosphere and impression.",
+      "At your core, you seem drawn to a world of old letters, soft melancholy, intimate emotion, and timeless devotion. The Victorian era carries a kind of beauty that is not loud, but deeply felt. It holds romance, restraint, sentiment, and the emotional richness of things left partly unsaid.",
     desc2:
-      "What makes this era feel right for you is its ability to make life feel cinematic. You are someone who may care deeply about beauty, presentation, and emotional significance. You may be drawn to polished aesthetics, iconic moments, and the kind of depth that feels both refined and emotionally powerful. Your soul often wants life to feel meaningful and memorable, not careless or forgettable.",
+      "What makes this result powerful is your connection to tenderness and depth. You are likely someone who feels meaning most strongly through emotional sincerity, symbolic beauty, and the quiet atmosphere of things that matter deeply. Your soul seems to crave grace, softness, and emotional truth.",
     meaning1:
-      "This result often means you carry an energy that is both graceful and emotionally resonant. You may value elegance, standards, and the feeling of creating something beautiful out of how you move through life. Even when you are relaxed, you may still naturally carry yourself in a way that feels intentional, composed, and quietly magnetic.",
+      "This result often means your inner world is organized around feeling, memory, devotion, and atmosphere. You may be emotionally moved by old places, handwritten words, sentimental objects, rainy afternoons, and the kind of beauty that feels intimate and haunting rather than loud or flashy.",
     meaning2:
-      "Because of that, people may experience you as memorable without always knowing why. You may have a presence that lingers. Your gift is not simply glamour. It is emotional polish — the ability to make beauty feel timeless and feeling feel elevated. You remind people that there is still room for grace in a chaotic world.",
+      "Because of that, you may carry unusual emotional depth and sensitivity. You may love slowly but seriously, feel beauty in subtle details, and be naturally drawn to people or environments that feel sincere rather than performative. Your soul seems less interested in noise and more interested in emotional resonance.",
     showUp1:
-      "In everyday life, this energy can show up as classic style, appreciation for old films or timeless design, emotional composure, and a preference for beauty that feels refined instead of loud. You may be someone who notices presentation, values memorable experiences, and carries a natural instinct for making things feel elevated.",
+      "In real life, this energy can show up as tenderness, loyalty, romantic imagination, appreciation for timeless aesthetics, and a strong connection to emotional atmosphere. You may be the kind of person who values meaningful words, remembers emotional details, and feels deeply attached to beauty that carries memory or longing.",
     showUp2:
-      "You may also hold yourself to high standards, especially in how you show up emotionally or aesthetically. The challenge is making sure elegance does not become pressure. Your soul may love beauty and composure, but it also deserves room to be human, messy, and fully real without losing its glow.",
-    strengths: "Elegance, presence, timeless emotional depth",
+      "You may also bring a soft, calming, and deeply human presence into the lives of others. People may experience you as gentle, emotionally rich, and quietly unforgettable. The challenge is making sure your depth remains life-giving rather than becoming heaviness, idealization, or emotional over-attachment.",
+    strengths: "Tenderness, devotion, emotional depth",
     strengthDetails:
-      "Your strengths include grace, composure, visual sensitivity, and the ability to make ordinary life feel more intentional and memorable. You often carry an emotional richness beneath the surface that gives your presence real depth. That combination of polish and feeling is what makes your energy so striking.",
-    watchOut: "Feeling pressure to stay composed or perfect all the time",
+      "Your strengths include sincerity, loyalty, sensitivity, and the ability to create emotional intimacy and beauty through presence rather than performance. You often help others feel seen, cared for, and emotionally understood. That kind of softness is powerful in ways that are often underestimated.",
+    watchOut: "Idealizing the past, love, or emotional intensity too much",
     watchOutDetails:
-      "What may feel difficult is allowing yourself to relax the performance of having it together. Sometimes people with this energy become so identified with elegance or control that vulnerability starts to feel unsafe. The goal is not to lose your standards. It is to let your humanity breathe inside them.",
+      "What may feel difficult is knowing when emotional beauty is nourishing and when it is turning into attachment to longing itself. Because your soul is drawn to depth, you may sometimes hold onto melancholy, romantic fantasy, or emotional memory more tightly than is healthy. The goal is not to become less tender. It is to let your tenderness stay rooted in the present.",
     bestMatch:
-      "People and paths that appreciate your grace, depth, and the beauty of emotional sincerity",
+      "People and paths that honor your softness, sincerity, and emotional depth without taking advantage of it",
     growth1:
-      "Growth for you often means discovering that true timelessness is not perfection. It is authenticity with form. The most powerful presence is not one that never breaks. It is one that stays beautiful even when it becomes real and vulnerable.",
+      "Growth for you often begins when you realize that beauty does not disappear when it becomes grounded. Love does not become less real when it is steady. Emotional depth does not need sadness in order to feel meaningful. Your soul can remain romantic while also feeling safe and present.",
     growth2:
-      "The healthiest version of your energy is someone who still carries elegance, still loves beauty, and still moves through life with intention — but who no longer believes they must be flawless to be worthy of being seen.",
+      "The healthiest version of this era energy is someone who still treasures tenderness, longing, and timeless beauty, but who also allows themselves to live fully in what is here now. That is when your emotional richness becomes not only moving, but sustainable.",
     reminder:
-      "Your presence already leaves an impression. Let yourself be real enough to feel it too.",
+      "Your softness is a strength. Just remember that the most beautiful love is not only felt deeply, but lived gently and honestly in the present.",
   },
 
-  free_spirit_70s: {
-    title: "Free Spirit 70s 🌼",
+  retro_70s: {
+    title: "The Retro 70s ✌️",
     summary:
-      "Your soul feels most at home in the Free Spirit 70s — expressive, warm, open-hearted, and deeply drawn to freedom, authenticity, and soulful living.",
+      "Your soul belongs to the Retro 70s — expressive, free-spirited, and drawn to authenticity, color, and fearless self-expression.",
     desc1:
-      "At heart, you are someone who values being real more than being polished. The Free Spirit 70s fits your soul because it reflects a life guided by openness, creativity, emotional honesty, and the courage to live outside rigid expectations. You may be naturally drawn to warmth, individuality, and spaces where people are free to feel and express who they are.",
+      "At heart, you seem connected to an era of movement, rebellion, creativity, and individuality. The Retro 70s carried a spirit of liberation, experimentation, and emotional honesty that still feels magnetic today. Something about that energy seems to match the way your soul wants to live.",
     desc2:
-      "What makes this era feel right for you is its soulful looseness. Your energy often blooms when life feels less controlled and more alive. You may love music, color, movement, connection, and a sense that life can unfold naturally instead of being forced into a narrow shape. Your soul often wants room to breathe.",
+      "What makes this result powerful is your connection to freedom. You are likely someone who does not want life to feel boxed in, emotionally flat, or overly controlled. Your soul seems to crave expression, originality, and the ability to live in a way that feels real rather than overly polished or restricted.",
     meaning1:
-      "This result often means you care deeply about authenticity. You may be someone who wants life to feel emotionally honest, creatively alive, and aligned with your real self rather than with outside pressure. Even when you are responsible and grounded, part of your spirit likely still resists anything that feels too stiff, fake, or overly performative.",
+      "This result often means your inner world is aligned with independence, boldness, warmth, and personal truth. You may naturally gravitate toward color, music, movement, unconventional beauty, and spaces where people are allowed to be fully themselves. You likely value authenticity more than approval.",
     meaning2:
-      "Because of that, you may naturally bring warmth and freedom into the lives of others. People may feel safer being themselves around you. Your gift is that you remind others that life does not always have to be so tightly managed to be beautiful. There is wisdom in your ease.",
+      "Because of that, you may be someone who resists rigid expectations and feels most alive when you can move, create, speak honestly, and follow your own energy. Your soul may not want a life that looks perfect from the outside. It wants a life that feels true from the inside.",
     showUp1:
-      "In real life, this energy can show up as casual creativity, soulful taste, emotional openness, a strong love of personal freedom, and a preference for connection that feels sincere rather than strategic. You may be someone who values self-expression, meaningful conversations, and a life that feels lived rather than performed.",
+      "In daily life, this energy can show up as strong individuality, expressive style, openness to change, emotional candor, and a natural ability to make life feel warmer and more alive. You may be the kind of person who likes experimenting, following instinct, or bringing unexpected color into ordinary spaces.",
     showUp2:
-      "You may also be the kind of person who resists pressure to become something smaller or more conventional than you really are. The challenge is making sure freedom remains grounded enough to support the life you want to build. Being open does not mean drifting without direction. Your soul needs both freedom and form.",
-    strengths: "Authenticity, warmth, soulful freedom",
+      "You may also give others permission to loosen up and be more themselves. People may experience you as refreshing, lively, and hard to control in the best way. The challenge is making sure your need for freedom stays connected to direction and self-respect rather than becoming scattered or resistant to commitment.",
+    strengths: "Freedom, originality, self-expression",
     strengthDetails:
-      "Your strengths include emotional honesty, openness, individuality, and the ability to create spaces that feel welcoming and alive. You often help others relax into themselves. That kind of genuine presence is powerful, especially in a world that often rewards performance more than truth.",
-    watchOut: "Avoiding structure so much that direction gets lost",
+      "Your strengths include authenticity, courage, warmth, adaptability, and the ability to live in a way that feels personally true. You often remind others that life does not have to be sterile, overly cautious, or overly performative. You bring color, motion, and emotional honesty wherever you go.",
+    watchOut: "Resisting structure so strongly that you lose stability or focus",
     watchOutDetails:
-      "What may feel difficult is staying consistent when structure begins to feel restrictive. Sometimes a strong need for freedom can make commitment, routine, or practical steps feel heavier than they really are. The goal is not to become rigid. It is to let your freedom have enough grounding to grow into something sustainable.",
+      "What may feel difficult is distinguishing healthy freedom from avoidance of responsibility, stillness, or deeper commitment. Because your soul values openness so strongly, structure may sometimes feel confining even when it could support you. The goal is not to become less free. It is to build a life where your freedom can actually last.",
     bestMatch:
-      "People and paths that honor your authenticity, creativity, and need for emotional breathing room",
+      "People and paths that respect your individuality while helping your energy stay grounded and directed",
     growth1:
-      "Growth for you often means realizing that structure is not always the enemy of freedom. Sometimes it is what protects it. A grounded routine, a healthy boundary, or a chosen commitment can become the frame that lets your real self flourish more fully.",
+      "Growth for you often begins when you realize that freedom becomes more powerful when it has form. Expression does not become less real when it is focused. In fact, some of your boldest gifts may flourish most when they are given a little structure and care.",
     growth2:
-      "The healthiest version of your energy is someone who still lives openly, still feels deeply, and still values freedom — but who also knows how to turn soulful instinct into a life with shape, steadiness, and real momentum.",
+      "The healthiest version of this era energy is someone who stays vibrant, authentic, and creatively free while also learning how to commit to what truly matters. That is when your soul stops only wandering and begins building a life that feels both alive and lasting.",
     reminder:
-      "Your soul was made to breathe freely. Just remember that even wildflowers grow best when they are rooted somewhere real.",
+      "Your originality is part of your magic. Just remember that true freedom grows strongest when it has something real to stand on.",
   },
 
-  nostalgic_90s: {
-    title: "Nostalgic 90s 📼",
+  ancient_classical: {
+    title: "The Ancient Classical World 🏛️",
     summary:
-      "Your soul feels most connected to the Nostalgic 90s — heartfelt, grounded, quietly expressive, and full of realness, comfort, and emotional familiarity.",
+      "Your soul belongs to the Ancient Classical world — timeless, wise, and deeply drawn to meaning, balance, and enduring beauty.",
     desc1:
-      "At your core, you are drawn to a world that feels genuine. The Nostalgic 90s matches your soul because it reflects emotional honesty without too much performance, style without too much pressure, and connection that feels real instead of overly polished. You may naturally love comfort, familiarity, and the kind of atmosphere that feels lived in rather than curated.",
+      "At your core, you seem connected to a world shaped by philosophy, myth, structure, and the search for what lasts. The Ancient Classical era carries a sense of dignity, contemplation, and timeless proportion. Something in that atmosphere seems to mirror the way your soul understands beauty and meaning.",
     desc2:
-      "What makes this era feel right for you is its balance. It holds warmth without being overly soft, individuality without needing constant reinvention, and emotional depth without turning everything into spectacle. Your soul may feel most alive in spaces that are simple, sincere, a little nostalgic, and full of subtle personality.",
+      "What makes this result powerful is your connection to what is enduring. You are likely someone who seeks more than trends, noise, or temporary excitement. Your soul seems to crave truth, balance, significance, and a life that feels rooted in something deeper than the surface of the moment.",
     meaning1:
-      "This result often means you are someone who values emotional truth, comfort, and authenticity in a grounded way. You may not always need life to be dramatic or dazzling. Instead, you may be drawn to what feels real, familiar, and quietly meaningful. Your energy often carries a sense of home.",
+      "This result often means your inner world is naturally aligned with wisdom, order, symbolic depth, and the search for lasting truths. You may feel drawn to mythology, history, ethics, architecture, timeless stories, or any form of beauty that feels noble, elegant, and deeply considered.",
     meaning2:
-      "Because of that, people may experience you as approachable, emotionally safe, and easy to be around. Your gift is that you make life feel less artificial. You bring a kind of honesty and ease that helps others settle into themselves. That simplicity is not small. It is deeply reassuring.",
+      "Because of that, you may be someone who values clarity, integrity, and substance. You may not be easily impressed by what is shallow or fashionable. Instead, your soul likely respects things that endure: ideas with weight, beauty with structure, and people whose character feels grounded and real.",
     showUp1:
-      "In daily life, this energy can show up as love of old music, emotional nostalgia, preference for relaxed style, appreciation for meaningful routines, and connection to things that feel comforting and true. You may be someone who treasures familiar places, remembers emotional eras of your life vividly, and values sincerity more than image.",
+      "In everyday life, this energy can show up as composure, love of learning, emotional steadiness, attraction to timeless aesthetics, and a desire to live according to values that feel meaningful. You may be the kind of person who seeks perspective before reacting and who values substance over spectacle.",
     showUp2:
-      "You may also naturally resist anything that feels too fake, too rushed, or too performative. The challenge is making sure comfort does not become emotional hiding. Your soul may love familiarity, but it still deserves growth, surprise, and the courage to step into new things without losing its grounded center.",
-    strengths: "Comfort, honesty, grounded emotional warmth",
+      "You may also bring a grounding and stabilizing energy into the lives of others. People may experience you as wise, calm, thoughtful, and quietly strong. The challenge is making sure your love of timelessness does not become rigidity or emotional distance from the unpredictable parts of real life.",
+    strengths: "Wisdom, balance, timeless perspective",
     strengthDetails:
-      "Your strengths include sincerity, emotional steadiness, relatability, and the ability to make people feel at ease. You often create an atmosphere that feels safe without being heavy, expressive without being overwhelming, and real without needing to prove itself. That is a rare kind of emotional intelligence.",
-    watchOut: "Staying too attached to familiarity or emotional comfort zones",
+      "Your strengths include discernment, dignity, steadiness, reflective depth, and the ability to see beyond temporary noise. You often remind people that not everything of value is loud, fast, or new. Your presence can make life feel more meaningful, ordered, and connected to something lasting.",
+    watchOut: "Becoming overly rigid, detached, or idealistic about order",
     watchOutDetails:
-      "What may feel difficult is moving forward when the familiar feels safer than the unknown. Sometimes nostalgia can become a quiet form of avoidance, especially when change feels uncertain. The goal is not to stop loving what feels comforting. It is to let comfort support your growth rather than replace it.",
+      "What may feel difficult is allowing life to stay human, messy, and emotionally alive instead of needing everything to make perfect sense. Because you value structure and meaning, disorder may feel especially uncomfortable. The goal is not to become less wise. It is to let wisdom stay flexible enough to hold real life.",
     bestMatch:
-      "People and paths that feel sincere, steady, emotionally real, and gently supportive",
+      "People and paths that value integrity, depth, timeless beauty, and a grounded sense of meaning",
     growth1:
-      "Growth for you often begins when you trust that new chapters do not have to erase what you love. You can carry your tenderness, your memories, and your grounded sense of self into a life that is still expanding.",
+      "Growth for you often begins when you remember that balance is not the absence of feeling. True wisdom can hold emotion, change, and uncertainty without losing itself. Your soul does not need to abandon its love of order. It simply needs to make room for life to remain alive.",
     growth2:
-      "The healthiest version of your energy is someone who still values comfort, still loves what feels real, and still honors emotional familiarity — but who also allows new experiences to become part of what home can mean.",
+      "The healthiest version of this era energy is someone who keeps their dignity, depth, and timeless values while also staying emotionally present and open to growth. That is when your wisdom becomes not only admirable, but deeply human.",
     reminder:
-      "Your soul knows the beauty of what feels real. Let that honesty guide you forward, not only backward.",
+      "Your soul carries something timeless. Just remember that even the strongest pillars are meant to support life, not keep it at a distance.",
   },
 
-  y2k_dream: {
-    title: "Y2K Dream 💿",
+  future_neon: {
+    title: "The Future Neon Age 🌃",
     summary:
-      "Your soul belongs to Y2K Dream — playful, expressive, futuristic, emotionally curious, and full of bold reinvention.",
+      "Your soul belongs to a Future Neon Age — visionary, restless, and drawn to reinvention, possibility, and the thrill of what has not existed yet.",
     desc1:
-      "At heart, you are drawn to a world that feels bright, fresh, and full of possibility. Y2K Dream fits your soul because it reflects a playful kind of confidence — one that mixes style, experimentation, individuality, and emotional curiosity. You may naturally feel pulled toward reinvention, visual fun, and the sense that life can always become something new.",
+      "At heart, you seem emotionally connected to a world of movement, technology, reinvention, and glowing possibility. The Future Neon Age is not about cold machinery alone. It is about imagination meeting evolution, identity meeting change, and the feeling that reality can be redesigned into something new.",
     desc2:
-      "What makes this era feel right for you is its energy of becoming. There is something in you that loves movement, newness, personality, and the freedom to shift your image or direction without losing your spark. Your soul often wants life to feel dynamic, expressive, and just a little ahead of itself.",
+      "What makes this result powerful is your connection to the unknown. You are likely someone who feels pulled forward rather than backward, energized by what could be built, transformed, or reimagined. Your soul seems to crave motion, originality, and the sense that life should keep evolving.",
     meaning1:
-      "This result often means you carry a youthful, adaptive, and highly expressive energy. You may be someone who likes trying new things, exploring different sides of yourself, and finding joy in style, technology, trends, or emotional self-reinvention. Even when life feels heavy, part of your spirit still looks for the next exciting version of possibility.",
+      "This result often means your inner world is aligned with innovation, change, individuality, and the atmosphere of becoming. You may naturally be drawn to futuristic aesthetics, digital culture, unusual ideas, bold reinvention, or any environment that feels experimental and full of potential. You likely feel most alive when something is moving.",
     meaning2:
-      "Because of that, you may bring freshness into the lives of others. Your gift is not only fun. It is movement. You help people remember that identity can evolve, that expression can be playful, and that life does not have to stay stuck in one form forever.",
+      "Because of that, you may be someone who becomes restless when life feels repetitive, overly traditional, or emotionally stagnant. Your soul may not want to preserve the old simply because it is familiar. It wants to imagine what comes next and live close to the edge of possibility.",
     showUp1:
-      "In everyday life, this energy can show up as curiosity, style experimentation, playful confidence, emotional adaptability, and a strong instinct for remixing who you are as you grow. You may be someone who gets bored when life becomes too static and who naturally looks for ways to keep things feeling alive and interesting.",
+      "In everyday life, this energy can show up as originality, adaptability, fascination with change, personal reinvention, and a strong pull toward what feels ahead of its time. You may be the kind of person who gets excited by ideas, identities, or creative directions that other people do not fully understand yet.",
     showUp2:
-      "You may also be drawn to people and spaces that feel exciting, creative, and a little unconventional. The challenge is making sure reinvention stays connected to your real self. Change is part of your gift, but constant self-editing can become exhausting if you never let yourself simply exist.",
-    strengths: "Reinvention, expressiveness, playful confidence",
+      "You may also change the energy of a room simply by bringing a more forward-looking perspective. People may experience you as unusual, visionary, exciting, or impossible to pin down. The challenge is making sure your hunger for reinvention stays rooted enough to become sustainable rather than constant drift.",
+    strengths: "Vision, reinvention, possibility",
     strengthDetails:
-      "Your strengths include adaptability, creative self-expression, optimism, and the ability to refresh the emotional atmosphere around you. You often help others feel freer to explore, try, change, and evolve. That playful movement can be incredibly energizing, especially when the world feels heavy or stuck.",
-    watchOut: "Reinventing so often that grounding and depth get lost",
+      "Your strengths include innovation, intuition for change, imaginative thinking, and the ability to sense what wants to emerge next. You often remind people that life is not fixed and identity is not static. That makes your presence powerful in times of transition, creativity, and new beginnings.",
+    watchOut: "Constantly chasing the next version of life without enough grounding",
     watchOutDetails:
-      "What may feel difficult is staying rooted long enough to build something lasting. Sometimes a love of change, novelty, or self-expression can make stillness feel too exposed or boring. The goal is not to stop evolving. It is to let your evolution have continuity, meaning, and enough honesty to feel like home.",
+      "What may feel difficult is staying with one path long enough for it to deepen. Because your soul is so connected to movement and possibility, stability may sometimes feel boring or limiting even when it could help your vision take real form. The goal is not to become less visionary. It is to let your future have roots.",
     bestMatch:
-      "People and paths that welcome your creativity, curiosity, and ever-evolving sense of self",
+      "People and paths that welcome change, creativity, and bold evolution while still offering enough grounding to help your vision last",
     growth1:
-      "Growth for you often means realizing that identity does not need to be fixed, but it does need a center. You can explore, play, and reinvent while still staying connected to what is most true about you underneath the surface.",
+      "Growth for you often begins when you realize that reinvention is most powerful when it is integrated. You do not need to constantly abandon yourself to become new. Sometimes the future you are searching for grows best when you stay long enough to build it from where you already are.",
     growth2:
-      "The healthiest version of your energy is someone who still experiments, still shines, and still changes fearlessly — but who also knows that real freedom includes the ability to pause, root, and let something deepen.",
+      "The healthiest version of this era energy is someone who remains imaginative, unconventional, and open to transformation while also learning how to stay present through the slower work of embodiment. That is when your future stops being only a fantasy and starts becoming real.",
     reminder:
-      "You are allowed to evolve. Just make sure the version you become still feels like you.",
+      "Your soul was made to imagine what comes next. Just remember that even neon needs something solid to glow against.",
   },
 } as const;
 
@@ -204,7 +204,7 @@ type ResultKey = keyof typeof results;
 function ResultContent() {
   const sp = useSearchParams();
   const rawKey = sp.get("type") as ResultKey | null;
-  const key: ResultKey = rawKey && rawKey in results ? rawKey : "vintage_romance";
+  const key: ResultKey = rawKey && rawKey in results ? rawKey : "roaring_20s";
   const r = results[key];
 
   const [copied, setCopied] = useState(false);
@@ -260,7 +260,7 @@ function ResultContent() {
             textTransform: "uppercase",
           }}
         >
-          Soul Era Result
+          Era Personality Result
         </p>
 
         <h1
@@ -314,7 +314,7 @@ function ResultContent() {
               color: "#111827",
             }}
           >
-            What this era says about your soul
+            What this era means
           </h2>
 
           <p>{r.meaning1}</p>

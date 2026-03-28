@@ -4,12 +4,12 @@ import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 
 type ResultKey =
-  | "vintage_romance"
-  | "roaring_twenties"
-  | "golden_hollywood"
-  | "free_spirit_70s"
-  | "nostalgic_90s"
-  | "y2k_dream";
+  | "roaring_20s"
+  | "renaissance"
+  | "victorian"
+  | "retro_70s"
+  | "ancient_classical"
+  | "future_neon";
 
 type Question = {
   q: string;
@@ -21,254 +21,254 @@ type Question = {
 
 const questions: Question[] = [
   {
-    q: "What kind of atmosphere feels most like home to your soul?",
+    q: "What kind of world feels most emotionally magnetic to you?",
     opts: [
       {
-        t: "Soft candlelight, handwritten letters, and quiet longing",
-        s: { vintage_romance: 2, golden_hollywood: 1 },
+        t: "A glamorous world of jazz, gold, and late-night celebration",
+        s: { roaring_20s: 2, retro_70s: 1 },
       },
       {
-        t: "Champagne, jazz, glitter, and a room full of excitement",
-        s: { roaring_twenties: 2, y2k_dream: 1 },
+        t: "A world of art, philosophy, beauty, and human brilliance",
+        s: { renaissance: 2, ancient_classical: 1 },
       },
       {
-        t: "Warm film cameras, emotional music, and timeless glamour",
-        s: { golden_hollywood: 2, vintage_romance: 1 },
+        t: "A quiet, romantic world full of letters, manners, and longing",
+        s: { victorian: 2, renaissance: 1 },
       },
       {
-        t: "Freedom, color, self-expression, and playful rebellion",
-        s: { free_spirit_70s: 2, nostalgic_90s: 1 },
+        t: "A bold, expressive world full of rebellion, color, and freedom",
+        s: { retro_70s: 2, future_neon: 1 },
       },
     ],
   },
   {
-    q: "If you could step into one kind of daily life, what would you choose?",
+    q: "What kind of beauty feels most like home to your soul?",
     opts: [
       {
-        t: "Writing poetry by the window while the rain falls outside",
-        s: { vintage_romance: 2 },
+        t: "Sparkling parties, elegant fashion, and golden city nights",
+        s: { roaring_20s: 2, victorian: 1 },
       },
       {
-        t: "Dancing all night in a glamorous city full of possibility",
-        s: { roaring_twenties: 2, golden_hollywood: 1 },
+        t: "Paintings, marble, poetry, and timeless creativity",
+        s: { renaissance: 2, ancient_classical: 1 },
       },
       {
-        t: "Living beautifully, dressing elegantly, and feeling cinematic",
-        s: { golden_hollywood: 2, y2k_dream: 1 },
+        t: "Soft candlelight, rainy windows, and old-world romance",
+        s: { victorian: 2, roaring_20s: 1 },
       },
       {
-        t: "Road trips, mixtapes, and doing life your own way",
-        s: { nostalgic_90s: 2, free_spirit_70s: 1 },
+        t: "Neon lights, electric motion, and a future full of possibility",
+        s: { future_neon: 2, retro_70s: 1 },
       },
     ],
   },
   {
-    q: "What kind of beauty pulls you in the most?",
+    q: "If you could spend one perfect day anywhere, where would you go?",
     opts: [
       {
-        t: "Something delicate, romantic, and almost tragic",
-        s: { vintage_romance: 2 },
+        t: "A rooftop party in a dazzling city full of music and champagne",
+        s: { roaring_20s: 2 },
       },
       {
-        t: "Something bold, flashy, and impossible to ignore",
-        s: { roaring_twenties: 2, y2k_dream: 1 },
+        t: "A sunlit studio filled with sketches, books, and ideas",
+        s: { renaissance: 2, victorian: 1 },
       },
       {
-        t: "Something graceful, polished, and effortlessly iconic",
-        s: { golden_hollywood: 2 },
+        t: "A grand old house with gardens, tea, and handwritten notes",
+        s: { victorian: 2 },
       },
       {
-        t: "Something raw, colorful, carefree, and full of personality",
-        s: { free_spirit_70s: 2, nostalgic_90s: 1 },
+        t: "A futuristic city glowing with technology and endless movement",
+        s: { future_neon: 2, retro_70s: 1 },
       },
     ],
   },
   {
-    q: "When you imagine your ideal social life, what feels right?",
+    q: "What kind of energy do people often feel from you?",
     opts: [
       {
-        t: "A few deep bonds and soulful conversations",
-        s: { vintage_romance: 2, nostalgic_90s: 1 },
+        t: "Charming, lively, and a little dazzling",
+        s: { roaring_20s: 2, retro_70s: 1 },
       },
       {
-        t: "Big parties, magnetic energy, and unforgettable nights",
-        s: { roaring_twenties: 2, y2k_dream: 1 },
+        t: "Thoughtful, artistic, and quietly profound",
+        s: { renaissance: 2, ancient_classical: 1 },
       },
       {
-        t: "Elegant gatherings where everyone feels captivating",
-        s: { golden_hollywood: 2, roaring_twenties: 1 },
+        t: "Gentle, deep, and emotionally romantic",
+        s: { victorian: 2, renaissance: 1 },
       },
       {
-        t: "Easygoing people, honesty, and freedom to be yourself",
-        s: { free_spirit_70s: 2, nostalgic_90s: 1 },
+        t: "Independent, unusual, and slightly ahead of your time",
+        s: { future_neon: 2, retro_70s: 1 },
       },
     ],
   },
   {
-    q: "Which kind of fashion feels most like your true energy?",
+    q: "Which kind of love story feels most meaningful to you?",
     opts: [
       {
-        t: "Lace, flowing fabrics, antique details, and timeless romance",
-        s: { vintage_romance: 2 },
+        t: "A dramatic romance wrapped in glamour and unforgettable nights",
+        s: { roaring_20s: 2, victorian: 1 },
       },
       {
-        t: "Sequins, feathers, sparkle, and dramatic confidence",
-        s: { roaring_twenties: 2 },
+        t: "A soulful connection built on beauty, intellect, and inspiration",
+        s: { renaissance: 2, ancient_classical: 1 },
       },
       {
-        t: "Classic silhouettes, polished elegance, and old-school glamour",
-        s: { golden_hollywood: 2 },
+        t: "A slow-burn romance filled with longing, devotion, and letters",
+        s: { victorian: 2 },
       },
       {
-        t: "Denim, playful layers, funky colors, or nostalgic street style",
-        s: { nostalgic_90s: 2, free_spirit_70s: 1 },
+        t: "A wild, unconventional connection that feels electric and free",
+        s: { retro_70s: 2, future_neon: 1 },
       },
     ],
   },
   {
-    q: "What kind of music feels closest to your inner world?",
+    q: "What kind of personal style feels most true to you?",
     opts: [
       {
-        t: "Tender songs that feel like secret love letters",
-        s: { vintage_romance: 2 },
+        t: "Elegant, luxurious, and a little dramatic",
+        s: { roaring_20s: 2, victorian: 1 },
       },
       {
-        t: "Jazz, swing, or anything that makes life feel sparkling",
-        s: { roaring_twenties: 2 },
+        t: "Classic, refined, and artistically expressive",
+        s: { renaissance: 2, ancient_classical: 1 },
       },
       {
-        t: "Orchestral, cinematic, or emotionally grand songs",
-        s: { golden_hollywood: 2, vintage_romance: 1 },
+        t: "Soft, romantic, and timelessly graceful",
+        s: { victorian: 2 },
       },
       {
-        t: "Soulful grooves, indie nostalgia, or playful pop with attitude",
-        s: { free_spirit_70s: 2, nostalgic_90s: 1, y2k_dream: 1 },
+        t: "Bold, experimental, and impossible to box in",
+        s: { retro_70s: 2, future_neon: 1 },
       },
     ],
   },
   {
-    q: "What kind of energy do you naturally bring into a room?",
+    q: "What do you think your soul secretly craves most?",
     opts: [
       {
-        t: "Soft mystery and emotional depth",
-        s: { vintage_romance: 2 },
+        t: "Excitement, sparkle, and a life that feels unforgettable",
+        s: { roaring_20s: 2, future_neon: 1 },
       },
       {
-        t: "Excitement, sparkle, and a little danger",
-        s: { roaring_twenties: 2, y2k_dream: 1 },
+        t: "Meaning, wisdom, and beauty that lasts across time",
+        s: { renaissance: 2, ancient_classical: 1 },
       },
       {
-        t: "Grace, presence, and quiet star quality",
-        s: { golden_hollywood: 2 },
+        t: "Depth, tenderness, and emotional sincerity",
+        s: { victorian: 2, renaissance: 1 },
       },
       {
-        t: "Warm individuality, ease, and a free spirit",
-        s: { free_spirit_70s: 2, nostalgic_90s: 1 },
+        t: "Freedom, movement, and the thrill of something new",
+        s: { retro_70s: 2, future_neon: 1 },
       },
     ],
   },
   {
-    q: "If your soul had a preferred pace of life, what would it be?",
+    q: "Which setting would inspire you the most creatively?",
     opts: [
       {
-        t: "Slow, meaningful, and emotionally rich",
-        s: { vintage_romance: 2 },
+        t: "A lively jazz club where everyone feels larger than life",
+        s: { roaring_20s: 2 },
       },
       {
-        t: "Fast, thrilling, and full of social energy",
-        s: { roaring_twenties: 2, y2k_dream: 1 },
+        t: "A historic city filled with sculpture, ideas, and masterpieces",
+        s: { renaissance: 2, ancient_classical: 1 },
       },
       {
-        t: "Intentional, elegant, and beautifully composed",
-        s: { golden_hollywood: 2 },
+        t: "A quiet room with old books, velvet curtains, and rainy skies",
+        s: { victorian: 2 },
       },
       {
-        t: "Loose, spontaneous, and open to adventure",
-        s: { free_spirit_70s: 2, nostalgic_90s: 1 },
+        t: "A glowing cyber city full of screens, motion, and new worlds",
+        s: { future_neon: 2, retro_70s: 1 },
       },
     ],
   },
   {
-    q: "Which kind of place would your soul most love to wander through?",
+    q: "What kind of strength feels most like yours?",
     opts: [
       {
-        t: "An old library, a hidden garden, or a rainy European street",
-        s: { vintage_romance: 2 },
+        t: "Charisma, confidence, and social brilliance",
+        s: { roaring_20s: 2 },
       },
       {
-        t: "A glittering ballroom or a jazz club alive after midnight",
-        s: { roaring_twenties: 2 },
+        t: "Wisdom, creativity, and depth of thought",
+        s: { renaissance: 2, ancient_classical: 1 },
       },
       {
-        t: "A classic movie set, vintage hotel, or glamorous city rooftop",
-        s: { golden_hollywood: 2, y2k_dream: 1 },
+        t: "Loyalty, emotional endurance, and quiet devotion",
+        s: { victorian: 2 },
       },
       {
-        t: "A record shop, a festival field, or a nostalgic downtown block",
-        s: { nostalgic_90s: 2, free_spirit_70s: 1 },
+        t: "Originality, courage, and fearless self-expression",
+        s: { retro_70s: 2, future_neon: 1 },
       },
     ],
   },
   {
-    q: "What kind of love story feels most like yours?",
+    q: "What kind of atmosphere are you most drawn to?",
     opts: [
       {
-        t: "Tender, poetic, and a little heartbreaking",
-        s: { vintage_romance: 2 },
+        t: "Golden lights, laughter, and glamorous movement",
+        s: { roaring_20s: 2 },
       },
       {
-        t: "Passionate, dramatic, and impossible to forget",
-        s: { roaring_twenties: 2, golden_hollywood: 1 },
+        t: "Warm sunlight, marble halls, and thoughtful conversation",
+        s: { renaissance: 2, ancient_classical: 1 },
       },
       {
-        t: "Beautiful, devoted, and worthy of the big screen",
-        s: { golden_hollywood: 2 },
+        t: "Foggy mornings, old gardens, and beautiful melancholy",
+        s: { victorian: 2 },
       },
       {
-        t: "Playful, real, and built on freedom and chemistry",
-        s: { free_spirit_70s: 2, nostalgic_90s: 1, y2k_dream: 1 },
+        t: "Neon nights, digital dreams, and restless energy",
+        s: { future_neon: 2, retro_70s: 1 },
       },
     ],
   },
   {
-    q: "Which sentence feels most like your soul?",
+    q: "When you imagine your most authentic self, what do you see?",
     opts: [
       {
-        t: "I was made for beauty, longing, and meaning.",
-        s: { vintage_romance: 2 },
+        t: "Someone radiant, magnetic, and impossible to forget",
+        s: { roaring_20s: 2 },
       },
       {
-        t: "Life should feel alive, dazzling, and unforgettable.",
-        s: { roaring_twenties: 2, y2k_dream: 1 },
+        t: "Someone wise, creative, and deeply connected to meaning",
+        s: { renaissance: 2, ancient_classical: 1 },
       },
       {
-        t: "I want life to feel timeless, elegant, and cinematic.",
-        s: { golden_hollywood: 2 },
+        t: "Someone tender, graceful, and full of emotional depth",
+        s: { victorian: 2 },
       },
       {
-        t: "I want to live freely and feel fully like myself.",
-        s: { free_spirit_70s: 2, nostalgic_90s: 1 },
+        t: "Someone visionary, bold, and not confined by the present",
+        s: { future_neon: 2, retro_70s: 1 },
       },
     ],
   },
   {
-    q: "Which era do you think your soul secretly belongs to?",
+    q: "Which era do you think your soul belongs to most?",
     opts: [
       {
-        t: "A romantic old world full of feeling and poetry",
-        s: { vintage_romance: 2 },
+        t: "The Roaring Twenties",
+        s: { roaring_20s: 2 },
       },
       {
-        t: "The roaring age of glamour, nightlife, and sparkle",
-        s: { roaring_twenties: 2 },
+        t: "The Renaissance",
+        s: { renaissance: 2, ancient_classical: 1 },
       },
       {
-        t: "The golden age of stars, drama, and elegance",
-        s: { golden_hollywood: 2 },
+        t: "The Victorian Era",
+        s: { victorian: 2 },
       },
       {
-        t: "A freer, more colorful, more expressive time",
-        s: { free_spirit_70s: 2, nostalgic_90s: 1, y2k_dream: 1 },
+        t: "A bold futuristic age",
+        s: { future_neon: 2, retro_70s: 1 },
       },
     ],
   },
@@ -276,15 +276,15 @@ const questions: Question[] = [
 
 function pickTop(scores: Record<ResultKey, number>): ResultKey {
   const priority: ResultKey[] = [
-    "vintage_romance",
-    "roaring_twenties",
-    "golden_hollywood",
-    "free_spirit_70s",
-    "nostalgic_90s",
-    "y2k_dream",
+    "roaring_20s",
+    "renaissance",
+    "victorian",
+    "retro_70s",
+    "ancient_classical",
+    "future_neon",
   ];
 
-  let best: ResultKey = "vintage_romance";
+  let best: ResultKey = "roaring_20s";
   let bestVal = -999;
 
   priority.forEach((k) => {
@@ -301,12 +301,12 @@ export default function EraMatchesYourSoulQuiz() {
   const router = useRouter();
   const [current, setCurrent] = useState(0);
   const [scores, setScores] = useState<Record<ResultKey, number>>({
-    vintage_romance: 0,
-    roaring_twenties: 0,
-    golden_hollywood: 0,
-    free_spirit_70s: 0,
-    nostalgic_90s: 0,
-    y2k_dream: 0,
+    roaring_20s: 0,
+    renaissance: 0,
+    victorian: 0,
+    retro_70s: 0,
+    ancient_classical: 0,
+    future_neon: 0,
   });
 
   const progress = useMemo(() => {
@@ -355,7 +355,7 @@ export default function EraMatchesYourSoulQuiz() {
             textTransform: "uppercase",
           }}
         >
-          Soul Era Personality Test
+          Era Personality Test
         </p>
 
         <h1
@@ -379,8 +379,9 @@ export default function EraMatchesYourSoulQuiz() {
           }}
         >
           Discover the time period your soul feels most emotionally connected to.
-          This personality quiz explores whether your energy belongs to a world
-          of romance, glamour, rebellion, nostalgia, or dreamy transformation.
+          This personality quiz explores whether your inner self belongs to the
+          Roaring Twenties, the Renaissance, the Victorian Era, the Retro 70s,
+          the Ancient Classical world, or a bold futuristic age.
         </p>
 
         <div
@@ -518,11 +519,14 @@ export default function EraMatchesYourSoulQuiz() {
               marginBottom: "14px",
             }}
           >
-            This soul era quiz is designed to reveal which time period feels
-            most naturally aligned with your inner emotional world. Sometimes
-            people feel strangely connected to a certain era, not because they
-            literally belong there, but because its beauty, rhythm, energy, or
-            emotional tone mirrors something deep inside them.
+            This era personality quiz is designed to help you discover which
+            historical or symbolic time period feels most aligned with your inner
+            world. Sometimes people feel emotionally connected to a certain era
+            not because they literally belong there, but because its beauty,
+            energy, values, and atmosphere reflect something deep inside them.
+            The way you imagine love, freedom, creativity, elegance, meaning, or
+            transformation can often reveal the kind of age your soul feels most
+            at home in.
           </p>
 
           <p
@@ -532,11 +536,14 @@ export default function EraMatchesYourSoulQuiz() {
               marginBottom: "14px",
             }}
           >
-            Some souls are drawn toward romance, softness, and old-world
-            longing. Others are pulled toward glamour, rebellion, cinematic
-            elegance, nostalgic simplicity, or playful reinvention. This test
-            explores those emotional patterns through reflective questions about
-            beauty, pace, love, atmosphere, and identity.
+            Some souls are drawn to the glamour and sparkle of the Roaring
+            Twenties. Others feel connected to the artistic brilliance of the
+            Renaissance, the emotional depth of the Victorian era, the bold
+            freedom of the Retro 70s, the timeless wisdom of the Ancient
+            Classical world, or the visionary energy of a futuristic neon age.
+            None of these eras are better than the others. They simply reflect
+            different emotional atmospheres and different ways of moving through
+            life.
           </p>
 
           <p
@@ -546,10 +553,149 @@ export default function EraMatchesYourSoulQuiz() {
               marginBottom: "18px",
             }}
           >
-            Your result is meant to feel personal, fun, and emotionally
-            resonant. It is less about historical accuracy and more about inner
-            symbolism. In other words, this is a personality mirror disguised as
-            an era test.
+            By answering a series of reflective questions, you can discover
+            which era matches your soul most naturally. The result is meant to
+            feel atmospheric, emotionally resonant, and easy to share. It is a
+            fun personality result, but it can also act as a creative mirror for
+            understanding the beauty, rhythm, and emotional tone that feel most
+            true to you.
+          </p>
+
+          <h3
+            style={{
+              fontSize: "21px",
+              fontWeight: 700,
+              marginBottom: "10px",
+              color: "#111827",
+            }}
+          >
+            Why eras matter
+          </h3>
+
+          <p
+            style={{
+              lineHeight: 1.9,
+              fontSize: "16px",
+              marginBottom: "14px",
+            }}
+          >
+            Eras matter because they carry emotional symbolism. A time period is
+            not only about dates, clothing, or architecture. It also represents
+            a mood, a worldview, and a way of feeling life. That is why people
+            are often drawn to certain historical aesthetics or atmospheres even
+            without fully understanding why. Sometimes an era simply feels like
+            home because it expresses something your inner self already values.
+          </p>
+
+          <p
+            style={{
+              lineHeight: 1.9,
+              fontSize: "16px",
+              marginBottom: "18px",
+            }}
+          >
+            Understanding what kind of era your soul connects to can help you
+            understand what inspires you, what kind of beauty you seek, what
+            kind of emotional world feels natural, and what kind of life energy
+            you are trying to create. You may also notice that your result
+            reveals something about how you approach love, creativity,
+            self-expression, depth, freedom, and meaning.
+          </p>
+
+          <h3
+            style={{
+              fontSize: "21px",
+              fontWeight: 700,
+              marginBottom: "10px",
+              color: "#111827",
+            }}
+          >
+            How to use your result
+          </h3>
+
+          <p
+            style={{
+              lineHeight: 1.9,
+              fontSize: "16px",
+              marginBottom: "14px",
+            }}
+          >
+            Once you receive your result, try to use it as a form of reflection
+            rather than a strict identity. Most people contain pieces of more
+            than one era. You may resonate with several atmospheres, but one
+            usually feels especially central. That result often points to the
+            emotional tone your soul naturally returns to when you imagine beauty
+            and belonging.
+          </p>
+
+          <p
+            style={{
+              lineHeight: 1.9,
+              fontSize: "16px",
+              marginBottom: "14px",
+            }}
+          >
+            A helpful next step is to compare your result with your actual life.
+            What kind of places, art, fashion, relationships, and stories pull
+            you in most strongly? What kind of atmosphere makes you feel alive?
+            What kind of values do you keep returning to even when life changes?
+            The more honestly you reflect, the more meaningful your result
+            becomes.
+          </p>
+
+          <p
+            style={{
+              lineHeight: 1.9,
+              fontSize: "16px",
+              marginBottom: "18px",
+            }}
+          >
+            Your era result can also help you understand both your strengths and
+            your blind spots. A soul drawn to glamour may need grounding. A soul
+            drawn to romance may need boundaries. A soul drawn to wisdom may need
+            spontaneity. A soul drawn to freedom may need direction. Growth
+            often begins when you learn how to honor the atmosphere that feels
+            true to you without getting lost in its extremes.
+          </p>
+
+          <h3
+            style={{
+              fontSize: "21px",
+              fontWeight: 700,
+              marginBottom: "10px",
+              color: "#111827",
+            }}
+          >
+            What this test explores
+          </h3>
+
+          <p
+            style={{
+              lineHeight: 1.9,
+              fontSize: "16px",
+              marginBottom: "14px",
+            }}
+          >
+            This test explores several dimensions of your emotional and symbolic
+            personality. It looks at what kind of beauty draws you in, what kind
+            of lifestyle feels inspiring, what type of love story resonates with
+            you, how your energy feels to others, and what kind of atmosphere
+            your soul seems to crave most deeply.
+          </p>
+
+          <p
+            style={{
+              lineHeight: 1.9,
+              fontSize: "16px",
+              marginBottom: "18px",
+            }}
+          >
+            Rather than focusing only on surface-level preferences, this quiz
+            tries to reveal the era-like emotional world that feels most
+            natural to your identity. That is why the questions are designed to
+            feel reflective, aesthetic, and symbolic. The goal is not only to
+            tell you what period you like, but to reveal what kind of emotional
+            world your soul keeps recognizing as home.
           </p>
 
           <h3
@@ -569,16 +715,30 @@ export default function EraMatchesYourSoulQuiz() {
               lineHeight: 1.9,
               fontSize: "16px",
               marginTop: 0,
+              marginBottom: "18px",
+            }}
+          >
+            <li>The Roaring Twenties</li>
+            <li>The Renaissance</li>
+            <li>The Victorian Era</li>
+            <li>The Retro 70s</li>
+            <li>The Ancient Classical World</li>
+            <li>The Future Neon Age</li>
+          </ul>
+
+          <p
+            style={{
+              lineHeight: 1.9,
+              fontSize: "16px",
               marginBottom: 0,
             }}
           >
-            <li>Vintage Romance</li>
-            <li>Roaring Twenties</li>
-            <li>Golden Hollywood</li>
-            <li>Free Spirit 70s</li>
-            <li>Nostalgic 90s</li>
-            <li>Y2K Dream</li>
-          </ul>
+            Each result comes with a deeper explanation of your emotional style,
+            your natural strengths, your symbolic atmosphere, and the kind of
+            life energy your soul seems to be drawn toward. In that sense, this
+            is not only a fun era quiz. It is also a creative reflection on the
+            world your heart has been searching for all along.
+          </p>
         </section>
       </div>
     </main>
