@@ -10,7 +10,7 @@ export default function Home() {
       title: "What Vibe Do You Give Off Online?",
       desc: "Discover the online energy people feel from you instantly 💻",
       href: "/quiz/online-vibe",
-      badge: "New",
+      badge: "Hot",
     },
     {
       title: "What Kind of Introvert Are You?",
