@@ -4,6 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.cocodoco.fun";
 
   const quizzes = [
+    "archetype-at-heart",
     "attachment-style",
     "attractive",
     "aura",
@@ -11,22 +12,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "comfort-type",
     "emotional-age",
     "energy",
+    "era-matches-your-soul",
     "everyday-vibe",
+    "first-impression",
     "friend-type",
     "hidden-personality",
     "hidden-talent",
     "inner-animal",
+    "introvert-type",
+    "kind-of-pretty",
     "life-energy",
     "love-language",
     "love-style",
+    "main-character",
     "mind-type",
+    "online-vibe",
+    "party-energy",
     "person-to-others",
     "personality-color",
     "romantic-energy",
+    "secret-green-flag",
+    "shadow-side",
     "social-personality",
+    "soft-skill-superpower",
     "soul-aesthetic",
     "soul-vibe",
     "true-strength",
+    "what-kind-of-muse-are-you",
   ];
 
   const quizPages = quizzes.map((slug) => ({
@@ -44,15 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   return [
-    // 홈
     {
       url: `${baseUrl}/`,
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 1,
     },
-
-    // 고정 페이지
     {
       url: `${baseUrl}/privacy`,
       lastModified: new Date(),
@@ -71,11 +80,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.3,
     },
-
-    // 퀴즈 페이지
     ...quizPages,
-
-    // 결과 페이지
     ...resultPages,
   ];
 }
