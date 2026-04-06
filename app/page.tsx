@@ -1,22 +1,28 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Aesthetic Room Matches Your Mind?",
+      desc: "Discover the room aesthetic that reflects your inner mental world most naturally 🛋️",
+      href: "/quiz/aesthetic-room-matches-your-mind",
+      badge: "New",
+    },
+    {
       title: "What Kind of Confidence Do You Have?",
       desc: "Discover the way your confidence naturally shows up in life ✨",
       href: "/quiz/confidence-type",
-      badge: "New",
+      badge: "Hot",
     },
     {
       title: "Which Green Flag Do You Need in Love?",
       desc: "Discover the healthy kind of love your heart needs most right now 💚",
       href: "/quiz/green-flag-you-need-in-love",
-      badge: "Hot",
+      badge: "Popular",
     },
     {
       title: "What First Impression Do You Give?",
       desc: "Discover the vibe people feel from you the moment they meet you ✨",
       href: "/quiz/first-impression",
-      badge: "Popular",
+      badge: "New",
     },
     {
       title: "What Kind of Muse Are You?",
