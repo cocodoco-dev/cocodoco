@@ -1,58 +1,64 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Kind of Comfort Character Are You?",
+      desc: "Discover the kind of comfort your presence naturally brings into people’s lives ☁️",
+      href: "/quiz/comfort-character",
+      badge: "New",
+    },
+    {
       title: "Which “Girl Type” Energy Are You?",
       desc: "Discover the feminine energy people feel from you most naturally 🎀",
       href: "/quiz/girl-type-energy",
-      badge: "New",
+      badge: "Hot",
     },
     {
       title: "What Aesthetic Room Matches Your Mind?",
       desc: "Discover the room aesthetic that reflects your inner mental world most naturally 🛋️",
       href: "/quiz/aesthetic-room-matches-your-mind",
-      badge: "Hot",
+      badge: "Popular",
     },
     {
       title: "What Kind of Confidence Do You Have?",
       desc: "Discover the way your confidence naturally shows up in life ✨",
       href: "/quiz/confidence-type",
-      badge: "Popular",
+      badge: "New",
     },
     {
       title: "Which Green Flag Do You Need in Love?",
       desc: "Discover the healthy kind of love your heart needs most right now 💚",
       href: "/quiz/green-flag-you-need-in-love",
-      badge: "New",
+      badge: "Hot",
     },
     {
       title: "What First Impression Do You Give?",
       desc: "Discover the vibe people feel from you the moment they meet you ✨",
       href: "/quiz/first-impression",
-      badge: "Hot",
+      badge: "Popular",
     },
     {
       title: "What Kind of Muse Are You?",
       desc: "Discover the kind of inspiration your presence creates ✨",
       href: "/quiz/what-kind-of-muse-are-you",
-      badge: "Popular",
+      badge: "New",
     },
     {
       title: "Which Era Matches Your Soul?",
       desc: "Discover the time period your soul feels most connected to ⏳",
       href: "/quiz/era-matches-your-soul",
-      badge: "New",
+      badge: "Hot",
     },
     {
       title: "What Vibe Do You Give Off Online?",
       desc: "Discover the online energy people feel from you instantly 💻",
       href: "/quiz/online-vibe",
-      badge: "Hot",
+      badge: "Popular",
     },
     {
       title: "What Kind of Introvert Are You?",
       desc: "Discover the quiet energy that feels most like your true self 🌙",
       href: "/quiz/introvert-type",
-      badge: "Popular",
+      badge: "New",
     },
     {
       title: "Which Archetype Are You at Heart?",
