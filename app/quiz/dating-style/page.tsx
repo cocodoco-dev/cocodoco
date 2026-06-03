@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 type ResultKey =
   | "romantic_dreamer"
@@ -11,7 +11,15 @@ type ResultKey =
   | "passionate_lover"
   | "independent_heart";
 
-const questions = [
+type Question = {
+  q: string;
+  opts: {
+    t: string;
+    s: Partial<Record<ResultKey, number>>;
+  }[];
+};
+
+const questions: Question[] = [
   {
     q: "When you first meet someone you like, what do you do?",
     opts: [
@@ -105,10 +113,19 @@ const questions = [
 ];
 
 function pickTop(scores: Record<ResultKey, number>): ResultKey {
+  const priority: ResultKey[] = [
+    "romantic_dreamer",
+    "slow_burn",
+    "free_spirit",
+    "loyal_partner",
+    "passionate_lover",
+    "independent_heart",
+  ];
+
   let best: ResultKey = "romantic_dreamer";
   let bestVal = -999;
 
-  (Object.keys(scores) as ResultKey[]).forEach((k) => {
+  priority.forEach((k) => {
     if (scores[k] > bestVal) {
       bestVal = scores[k];
       best = k;
@@ -129,6 +146,10 @@ export default function DatingStyleQuiz() {
     passionate_lover: 0,
     independent_heart: 0,
   });
+
+  const progress = useMemo(() => {
+    return ((current + 1) / questions.length) * 100;
+  }, [current]);
 
   function choose(partial: Partial<Record<ResultKey, number>>) {
     const nextScores = { ...scores };
@@ -153,18 +174,33 @@ export default function DatingStyleQuiz() {
     <main
       style={{
         minHeight: "100vh",
-        background: "#fdf2f8",
-        fontFamily: "sans-serif",
-        padding: "36px 18px",
+        background:
+          "linear-gradient(180deg, #fdf2f8 0%, #fff7ed 45%, #fefce8 100%)",
+        fontFamily: "Arial, sans-serif",
+        padding: "36px 18px 60px",
         display: "flex",
         justifyContent: "center",
       }}
     >
-      <div style={{ width: "min(720px, 100%)", textAlign: "center" }}>
+      <div style={{ width: "min(760px, 100%)", textAlign: "center" }}>
+        <p
+          style={{
+            margin: "0 0 10px",
+            fontSize: "13px",
+            fontWeight: 700,
+            letterSpacing: "0.08em",
+            color: "#9d174d",
+            textTransform: "uppercase",
+          }}
+        >
+          Dating Style Personality Test
+        </p>
+
         <h1
           style={{
-            fontSize: "32px",
-            marginBottom: "10px",
+            fontSize: "34px",
+            lineHeight: 1.2,
+            marginBottom: "12px",
             color: "#111827",
           }}
         >
@@ -173,29 +209,67 @@ export default function DatingStyleQuiz() {
 
         <p
           style={{
-            marginBottom: "20px",
-            color: "#374151",
-            fontSize: "17px",
-            fontWeight: 600,
+            margin: "0 auto 18px",
+            color: "#4b5563",
+            fontSize: "16px",
+            lineHeight: 1.8,
+            maxWidth: "680px",
           }}
         >
-          Question {current + 1} / {questions.length}
+          Discover how you naturally love, connect, and show up in romantic
+          relationships. This personality quiz explores whether your dating
+          energy feels most like a romantic dreamer, a slow burn, a free spirit,
+          a loyal partner, a passionate lover, or an independent heart.
         </p>
 
         <div
           style={{
-            background: "rgba(255,255,255,0.75)",
+            width: "100%",
+            height: "12px",
+            borderRadius: "999px",
+            background: "rgba(255,255,255,0.8)",
+            border: "1px solid #fbcfe8",
+            overflow: "hidden",
+            marginBottom: "12px",
+          }}
+        >
+          <div
+            style={{
+              width: `${progress}%`,
+              height: "100%",
+              background: "linear-gradient(90deg, #fb7185 0%, #f59e0b 100%)",
+              borderRadius: "999px",
+              transition: "width 0.25s ease",
+            }}
+          />
+        </div>
+
+        <p
+          style={{
+            marginBottom: "20px",
+            color: "#374151",
+            fontSize: "16px",
+            fontWeight: 700,
+          }}
+        >
+          Question {current + 1} of {questions.length}
+        </p>
+
+        <div
+          style={{
+            background: "rgba(255,255,255,0.78)",
             border: "1px solid #f2a7b8",
-            borderRadius: "16px",
-            padding: "22px",
+            borderRadius: "18px",
+            padding: "24px",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
           }}
         >
           <h2
             style={{
-              marginBottom: "18px",
+              marginBottom: "20px",
               color: "#374151",
-              fontSize: "22px",
-              lineHeight: 1.4,
+              fontSize: "24px",
+              lineHeight: 1.45,
               fontWeight: 700,
             }}
           >
@@ -215,14 +289,17 @@ export default function DatingStyleQuiz() {
                 key={idx}
                 onClick={() => choose(opt.s)}
                 style={{
-                  padding: "12px 18px",
-                  borderRadius: "12px",
+                  padding: "14px 18px",
+                  borderRadius: "14px",
                   border: "none",
-                  background: "#ff8fab",
+                  background: "linear-gradient(135deg, #ff8fab 0%, #fb7185 100%)",
                   color: "white",
                   cursor: "pointer",
                   fontSize: "16px",
-                  width: "min(520px, 100%)",
+                  lineHeight: 1.5,
+                  width: "min(560px, 100%)",
+                  fontWeight: 600,
+                  boxShadow: "0 8px 18px rgba(251, 113, 133, 0.18)",
                 }}
               >
                 {opt.t}
@@ -238,7 +315,7 @@ export default function DatingStyleQuiz() {
             height: "110px",
             borderRadius: "14px",
             border: "1px dashed #f2a7b8",
-            background: "rgba(255, 255, 255, 0.6)",
+            background: "rgba(255, 255, 255, 0.65)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -248,6 +325,192 @@ export default function DatingStyleQuiz() {
         >
           Ad Space (Google AdSense will go here)
         </div>
+
+        <section
+          style={{
+            marginTop: "34px",
+            textAlign: "left",
+            background: "rgba(255,255,255,0.76)",
+            border: "1px solid #f2d2db",
+            borderRadius: "18px",
+            padding: "26px",
+            color: "#374151",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.03)",
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "25px",
+              fontWeight: 700,
+              marginTop: 0,
+              marginBottom: "14px",
+              color: "#111827",
+            }}
+          >
+            About this quiz
+          </h2>
+
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "14px" }}>
+            This dating style quiz is designed to reveal how your heart
+            naturally moves in romantic relationships. Some people love with
+            grand gestures and deep feeling. Others build slowly, protect their
+            independence, stay light and free, give steadily and loyally, burn
+            with intense passion, or love quietly on their own terms. Even when
+            people are not fully conscious of it, they often carry one
+            consistent emotional style in how they date, connect, and fall for
+            others.
+          </p>
+
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "14px" }}>
+            Dating style is not just about whether you text first or how quickly
+            you commit. It is about the emotional atmosphere you create in
+            romantic relationships, the way you show care, how you handle
+            closeness and distance, and what love feels like when it flows
+            through you naturally. Understanding that style can explain a lot
+            about your past relationships, your current patterns, and what you
+            are really looking for.
+          </p>
+
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "18px" }}>
+            By answering a series of reflective questions about how you
+            naturally respond in romantic situations, you can discover the
+            dating style that fits you most closely. The result is designed to
+            feel accurate, emotionally honest, and easy to share — whether as
+            something fun or as a real moment of self-reflection.
+          </p>
+
+          <h3
+            style={{
+              fontSize: "21px",
+              fontWeight: 700,
+              marginBottom: "10px",
+              color: "#111827",
+            }}
+          >
+            Why dating style matters
+          </h3>
+
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "14px" }}>
+            Your dating style shapes everything about how love feels for you
+            and the people you connect with. It influences how quickly you open
+            up, what kind of attention feels good, how you handle uncertainty,
+            what makes you feel secure, and what eventually makes you feel
+            drained or fulfilled. Two people can deeply care for each other and
+            still feel mismatched because their styles create friction rather
+            than flow.
+          </p>
+
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "18px" }}>
+            Knowing your style helps you stop blaming yourself for patterns
+            that are not flaws but simply the shape your love naturally takes.
+            It can also help you become more intentional — choosing people who
+            complement your style instead of conflict with it, and adjusting
+            the parts of your style that may be creating unnecessary distance
+            or pain.
+          </p>
+
+          <h3
+            style={{
+              fontSize: "21px",
+              fontWeight: 700,
+              marginBottom: "10px",
+              color: "#111827",
+            }}
+          >
+            How to use your result
+          </h3>
+
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "14px" }}>
+            Once you get your result, try reading it as a mirror rather than a
+            label. Most people carry more than one dating style, but one usually
+            feels most natural — especially under emotional pressure or in
+            relationships that matter deeply. That core style often reveals
+            itself in the way you pursue, the way you pull back, and the way
+            you stay or leave.
+          </p>
+
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "14px" }}>
+            A useful next step is to compare your result with your relationship
+            history. Look for the patterns. When did you feel most like
+            yourself in love? When did things go wrong in a way that felt
+            familiar? What did past partners appreciate most about you, and
+            what did they find frustrating? Often your dating style is right
+            there, visible in retrospect.
+          </p>
+
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "18px" }}>
+            Your result also includes a growth path — not because your style
+            needs to be fixed, but because every style has a shadow side that
+            tends to appear in longer relationships. Awareness of that shadow
+            gives you a real advantage in love.
+          </p>
+
+          <h3
+            style={{
+              fontSize: "21px",
+              fontWeight: 700,
+              marginBottom: "10px",
+              color: "#111827",
+            }}
+          >
+            What this test explores
+          </h3>
+
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "14px" }}>
+            This test explores several emotional dimensions of romantic
+            behavior. It looks at how you initiate, how you respond to
+            closeness, what you value in a partner, how you handle conflict,
+            what your fears in dating look like, and what kind of relationship
+            feels most like home. It also examines whether your romantic energy
+            is warmer, cooler, deeper, lighter, more intense, or more
+            self-contained.
+          </p>
+
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "18px" }}>
+            Rather than sorting people into rigid personality boxes, this quiz
+            tries to describe how love moves through you. That makes it less
+            about what type you are and more about how you love — which is
+            usually a more useful and accurate lens for understanding yourself
+            in relationships.
+          </p>
+
+          <h3
+            style={{
+              fontSize: "21px",
+              fontWeight: 700,
+              marginBottom: "10px",
+              color: "#111827",
+            }}
+          >
+            Possible results
+          </h3>
+
+          <ul
+            style={{
+              paddingLeft: "22px",
+              lineHeight: 1.9,
+              fontSize: "16px",
+              marginTop: 0,
+              marginBottom: "18px",
+            }}
+          >
+            <li>The Romantic Dreamer</li>
+            <li>The Slow Burn</li>
+            <li>The Free Spirit</li>
+            <li>The Loyal Partner</li>
+            <li>The Passionate Lover</li>
+            <li>The Independent Heart</li>
+          </ul>
+
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: 0 }}>
+            Each result comes with a deeper explanation of your emotional style
+            in love, your romantic strengths, the challenges your style tends
+            to create, and a growth path that can help your love life become
+            more fulfilling and self-aware. In that sense, this is not only a
+            fun dating quiz. It is also a small reflection on the way your
+            heart moves toward other people.
+          </p>
+        </section>
       </div>
     </main>
   );
