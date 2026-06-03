@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What's Your Dating Style?",
+      desc: "Discover how you naturally love, connect, and show up in relationships 💘",
+      href: "/quiz/dating-style",
+      badge: "New",
+    },
+    {
       title: "What Kind of Comfort Character Are You?",
       desc: "Discover the kind of comfort your presence naturally brings into people’s lives ☁️",
       href: "/quiz/comfort-character",
