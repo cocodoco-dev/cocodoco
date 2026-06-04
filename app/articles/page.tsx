@@ -1,6 +1,41 @@
 export default function ArticlesPage() {
   const articles = [
     {
+      title: "How to Stop Romanticizing People Too Quickly",
+      desc: "You're not in love with them — you're in love with the story you're writing about them. Here's how to tell the difference.",
+      href: "/articles/how-to-stop-romanticizing-people",
+      category: "Love & Relationships",
+      badge: "New",
+    },
+    {
+      title: "Why You Keep Attracting the Same Type of Person",
+      desc: "Different name, different face, same story. You're not unlucky — you're operating from a template. Here's how to see it.",
+      href: "/articles/why-you-keep-attracting-the-same-type",
+      category: "Love & Relationships",
+      badge: "New",
+    },
+    {
+      title: "Green Flags You Should Actually Look For in a Partner",
+      desc: "Everyone talks about red flags. But if you don't know what healthy looks like in practice, you might miss it entirely.",
+      href: "/articles/green-flags-to-look-for-in-a-partner",
+      category: "Love & Relationships",
+      badge: "New",
+    },
+    {
+      title: "The 5 Love Languages Explained — And Why Mismatches Hurt So Much",
+      desc: "You felt unseen. They had no idea. This is what a love language mismatch looks like — and what to do about it.",
+      href: "/articles/the-5-love-languages-explained",
+      category: "Love & Relationships",
+      badge: "New",
+    },
+    {
+      title: "What Your Dating Style Says About Your Past",
+      desc: "If the same patterns keep showing up with different people, it might not be a choice. Here's what your dating style is telling you.",
+      href: "/articles/what-your-dating-style-says-about-your-past",
+      category: "Love & Relationships",
+      badge: "New",
+    },
+    {
       title: "What Is Your Shadow Side and Why It Shows Up in Relationships",
       desc: "The hidden emotional patterns that surface when you feel unprotected — and what they really mean.",
       href: "/articles/what-is-your-shadow-side",
