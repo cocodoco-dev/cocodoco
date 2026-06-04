@@ -41,7 +41,7 @@ app/articles/page.tsx          ← 아티클 목록 페이지
   desc: string;         // 한 줄 요약 (카드에 표시)
   href: string;         // "/articles/[slug]"
   category: "Personality" | "Love & Relationships";
-  badge: "New" | "Hot" | "Popular";
+  badge: "New" | "Hot" | "Popular";  // 세 가지를 균등하게 배분할 것 (New→Hot→Popular 순환)
 }
 ```
 
