@@ -1,6 +1,41 @@
 export default function ArticlesPage() {
   const articles = [
     {
+      title: "Why Some People Just Have 'It' — The Science of Charisma",
+      desc: "You've met people who aren't especially accomplished, yet the room tilts toward them. That quality has been studied — and it's more learnable than you think.",
+      href: "/articles/why-some-people-just-have-it-the-science-of-charisma",
+      category: "Personality",
+      badge: "New",
+    },
+    {
+      title: "What Your Social Battery Actually Is — And How to Protect It",
+      desc: "You're having a good time. You like these people. And then the slow drain hits. Here's the neuroscience behind why.",
+      href: "/articles/what-your-social-battery-actually-is",
+      category: "Personality",
+      badge: "New",
+    },
+    {
+      title: "The Psychology of Being the Main Character in Your Own Life",
+      desc: "Most people drift through life as supporting characters in someone else's story. Here's the research on what it takes to actually change that.",
+      href: "/articles/the-psychology-of-being-the-main-character",
+      category: "Personality",
+      badge: "New",
+    },
+    {
+      title: "What Your Aesthetic Says About Your Personality",
+      desc: "The room you'd choose to live in, the music that stops you mid-scroll — these are not random preferences. They are a map of your inner world.",
+      href: "/articles/what-your-aesthetic-says-about-your-personality",
+      category: "Personality",
+      badge: "New",
+    },
+    {
+      title: "Why You Feel Everything More Deeply Than Others",
+      desc: "You cry at scenes no one else noticed. You feel others' embarrassment in your own body. You are not too sensitive — you are wired differently.",
+      href: "/articles/why-you-feel-everything-more-deeply",
+      category: "Personality",
+      badge: "New",
+    },
+    {
       title: "How to Stop Romanticizing People Too Quickly",
       desc: "You're not in love with them — you're in love with the story you're writing about them. Here's how to tell the difference.",
       href: "/articles/how-to-stop-romanticizing-people",
