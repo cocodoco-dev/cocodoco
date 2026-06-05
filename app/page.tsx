@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Kind of Flirt Are You?",
+      desc: "Discover the flirting style that comes most naturally to you 💘",
+      href: "/quiz/flirt-type",
+      badge: "New",
+    },
+    {
       title: "What's Your Dating Style?",
       desc: "Discover how you naturally love, connect, and show up in relationships 💘",
       href: "/quiz/dating-style",
