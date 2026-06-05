@@ -1,6 +1,13 @@
 export default function ArticlesPage() {
   const articles = [
     {
+      title: "Why Some People Are Natural Flirts — And Others Find It Impossible",
+      desc: "You watch them do it effortlessly. When you try, it feels like furniture assembly without instructions. Here's the neuroscience of why.",
+      href: "/articles/why-some-people-are-natural-flirts",
+      category: "Love & Relationships",
+      badge: "New",
+    },
+    {
       title: "Why Emotionally Unavailable People Are So Hard to Walk Away From",
       desc: "The warmth appears just enough to keep you hoping. You've tried to leave. Here's the behavioral science behind why it's so hard.",
       href: "/articles/why-emotionally-unavailable-people-are-hard-to-leave",
