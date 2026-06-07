@@ -1,6 +1,13 @@
 export default function ArticlesPage() {
   const articles = [
     {
+      title: "Why We're Afraid to Love — The Psychology Behind Relationship Fear",
+      desc: "You want closeness. And yet something in you hesitates every time love gets real. Here's what that fear is actually about — and where it begins.",
+      href: "/articles/why-we-are-afraid-to-love",
+      category: "Love & Relationships",
+      badge: "Hot",
+    },
+    {
       title: "Why Some People Are Natural Flirts — And Others Find It Impossible",
       desc: "You watch them do it effortlessly. When you try, it feels like furniture assembly without instructions. Here's the neuroscience of why.",
       href: "/articles/why-some-people-are-natural-flirts",
