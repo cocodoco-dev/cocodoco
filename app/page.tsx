@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Is Your Relationship Fear?",
+      desc: "Discover the hidden fear quietly shaping how you love and connect 💙",
+      href: "/quiz/relationship-fear",
+      badge: "New",
+    },
+    {
       title: "What Kind of Flirt Are You?",
       desc: "Discover the flirting style that comes most naturally to you 💘",
       href: "/quiz/flirt-type",
