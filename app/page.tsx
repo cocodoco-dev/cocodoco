@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Is Your Heartbreak Style?",
+      desc: "Discover how you move through heartbreak — and what it reveals about how you love 💔",
+      href: "/quiz/heartbreak-style",
+      badge: "New",
+    },
+    {
       title: "What Is Your Relationship Fear?",
       desc: "Discover the hidden fear quietly shaping how you love and connect 💙",
       href: "/quiz/relationship-fear",
