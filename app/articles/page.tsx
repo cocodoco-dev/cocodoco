@@ -1,6 +1,13 @@
 export default function ArticlesPage() {
   const articles = [
     {
+      title: "What Heartbreak Actually Does to You — And Why Everyone Heals Differently",
+      desc: "Heartbreak changes your brain chemistry, activates your pain system, and leaves marks that last. Why you recover the way you do is not random.",
+      href: "/articles/what-heartbreak-does-to-you",
+      category: "Love & Relationships",
+      badge: "Popular",
+    },
+    {
       title: "Why We're Afraid to Love — The Psychology Behind Relationship Fear",
       desc: "You want closeness. And yet something in you hesitates every time love gets real. Here's what that fear is actually about — and where it begins.",
       href: "/articles/why-we-are-afraid-to-love",
