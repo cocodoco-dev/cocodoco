@@ -32,26 +32,26 @@ const questions: Question[] = [
   {
     q: "When someone asks how you're doing after a breakup...",
     opts: [
-      { t: "You're honest — you tell them you're struggling and need to talk", s: { the_griever: 2 } },
       { t: "You say you're fine and change the subject", s: { the_avoider: 2, the_protector: 1 } },
-      { t: "You give a detailed account of what probably went wrong", s: { the_analyzer: 2 } },
       { t: "You mention how much you miss them — the good things, the memories", s: { the_romantic: 2 } },
+      { t: "You're honest — you tell them you're struggling and need to talk", s: { the_griever: 2 } },
+      { t: "You give a detailed account of what probably went wrong", s: { the_analyzer: 2 } },
     ],
   },
   {
     q: "The hardest part of heartbreak for you is...",
     opts: [
-      { t: "The grief itself — the rawness, the missing, the weight of it", s: { the_griever: 2 } },
-      { t: "Having to slow down long enough to actually feel it", s: { the_avoider: 2, the_protector: 1 } },
       { t: "Not having answers — not understanding why it ended this way", s: { the_analyzer: 2 } },
+      { t: "The grief itself — the rawness, the missing, the weight of it", s: { the_griever: 2 } },
       { t: "Losing the future you had imagined with that person", s: { the_romantic: 2, the_griever: 1 } },
+      { t: "Having to slow down long enough to actually feel it", s: { the_avoider: 2, the_protector: 1 } },
     ],
   },
   {
     q: "A month after a breakup, you're most likely...",
     opts: [
-      { t: "Still processing — healing takes as long as it takes", s: { the_griever: 2 } },
       { t: "Busier than ever — you've filled every available hour", s: { the_avoider: 2 } },
+      { t: "Still processing — healing takes as long as it takes", s: { the_griever: 2 } },
       { t: "Still trying to understand it — the why keeps coming back", s: { the_analyzer: 2 } },
       { t: "Occasionally checking their social media or rereading old messages", s: { the_romantic: 2 } },
     ],
@@ -59,27 +59,27 @@ const questions: Question[] = [
   {
     q: "After heartbreak, which feels most true about how you cope?",
     opts: [
-      { t: "I need to feel the pain fully before I can move forward", s: { the_griever: 2 } },
-      { t: "I'd rather stay busy and keep moving — sitting with it makes it worse", s: { the_avoider: 2 } },
       { t: "I use the pain as fuel — I want to come out of this stronger", s: { the_rebuilder: 2 } },
+      { t: "I need to feel the pain fully before I can move forward", s: { the_griever: 2 } },
       { t: "I close off a little — I'm more careful the next time I trust someone", s: { the_protector: 2 } },
+      { t: "I'd rather stay busy and keep moving — sitting with it makes it worse", s: { the_avoider: 2 } },
     ],
   },
   {
     q: "When you think about your ex after a breakup, you mostly...",
     opts: [
       { t: "Feel a deep sadness — you loved them, and that love was real", s: { the_griever: 2 } },
-      { t: "Try not to think about them — going there makes everything worse", s: { the_avoider: 2, the_protector: 1 } },
       { t: "Want to understand — their feelings, their reasons, what they were thinking", s: { the_analyzer: 2 } },
       { t: "Remember the good more than the hurt — the warmth lingers longest", s: { the_romantic: 2 } },
+      { t: "Try not to think about them — going there makes everything worse", s: { the_avoider: 2, the_protector: 1 } },
     ],
   },
   {
     q: "Which describes your first week of heartbreak most accurately?",
     opts: [
-      { t: "Emotionally open — you let yourself fall apart, you need people around", s: { the_griever: 2 } },
       { t: "Distracted — your schedule fills up almost immediately", s: { the_avoider: 2 } },
       { t: "Pulled inward — you don't want to be vulnerable with anyone right now", s: { the_protector: 2 } },
+      { t: "Emotionally open — you let yourself fall apart, you need people around", s: { the_griever: 2 } },
       { t: "Searching for meaning — looking for what this experience can teach you", s: { the_rebuilder: 2 } },
     ],
   },
@@ -87,45 +87,45 @@ const questions: Question[] = [
     q: "After a significant heartbreak, what changes most about you?",
     opts: [
       { t: "You feel more emotionally open — grief softened something in you", s: { the_griever: 2 } },
+      { t: "You carry some part of them with you — they don't fully leave", s: { the_romantic: 2 } },
       { t: "You become harder to reach — your walls quietly go up", s: { the_protector: 2 } },
       { t: "You know yourself better — you came out of it with real self-awareness", s: { the_rebuilder: 2, the_analyzer: 1 } },
-      { t: "You carry some part of them with you — they don't fully leave", s: { the_romantic: 2 } },
     ],
   },
   {
     q: "When you imagine fully letting go of someone, you feel...",
     opts: [
-      { t: "Sad but eventually ready — grief is the path through, not around", s: { the_griever: 2 } },
+      { t: "Resistant — letting go feels like losing something genuinely real", s: { the_romantic: 2 } },
       { t: "Like something worth working toward — you want to come out of this different", s: { the_rebuilder: 2 } },
       { t: "Uneasy — there are still things you don't understand and need to", s: { the_analyzer: 2 } },
-      { t: "Resistant — letting go feels like losing something genuinely real", s: { the_romantic: 2 } },
+      { t: "Sad but eventually ready — grief is the path through, not around", s: { the_griever: 2 } },
     ],
   },
   {
     q: "If you unexpectedly bumped into your ex, you'd most likely...",
     opts: [
       { t: "Feel a wave of emotion — it would hit harder than you expected", s: { the_griever: 2, the_romantic: 1 } },
-      { t: "Keep it brief and composed — you'd rather not reopen anything", s: { the_protector: 2, the_avoider: 1 } },
-      { t: "Feel a pull to ask questions — how they are, what they think now", s: { the_analyzer: 2 } },
       { t: "Feel something jump inside — some part of you would still be glad to see them", s: { the_romantic: 2 } },
+      { t: "Feel a pull to ask questions — how they are, what they think now", s: { the_analyzer: 2 } },
+      { t: "Keep it brief and composed — you'd rather not reopen anything", s: { the_protector: 2, the_avoider: 1 } },
     ],
   },
   {
     q: "What do you most need from people around you during heartbreak?",
     opts: [
+      { t: "Encouragement to grow — people who believe you'll come out of this better", s: { the_rebuilder: 2 } },
       { t: "Space to feel everything, without being told to move on", s: { the_griever: 2 } },
       { t: "Distraction — plans, laughter, being kept busy and out of your head", s: { the_avoider: 2 } },
       { t: "Someone to help you process and make sense of what happened", s: { the_analyzer: 2, the_griever: 1 } },
-      { t: "Encouragement to grow — people who believe you'll come out of this better", s: { the_rebuilder: 2 } },
     ],
   },
   {
     q: "When you look back on past heartbreaks, you mostly...",
     opts: [
-      { t: "Remember how much they hurt — and how much you actually felt", s: { the_griever: 2 } },
-      { t: "Prefer not to revisit them — you've moved past and want to stay there", s: { the_avoider: 2, the_protector: 1 } },
       { t: "Can see the patterns and warning signs you missed — you understand it now", s: { the_analyzer: 2 } },
+      { t: "Prefer not to revisit them — you've moved past and want to stay there", s: { the_avoider: 2, the_protector: 1 } },
       { t: "Still feel something — even old heartbreaks hold a kind of tenderness", s: { the_romantic: 2 } },
+      { t: "Remember how much they hurt — and how much you actually felt", s: { the_griever: 2 } },
     ],
   },
 ];
