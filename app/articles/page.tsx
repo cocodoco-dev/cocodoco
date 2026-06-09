@@ -1,6 +1,13 @@
 export default function ArticlesPage() {
   const articles = [
     {
+      title: "Why Your Brain Replays Conversations — The Psychology of Rumination",
+      desc: "You said something three days ago. Nobody else remembers. You still can't stop thinking about it. Here's what's actually happening in your brain.",
+      href: "/articles/why-your-brain-replays-conversations",
+      category: "Personality",
+      badge: "New",
+    },
+    {
       title: "What Heartbreak Actually Does to You — And Why Everyone Heals Differently",
       desc: "Heartbreak changes your brain chemistry, activates your pain system, and leaves marks that last. Why you recover the way you do is not random.",
       href: "/articles/what-heartbreak-does-to-you",
