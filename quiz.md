@@ -7,7 +7,7 @@
 항상 아래 파일을 스타일 기준으로 사용할 것. `aura` 같은 구형 퀴즈는 참고하지 말 것.
 
 - **Quiz page:** `app/quiz/comfort-character/page.tsx`
-- **Result page:** `app/result/comfort-character/page.tsx`
+- **Result page:** `app/result/heartbreak-style/page.tsx`
 
 ## Quiz flow
 
@@ -43,6 +43,23 @@
   "What this [X] means" / "How this [X] shows up in your life" /
   "Your strengths" / "What may feel difficult" / "Growth path" / "A small reminder for you"
 
+#### 결과 페이지 레이아웃 순서 (반드시 준수)
+
+```
+① 헤더 (cocodoco 링크)
+② 카테고리 라벨 (대문자, 중앙 정렬)
+③ 히어로 섹션 — 카드 밖, 광고 위에 배치
+   - title (크게, bold)
+   - summary (bold, 중앙 또는 좌측 정렬)
+④ 광고 슬롯
+⑤ 상세 카드 (desc1, desc2 + h2 섹션 6개)
+⑥ Retake 버튼
+⑦ 광고 슬롯 (하단)
+⑧ ← Back to all quizzes 링크
+```
+
+**핵심 원칙:** `title`과 `summary`는 반드시 카드 **밖** 히어로 섹션에 위치해야 함. 카드 안에 넣으면 광고 아래에 묻혀 결과 공개의 임팩트가 사라짐.
+
 ### `app/page.tsx`
 
 생성 후 퀴즈 배열 **맨 앞**에 추가.
@@ -65,4 +82,4 @@
 AdSense 스크립트(`ca-pub-8500564460470684`)는 `app/layout.tsx`에 전역 삽입됨.
 광고 슬롯 위치:
 - 퀴즈 페이지: 문항 카드 하단
-- 결과 페이지: 결과 카드 상단 + 하단
+- 결과 페이지: 히어로 섹션(title+summary) 아래, 상세 카드 위 + 상세 카드 하단
