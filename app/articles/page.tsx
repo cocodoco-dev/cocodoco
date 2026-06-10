@@ -1,6 +1,13 @@
 export default function ArticlesPage() {
   const articles = [
     {
+      title: "Why Villains Are So Attractive — The Psychology of Dark Charisma",
+      desc: "You know they're the villain. You're rooting for them anyway. Here's the psychology behind why dangerous, morally complex people are so genuinely compelling.",
+      href: "/articles/why-villains-are-so-attractive",
+      category: "Personality",
+      badge: "Hot",
+    },
+    {
       title: "Why Your Brain Replays Conversations — The Psychology of Rumination",
       desc: "You said something three days ago. Nobody else remembers. You still can't stop thinking about it. Here's what's actually happening in your brain.",
       href: "/articles/why-your-brain-replays-conversations",
