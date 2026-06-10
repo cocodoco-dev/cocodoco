@@ -6,7 +6,7 @@
 
 항상 아래 파일을 스타일 기준으로 사용할 것. `aura` 같은 구형 퀴즈는 참고하지 말 것.
 
-- **Quiz page:** `app/quiz/comfort-character/page.tsx`
+- **Quiz page:** `app/quiz/flirt-type/page.tsx`
 - **Result page:** `app/result/heartbreak-style/page.tsx`
 
 ## Quiz flow
@@ -23,12 +23,112 @@
 
 ### `app/quiz/[name]/page.tsx`
 
+#### Quiz page 레이아웃 순서 (반드시 준수)
+
+```
+① <main>
+   - background: "linear-gradient(180deg, #fdf2f8 0%, #fff7ed 45%, #fefce8 100%)"
+   - fontFamily: "Arial, sans-serif"
+   - padding: "36px 18px 60px"
+   - display: "flex", justifyContent: "center"
+   ※ <header> 태그 별도 사용 금지 — 단일 <div> 안에 전부 포함
+
+② <div style={{ width: "min(760px, 100%)", textAlign: "center" }}>
+
+   ③ 카테고리 라벨 (p 태그)
+      - 단순한 "PERSONALITY" 금지
+      - 퀴즈 성격을 설명하는 구체적 문구 사용
+        예: "Flirt Type Personality Test", "Villain Energy Personality Test"
+      - fontSize: 13px, fontWeight: 700, letterSpacing: "0.08em"
+      - color: "#9d174d", textTransform: "uppercase"
+      - margin: "0 0 10px"
+
+   ④ 퀴즈 제목 (h1 태그)
+      - fontSize: "34px", lineHeight: 1.2, marginBottom: "12px"
+      - color: "#111827"
+      - 이모지 포함 필수 (예: 💘, 🖤, 🌀)
+
+   ⑤ 소개 문단 (p 태그)
+      - 6개 결과 타입 이름을 모두 나열해 기대감 형성
+        예: "This quiz explores whether your energy feels most like
+            a subtle charmer, a playful teaser, a sincere connector,
+            a confident pursuer, a soft romantic, or a mystery keeper."
+      - fontSize: "16px", lineHeight: 1.8, color: "#4b5563"
+      - margin: "0 auto 18px", maxWidth: "680px"
+
+   ⑥ 진행 바 트랙 (div)
+      - width: "100%", height: "12px"       ← 6px 금지, 반드시 12px
+      - borderRadius: "999px"
+      - background: "rgba(255,255,255,0.8)"  ← #f3f4f6 금지
+      - border: "1px solid #fbcfe8"
+      - overflow: "hidden", marginBottom: "12px"
+      내부 fill div:
+      - width: `${progress}%`, height: "100%"
+      - background: "linear-gradient(90deg, #fb7185 0%, #f59e0b 100%)"
+      - borderRadius: "999px", transition: "width 0.25s ease"
+
+   ⑦ 문항 카운터 (p 태그)
+      - 형식: "Question {current + 1} of {questions.length}"  ← "X / Y" 형식 금지
+      - fontSize: "16px", fontWeight: 700, color: "#374151"
+      - marginBottom: "20px"
+      - textAlign: "center" (기본값 — 별도 지정 불필요)
+
+   ⑧ 문항 카드 (div)
+      - background: "rgba(255,255,255,0.78)"
+      - border: "1px solid #f2a7b8"          ← 반드시 border 포함
+      - borderRadius: "18px", padding: "24px"
+      - boxShadow: "0 10px 30px rgba(0,0,0,0.04)"
+
+      ⑧-a 질문 텍스트 (h2 태그)              ← p 태그 금지
+         - fontSize: "24px", lineHeight: 1.45, fontWeight: 700
+         - color: "#374151", marginBottom: "20px"
+
+      ⑧-b 버튼 컨테이너 (div)
+         - display: "flex", flexDirection: "column"
+         - gap: "12px", alignItems: "center"
+
+      ⑧-c 선택지 버튼 (button 태그)
+         - width: "min(560px, 100%)"
+         - padding: "14px 18px"
+         - borderRadius: "14px", border: "none"
+         - background: "linear-gradient(135deg, #ff8fab 0%, #fb7185 100%)"
+         - color: "white", cursor: "pointer"
+         - fontSize: "16px", lineHeight: 1.5, fontWeight: 600
+         - boxShadow: "0 8px 18px rgba(251,113,133,0.18)"
+
+   ⑨ 광고 슬롯 (div)
+      - marginTop: "18px", width: "100%", height: "110px"
+      - borderRadius: "14px", border: "1px dashed #f2a7b8"
+      - background: "rgba(255,255,255,0.65)"
+
+   ⑩ About this quiz 섹션 (section 태그)
+      - marginTop: "34px", textAlign: "left"
+      - background: "rgba(255,255,255,0.76)", border: "1px solid #f2d2db"
+      - borderRadius: "18px", padding: "26px"
+      - color: "#374151", boxShadow: "0 10px 30px rgba(0,0,0,0.03)"
+```
+
+#### 텍스트 크기 기준표
+
+| 요소 | 태그 | fontSize | fontWeight | color |
+|---|---|---|---|---|
+| 카테고리 라벨 | p | 13px | 700 | #9d174d |
+| 퀴즈 제목 | **h1** | **34px** | 700 | #111827 |
+| 소개 문단 | p | 16px | 400 | #4b5563 |
+| 문항 카운터 | p | **16px** | **700** | #374151 |
+| 질문 텍스트 | **h2** | **24px** | 700 | #374151 |
+| 버튼 텍스트 | button | 16px | 600 | white |
+| About 제목 "About this quiz" | h2 | **25px** | 700 | #111827 |
+| About h3 소제목 | h3 | **21px** | 700 | #111827 |
+| About 본문 | p | **16px** | 400 | #374151 |
+
+---
+
 - 명시적 `Question` 타입 선언
 - `useMemo`로 진행 바 계산: `((current + 1) / questions.length) * 100`
-- 그라디언트 배경, 카테고리 라벨(대문자), h1, 소개 문단, 애니메이션 진행 바, `boxShadow` 카드, 그라디언트 버튼
-- **하단 "About this quiz" 섹션 필수** — 600~800단어 이상, h3 소제목 4개 고정 구조 준수 (아래 참고)
-- **About 섹션 톤:** 독자에게 직접 말 걸기 ("you" 기반 2인칭 서술). 학술적 설명 나열 금지
-- **About 섹션 도입:** h3 없이 시작하는 도입 문단 최소 3문단 — 이 퀴즈가 무엇을 측정하는지, 왜 사람마다 다른지, 결과가 어떤 의미를 갖는지
+- **문항당 선택지 수는 4개로 통일**
+- **결과 타입(ResultKey) 수는 6개로 통일**
+- **선택지 위치(A/B/C/D)는 문항마다 결과 타입을 다르게 배치할 것** — 같은 타입이 매 문항에서 동일한 버튼 위치에 고정되면 2~3문항만 봐도 패턴이 노출됨. 12문항에 걸쳐 각 결과 타입이 A/B/C/D 위치를 골고루 차지하도록 설계할 것
 
 #### About this quiz 고정 구조 (순서·제목 변경 금지)
 
@@ -50,9 +150,11 @@ h3: "Possible results"
 ```
 
 **기준 파일:** `app/quiz/flirt-type/page.tsx` — About 섹션 품질 기준으로 삼을 것
-- **문항당 선택지 수는 4개로 통일** — 결과 타입 수와 무관. 각 선택지의 `s` 객체로 여러 result key에 동시에 가중치 부여 가능하므로, 12문항 × 4선택지 조합으로 6개 결과 타입도 충분히 구분 가능
-- **결과 타입(ResultKey) 수는 6개로 통일**
-- **선택지 위치(A/B/C/D)는 문항마다 결과 타입을 다르게 배치할 것** — 같은 타입이 매 문항에서 동일한 버튼 위치에 고정되면 2~3문항만 봐도 패턴이 노출됨. 12문항에 걸쳐 각 결과 타입이 A/B/C/D 위치를 골고루 차지하도록 설계할 것
+
+- **About 섹션 톤:** 독자에게 직접 말 걸기 ("you" 기반 2인칭 서술). 학술적 설명 나열 금지
+- **About 섹션 도입:** h3 없이 시작하는 도입 문단 최소 3문단 — 이 퀴즈가 무엇을 측정하는지, 왜 사람마다 다른지, 결과가 어떤 의미를 갖는지
+
+---
 
 ### `app/result/[name]/page.tsx`
 
@@ -83,22 +185,11 @@ h3: "Possible results"
 
 **핵심 원칙:** `title`과 `summary`는 반드시 카드 **밖** 히어로 섹션에 위치해야 함. 카드 안에 넣으면 광고 아래에 묻혀 결과 공개의 임팩트가 사라짐.
 
+---
+
 ### `app/page.tsx`
 
 생성 후 퀴즈 배열 **맨 앞**에 추가.
-
-## Styling rules
-
-- **인라인 스타일만 사용** — Tailwind 클래스 금지
-- **폰트:** `Arial, sans-serif`
-- **배경:** `linear-gradient(180deg, #fdf2f8 0%, #fff7ed 45%, #fefce8 100%)`
-- **카테고리 라벨:** `fontSize: 13px`, `fontWeight: 700`, `letterSpacing: 0.08em`, `color: #9d174d`, `textTransform: uppercase`
-- **진행 바:** `linear-gradient(90deg, #fb7185 0%, #f59e0b 100%)`, `transition: width 0.25s ease`
-- **문항 카드:** `boxShadow: 0 10px 30px rgba(0,0,0,0.04)`
-- **버튼:** `linear-gradient(135deg, #ff8fab 0%, #fb7185 100%)`, `fontWeight: 600`, `boxShadow: 0 8px 18px rgba(251,113,133,0.18)`, `width: min(560px, 100%)`
-- **결과 카드:** `lineHeight: 1.8`, `boxShadow: 0 10px 30px rgba(0,0,0,0.03)`
-- **최대 너비:** 퀴즈 페이지 `min(760px, 100%)`, 결과 페이지 `min(860px, 100%)`
-- **Border radius:** 카드 `18px`, 버튼 `14px`
 
 ## AdSense
 

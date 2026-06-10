@@ -177,137 +177,112 @@ export default function VillainEnergyQuiz() {
     <main
       style={{
         minHeight: "100vh",
-        background:
-          "linear-gradient(180deg, #fdf2f8 0%, #fff7ed 45%, #fefce8 100%)",
+        background: "linear-gradient(180deg, #fdf2f8 0%, #fff7ed 45%, #fefce8 100%)",
         fontFamily: "Arial, sans-serif",
-        padding: "48px 18px",
+        padding: "36px 18px 60px",
+        display: "flex",
+        justifyContent: "center",
       }}
     >
-      <header style={{ textAlign: "center", marginBottom: "32px" }}>
-        <a href="/" style={{ textDecoration: "none" }}>
-          <h1 style={{ fontSize: "36px", margin: 0, color: "#111827" }}>
-            cocodoco
-          </h1>
-        </a>
-      </header>
-
-      <div style={{ maxWidth: "min(760px, 100%)", margin: "0 auto" }}>
+      <div style={{ width: "min(760px, 100%)", textAlign: "center" }}>
         <p
           style={{
+            margin: "0 0 10px",
             fontSize: "13px",
             fontWeight: 700,
             letterSpacing: "0.08em",
             color: "#9d174d",
             textTransform: "uppercase",
-            marginBottom: "10px",
-            textAlign: "center",
           }}
         >
-          Personality
+          Villain Energy Personality Test
         </p>
-        <h2
-          style={{
-            fontSize: "28px",
-            fontWeight: 800,
-            color: "#111827",
-            textAlign: "center",
-            marginBottom: "10px",
-            lineHeight: 1.3,
-          }}
-        >
-          What Kind of Villain Energy Do You Have?
-        </h2>
+
+        <h1 style={{ fontSize: "34px", lineHeight: 1.2, marginBottom: "12px", color: "#111827" }}>
+          What Kind of Villain Energy Do You Have? 🖤
+        </h1>
+
         <p
           style={{
-            textAlign: "center",
-            color: "#6b7280",
-            fontSize: "15px",
-            marginBottom: "28px",
-            lineHeight: 1.6,
+            margin: "0 auto 18px",
+            color: "#4b5563",
+            fontSize: "16px",
+            lineHeight: 1.8,
+            maxWidth: "680px",
           }}
         >
-          Everyone has a little villain in them. Discover the specific kind of
-          power, strategy, and chaos that lives in yours.
+          Everyone has a shadow side. This quiz explores whether your energy
+          feels most like a cold mastermind, a magnetic charmer, a defiant
+          rebel, a self-sufficient lone wolf, a theatrical dramatic, or a
+          quietly dangerous silent threat.
         </p>
 
         <div
           style={{
-            background: "#f3f4f6",
+            width: "100%",
+            height: "12px",
             borderRadius: "999px",
-            height: "6px",
-            marginBottom: "8px",
+            background: "rgba(255,255,255,0.8)",
+            border: "1px solid #fbcfe8",
             overflow: "hidden",
+            marginBottom: "12px",
           }}
         >
           <div
             style={{
-              height: "100%",
               width: `${progress}%`,
+              height: "100%",
               background: "linear-gradient(90deg, #fb7185 0%, #f59e0b 100%)",
               borderRadius: "999px",
               transition: "width 0.25s ease",
             }}
           />
         </div>
-        <p
-          style={{
-            textAlign: "right",
-            fontSize: "13px",
-            color: "#9ca3af",
-            marginBottom: "20px",
-          }}
-        >
-          {current + 1} / {questions.length}
+
+        <p style={{ marginBottom: "20px", color: "#374151", fontSize: "16px", fontWeight: 700 }}>
+          Question {current + 1} of {questions.length}
         </p>
 
         <div
           style={{
-            background: "rgba(255,255,255,0.85)",
+            background: "rgba(255,255,255,0.78)",
+            border: "1px solid #f2a7b8",
             borderRadius: "18px",
-            padding: "28px 24px",
+            padding: "24px",
             boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
-            marginBottom: "16px",
           }}
         >
-          <p
+          <h2
             style={{
-              fontSize: "18px",
+              marginBottom: "20px",
+              color: "#374151",
+              fontSize: "24px",
+              lineHeight: 1.45,
               fontWeight: 700,
-              color: "#111827",
-              marginBottom: "22px",
-              lineHeight: 1.5,
             }}
           >
             {q.q}
-          </p>
+          </h2>
 
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "12px",
-              alignItems: "center",
-            }}
-          >
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px", alignItems: "center" }}>
             {q.opts.map((opt, i) => (
               <button
                 key={i}
                 onClick={() => handleOption(opt.s)}
                 style={{
-                  width: "min(560px, 100%)",
-                  padding: "14px 20px",
-                  background:
-                    "linear-gradient(135deg, #ff8fab 0%, #fb7185 100%)",
-                  color: "white",
-                  border: "none",
+                  padding: "14px 18px",
                   borderRadius: "14px",
-                  fontSize: "15px",
-                  fontWeight: 600,
+                  border: "none",
+                  background: "linear-gradient(135deg, #ff8fab 0%, #fb7185 100%)",
+                  color: "white",
                   cursor: "pointer",
-                  textAlign: "left",
+                  fontSize: "16px",
                   lineHeight: 1.5,
+                  width: "min(560px, 100%)",
+                  fontWeight: 600,
                   boxShadow: "0 8px 18px rgba(251,113,133,0.18)",
                   fontFamily: "Arial, sans-serif",
+                  textAlign: "left",
                 }}
               >
                 {opt.t}
@@ -318,97 +293,164 @@ export default function VillainEnergyQuiz() {
 
         <div
           style={{
-            width: "min(760px, 100%)",
-            height: "100px",
+            marginTop: "18px",
+            width: "100%",
+            height: "110px",
             borderRadius: "14px",
             border: "1px dashed #f2a7b8",
-            background: "rgba(255,255,255,0.6)",
+            background: "rgba(255,255,255,0.65)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             color: "#9ca3af",
             fontSize: "14px",
-            margin: "20px 0",
           }}
         >
           Ad Space (Google AdSense will go here)
         </div>
 
-        <div
+        <section
           style={{
-            background: "rgba(255,255,255,0.75)",
+            marginTop: "34px",
+            textAlign: "left",
+            background: "rgba(255,255,255,0.76)",
+            border: "1px solid #f2d2db",
             borderRadius: "18px",
-            padding: "28px 24px",
-            boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
-            marginTop: "8px",
+            padding: "26px",
+            color: "#374151",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.03)",
           }}
         >
-          <h3
-            style={{
-              fontSize: "18px",
-              fontWeight: 700,
-              color: "#111827",
-              marginBottom: "14px",
-            }}
-          >
+          <h2 style={{ fontSize: "25px", fontWeight: 700, marginTop: 0, marginBottom: "14px", color: "#111827" }}>
             About this quiz
-          </h3>
+          </h2>
 
-          <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
-            Everyone has a shadow side — a set of traits that would read as dangerous, threatening, or powerful if turned outward without restraint. This quiz is not about whether you are good or bad. It is about what kind of power you carry, how you instinctively move when you feel threatened, and what your natural edge looks like when you stop managing it for other people&apos;s comfort.
-          </p>
-          <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
-            Not everyone&apos;s shadow looks the same. Some people&apos;s unconstrained self is a strategist — cold, precise, always three moves ahead. Some people burn things down on principle. Some charm their way through everything. Some go completely alone. The shape your villain energy takes is not random: it reflects your temperament, your history, and the specific qualities you have been taught to keep in check. By answering twelve questions about how you naturally respond to power, conflict, and other people, you can discover which of six villain types fits you most closely.
-          </p>
-          <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
-            Your result is not a judgment. It is a description of your dominant power mode — the energy that emerges when you stop performing for the room and operate from your most unmanaged self. Think of it as the version of you that exists when no one is watching and nothing is at stake except what you actually want.
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "14px" }}>
+            Everyone has a shadow side — a set of traits that would read as
+            dangerous, threatening, or powerful if turned outward without
+            restraint. This quiz is not about whether you are good or bad. It
+            is about what kind of power you carry, how you instinctively move
+            when you feel threatened, and what your natural edge looks like
+            when you stop managing it for other people&apos;s comfort.
           </p>
 
-          <h3 style={{ fontSize: "16px", fontWeight: 700, color: "#111827", marginBottom: "10px", marginTop: "20px" }}>
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "14px" }}>
+            Not everyone&apos;s shadow looks the same. Some people&apos;s
+            unconstrained self is a strategist — cold, precise, always three
+            moves ahead. Some people burn things down on principle. Some charm
+            their way through everything. Some go completely alone. The shape
+            your villain energy takes is not random: it reflects your
+            temperament, your history, and the specific qualities you have been
+            taught to keep in check. By answering twelve questions about how
+            you naturally respond to power, conflict, and other people, you can
+            discover which of six villain types fits you most closely.
+          </p>
+
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "18px" }}>
+            Your result is not a judgment. It is a description of your dominant
+            power mode — the energy that emerges when you stop performing for
+            the room and operate from your most unmanaged self. Think of it as
+            the version of you that exists when no one is watching and nothing
+            is at stake except what you actually want.
+          </p>
+
+          <h3 style={{ fontSize: "21px", fontWeight: 700, marginBottom: "10px", color: "#111827" }}>
             Why your villain energy matters
           </h3>
-          <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
-            In Jungian psychology, the shadow is not the enemy — it is the part of yourself that contains suppressed power, creativity, and drive. Carl Jung argued that the shadow, when integrated rather than denied, makes a person more whole rather than more dangerous. The problem is not the traits themselves. The problem is when they operate unconsciously — when you project them outward, or when they surface at the wrong moment because you never gave them a legitimate outlet.
-          </p>
-          <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
-            Understanding your villain energy gives you access to the strengths buried inside it. The mastermind&apos;s shadow contains genuine strategic intelligence. The rebel&apos;s shadow contains real moral courage. The lone wolf&apos;s contains a self-sufficiency most people never develop. Knowing which type you carry — and what the healthy version of it looks like — is more useful than pretending the energy isn&apos;t there.
+
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "14px" }}>
+            In Jungian psychology, the shadow is not the enemy — it is the part
+            of yourself that contains suppressed power, creativity, and drive.
+            Carl Jung argued that the shadow, when integrated rather than
+            denied, makes a person more whole rather than more dangerous. The
+            problem is not the traits themselves. The problem is when they
+            operate unconsciously — when you project them outward, or when they
+            surface at the wrong moment because you never gave them a
+            legitimate outlet.
           </p>
 
-          <h3 style={{ fontSize: "16px", fontWeight: 700, color: "#111827", marginBottom: "10px", marginTop: "20px" }}>
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "18px" }}>
+            Understanding your villain energy gives you access to the strengths
+            buried inside it. The mastermind&apos;s shadow contains genuine
+            strategic intelligence. The rebel&apos;s shadow contains real moral
+            courage. The lone wolf&apos;s contains a self-sufficiency most
+            people never develop. Knowing which type you carry — and what the
+            healthy version of it looks like — is more useful than pretending
+            the energy isn&apos;t there.
+          </p>
+
+          <h3 style={{ fontSize: "21px", fontWeight: 700, marginBottom: "10px", color: "#111827" }}>
             How to use your result
           </h3>
-          <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
-            Read your result as a description of your default power mode — not your entire personality, and not a fixed identity. Most people can access more than one villain type depending on context and what&apos;s at stake. But one tends to feel most like home: the energy that requires no effort, that shows up automatically when you are stressed, threatened, or simply not trying to manage anyone&apos;s impression of you. That is the one this quiz is designed to surface.
-          </p>
-          <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
-            Each result also includes a growth path — the shadow of the shadow. Every villain type has a version of itself that works against you rather than for you: the mastermind whose strategy tips into paranoia, the charmer whose ease tips into inauthenticity, the rebel whose defiance tips into self-sabotage. Knowing your type helps you recognize when your natural power is landing — and when it is starting to cost you something.
+
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "14px" }}>
+            Read your result as a description of your default power mode — not
+            your entire personality, and not a fixed identity. Most people can
+            access more than one villain type depending on context and
+            what&apos;s at stake. But one tends to feel most like home: the
+            energy that requires no effort, that shows up automatically when
+            you are stressed, threatened, or simply not trying to manage
+            anyone&apos;s impression of you. That is the one this quiz is
+            designed to surface.
           </p>
 
-          <h3 style={{ fontSize: "16px", fontWeight: 700, color: "#111827", marginBottom: "10px", marginTop: "20px" }}>
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "18px" }}>
+            Each result also includes a growth path — the shadow of the shadow.
+            Every villain type has a version of itself that works against you
+            rather than for you: the mastermind whose strategy tips into
+            paranoia, the charmer whose ease tips into inauthenticity, the
+            rebel whose defiance tips into self-sabotage. Knowing your type
+            helps you recognize when your natural power is landing — and when
+            it is starting to cost you something.
+          </p>
+
+          <h3 style={{ fontSize: "21px", fontWeight: 700, marginBottom: "10px", color: "#111827" }}>
             What this test explores
           </h3>
-          <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
-            This quiz looks at several dimensions of how you move through the world when you are operating from power rather than performance. It explores how you respond when someone underestimates you, how you handle betrayal, what you do when someone gets in your way, what you think your real power actually is, and what kind of origin story your life has been building toward. It also looks at your relationship to rules, to other people&apos;s approval, to solitude, and to being seen.
-          </p>
-          <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
-            Rather than sorting you into a fixed box, the quiz tries to describe the specific texture of your edge — which is almost always more interesting than knowing your personality in general. The villain archetype strips away the social performance and asks what&apos;s underneath. This quiz tries to make some of that visible in a way that feels like recognition rather than reduction.
+
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "14px" }}>
+            This quiz looks at several dimensions of how you move through the
+            world when you are operating from power rather than performance. It
+            explores how you respond when someone underestimates you, how you
+            handle betrayal, what you do when someone gets in your way, what
+            you think your real power actually is, and what kind of origin
+            story your life has been building toward. It also looks at your
+            relationship to rules, to other people&apos;s approval, to
+            solitude, and to being seen.
           </p>
 
-          <h3 style={{ fontSize: "16px", fontWeight: 700, color: "#111827", marginBottom: "10px", marginTop: "20px" }}>
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: "18px" }}>
+            Rather than sorting you into a fixed box, the quiz tries to
+            describe the specific texture of your edge — which is almost always
+            more interesting than knowing your personality in general. The
+            villain archetype strips away the social performance and asks
+            what&apos;s underneath. This quiz tries to make some of that
+            visible in a way that feels like recognition rather than reduction.
+          </p>
+
+          <h3 style={{ fontSize: "21px", fontWeight: 700, marginBottom: "10px", color: "#111827" }}>
             Possible results
           </h3>
-          <ul style={{ color: "#374151", fontSize: "15px", lineHeight: 2, marginBottom: "14px", paddingLeft: "20px" }}>
-            <li><strong>The Mastermind</strong> — Cold intelligence, long games, always three steps ahead</li>
-            <li><strong>The Charmer</strong> — Social power, magnetic ease, everyone trusts you before they should</li>
-            <li><strong>The Rebel</strong> — Conviction-fueled defiance, your own code, no apologies</li>
-            <li><strong>The Lone Wolf</strong> — Complete self-sufficiency, no leverage, no obligations</li>
-            <li><strong>The Dramatic</strong> — Theatrical power, unforgettable presence, the exit as statement</li>
-            <li><strong>The Silent Threat</strong> — Stillness as strategy, says little, notices everything</li>
+
+          <ul style={{ paddingLeft: "22px", lineHeight: 1.9, fontSize: "16px", marginTop: 0, marginBottom: "18px" }}>
+            <li>The Mastermind</li>
+            <li>The Charmer</li>
+            <li>The Rebel</li>
+            <li>The Lone Wolf</li>
+            <li>The Dramatic</li>
+            <li>The Silent Threat</li>
           </ul>
-          <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8 }}>
-            Each result comes with a detailed description of your villain energy, what it looks like in real life, where it becomes a genuine strength, where it tends to work against you, and what the most integrated version of it looks like. In that sense, this is not only a fun personality quiz. It is also a small reflection on the parts of yourself you have been taught to keep quiet — and what they are actually worth.
+
+          <p style={{ lineHeight: 1.9, fontSize: "16px", marginBottom: 0 }}>
+            Each result comes with a detailed description of your villain
+            energy, what it looks like in real life, where it becomes a genuine
+            strength, where it tends to work against you, and what the most
+            integrated version of it looks like. In that sense, this is not
+            only a fun personality quiz. It is also a small reflection on the
+            parts of yourself you have been taught to keep quiet — and what
+            they are actually worth.
           </p>
-        </div>
+        </section>
       </div>
     </main>
   );
