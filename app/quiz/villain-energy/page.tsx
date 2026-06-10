@@ -355,27 +355,58 @@ export default function VillainEnergyQuiz() {
           </h3>
 
           <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
-            Everyone has a shadow side — a set of traits that would read as dangerous, threatening, or powerful if they were turned outward without restraint. This quiz is not about whether you are good or bad. It is about what kind of power you carry, how you instinctively move when you feel threatened, and what your natural edge looks like when you stop managing it for other people&apos;s comfort.
+            Everyone has a shadow side — a set of traits that would read as dangerous, threatening, or powerful if turned outward without restraint. This quiz is not about whether you are good or bad. It is about what kind of power you carry, how you instinctively move when you feel threatened, and what your natural edge looks like when you stop managing it for other people&apos;s comfort.
+          </p>
+          <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
+            Not everyone&apos;s shadow looks the same. Some people&apos;s unconstrained self is a strategist — cold, precise, always three moves ahead. Some people burn things down on principle. Some charm their way through everything. Some go completely alone. The shape your villain energy takes is not random: it reflects your temperament, your history, and the specific qualities you have been taught to keep in check. By answering twelve questions about how you naturally respond to power, conflict, and other people, you can discover which of six villain types fits you most closely.
+          </p>
+          <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
+            Your result is not a judgment. It is a description of your dominant power mode — the energy that emerges when you stop performing for the room and operate from your most unmanaged self. Think of it as the version of you that exists when no one is watching and nothing is at stake except what you actually want.
           </p>
 
           <h3 style={{ fontSize: "16px", fontWeight: 700, color: "#111827", marginBottom: "10px", marginTop: "20px" }}>
-            Why villain archetypes reveal real personality traits
+            Why your villain energy matters
           </h3>
           <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
-            In Jungian psychology, the shadow is the part of the self that contains the traits we have been taught to suppress — aggression, ambition, manipulation, independence taken past the point of comfort. Carl Jung argued that the shadow is not purely negative: it contains genuine power, creativity, and drive that, when integrated, makes a person more whole rather than more dangerous. The villain archetype is the shadow made explicit — an exaggerated version of qualities that exist, in more moderated forms, in everyone.
+            In Jungian psychology, the shadow is not the enemy — it is the part of yourself that contains suppressed power, creativity, and drive. Carl Jung argued that the shadow, when integrated rather than denied, makes a person more whole rather than more dangerous. The problem is not the traits themselves. The problem is when they operate unconsciously — when you project them outward, or when they surface at the wrong moment because you never gave them a legitimate outlet.
           </p>
           <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
-            Research in personality psychology supports this. Traits associated with the so-called dark triad — narcissism, Machiavellianism, and psychopathy — exist on a spectrum, and subclinical versions of these traits are widespread in the general population. Mild Machiavellianism, for instance, correlates with strategic thinking and social intelligence. Subclinical narcissism correlates with confidence and leadership effectiveness. The traits themselves are not the problem — the problem is when they are expressed without self-awareness or regard for others.
+            Understanding your villain energy gives you access to the strengths buried inside it. The mastermind&apos;s shadow contains genuine strategic intelligence. The rebel&apos;s shadow contains real moral courage. The lone wolf&apos;s contains a self-sufficiency most people never develop. Knowing which type you carry — and what the healthy version of it looks like — is more useful than pretending the energy isn&apos;t there.
           </p>
 
           <h3 style={{ fontSize: "16px", fontWeight: 700, color: "#111827", marginBottom: "10px", marginTop: "20px" }}>
-            The six villain types
+            How to use your result
           </h3>
           <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
-            This quiz identifies six distinct villain energy types, each rooted in a different kind of power. The Mastermind operates through intelligence and control. The Charmer operates through social influence. The Rebel operates through defiance and conviction. The Lone Wolf operates through radical self-sufficiency. The Dramatic operates through presence and spectacle. The Silent Threat operates through stillness and unreadability. None of these are purely negative — each contains real strengths that, in the right context, are genuinely formidable.
+            Read your result as a description of your default power mode — not your entire personality, and not a fixed identity. Most people can access more than one villain type depending on context and what&apos;s at stake. But one tends to feel most like home: the energy that requires no effort, that shows up automatically when you are stressed, threatened, or simply not trying to manage anyone&apos;s impression of you. That is the one this quiz is designed to surface.
           </p>
+          <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
+            Each result also includes a growth path — the shadow of the shadow. Every villain type has a version of itself that works against you rather than for you: the mastermind whose strategy tips into paranoia, the charmer whose ease tips into inauthenticity, the rebel whose defiance tips into self-sabotage. Knowing your type helps you recognize when your natural power is landing — and when it is starting to cost you something.
+          </p>
+
+          <h3 style={{ fontSize: "16px", fontWeight: 700, color: "#111827", marginBottom: "10px", marginTop: "20px" }}>
+            What this test explores
+          </h3>
+          <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
+            This quiz looks at several dimensions of how you move through the world when you are operating from power rather than performance. It explores how you respond when someone underestimates you, how you handle betrayal, what you do when someone gets in your way, what you think your real power actually is, and what kind of origin story your life has been building toward. It also looks at your relationship to rules, to other people&apos;s approval, to solitude, and to being seen.
+          </p>
+          <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8, marginBottom: "14px" }}>
+            Rather than sorting you into a fixed box, the quiz tries to describe the specific texture of your edge — which is almost always more interesting than knowing your personality in general. The villain archetype strips away the social performance and asks what&apos;s underneath. This quiz tries to make some of that visible in a way that feels like recognition rather than reduction.
+          </p>
+
+          <h3 style={{ fontSize: "16px", fontWeight: 700, color: "#111827", marginBottom: "10px", marginTop: "20px" }}>
+            Possible results
+          </h3>
+          <ul style={{ color: "#374151", fontSize: "15px", lineHeight: 2, marginBottom: "14px", paddingLeft: "20px" }}>
+            <li><strong>The Mastermind</strong> — Cold intelligence, long games, always three steps ahead</li>
+            <li><strong>The Charmer</strong> — Social power, magnetic ease, everyone trusts you before they should</li>
+            <li><strong>The Rebel</strong> — Conviction-fueled defiance, your own code, no apologies</li>
+            <li><strong>The Lone Wolf</strong> — Complete self-sufficiency, no leverage, no obligations</li>
+            <li><strong>The Dramatic</strong> — Theatrical power, unforgettable presence, the exit as statement</li>
+            <li><strong>The Silent Threat</strong> — Stillness as strategy, says little, notices everything</li>
+          </ul>
           <p style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8 }}>
-            Your result reflects your dominant mode of power — the way you naturally move when you are operating from your most unconstrained self. Think of it less as who you are all the time and more as what you become when you stop performing for the room.
+            Each result comes with a detailed description of your villain energy, what it looks like in real life, where it becomes a genuine strength, where it tends to work against you, and what the most integrated version of it looks like. In that sense, this is not only a fun personality quiz. It is also a small reflection on the parts of yourself you have been taught to keep quiet — and what they are actually worth.
           </p>
         </div>
       </div>
