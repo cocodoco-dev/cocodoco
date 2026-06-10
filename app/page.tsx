@@ -1,6 +1,12 @@
 export default function Home() {
   const quizzes = [
     {
+      title: "What Kind of Villain Energy Do You Have?",
+      desc: "Everyone has a little villain in them. Discover the specific kind of power, strategy, and chaos that lives in yours 🖤",
+      href: "/quiz/villain-energy",
+      badge: "New",
+    },
+    {
       title: "What Kind of Overthinker Are You?",
       desc: "Discover the pattern your overthinking follows — and what it reveals about how your mind actually works 🌀",
       href: "/quiz/overthinker-type",
